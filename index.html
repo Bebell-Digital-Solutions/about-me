@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Bebell Digital Solutions</title>
+    <title>About Barclay Bellande</title>
   
 
 
@@ -17,8 +17,7 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>
 
 
 
@@ -806,6 +805,12 @@
             border-radius: .5rem;
         }
 
+
+.work-card.hidden {
+    display: none !important;
+}
+
+
         .portfolio-item-details {
             display: none;
         }
@@ -928,7 +933,16 @@
             color: var(--skin-color);
         }
 
+
+
+
+
+
+
+
         /* Main - Services */
+
+
         .services-container {
             /* Styles removed to allow swiper to control layout */
         }
@@ -952,7 +966,7 @@
 
         .services-icon {
             display: block;
-            font-size: 1.8rem;
+            font-size: 2.8rem;
             color: var(--skin-color);
             margin-bottom: var(--mb1);
         }
@@ -981,44 +995,59 @@
             transform: translateX(.25rem);
         }
 
-        .services-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, .5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0 1rem;
-            z-index: var(--z-modal);
-            opacity: 0;
-            visibility: hidden;
-            transition: .4s;
-        }
+.services-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    z-index: var(--z-modal);
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s;
+}
+
+
+.services-modal.active-modal {
+    opacity: 1;
+    visibility: visible;
+}
+
+.services-modal-content {
+    width: 500px;
+    position: relative;
+    background-color: var(--box-color);
+    padding: 4.5rem 2.5rem 2.5rem;
+    border-radius: .5rem;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.services-modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--skin-color);
+    cursor: pointer;
+    z-index: 10;
+}
+
+.services-modal-close:hover {
+    color: var(--title-color);
+}
 
         .active-modal {
             opacity: 1;
             visibility: visible;
         }
 
-        .services-modal-content {
-            width: 500px;
-            position: relative;
-            background-color: var(--box-color);
-            padding: 4.5rem 2.5rem 2.5rem;
-            border-radius: .5rem;
-        }
 
-        .services-modal-close {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            font-size: 1.5rem;
-            color: var(--skin-color);
-            cursor: pointer;
-        }
 
         .services-modal-title,
         .services-modal-description {
@@ -1056,24 +1085,17 @@
             font-size: var(--small-font-size);
         }
 
+
+
+
+
+
         /* Main - Testimonials */
         .testimonials-container.swiper {
             padding-bottom: 3rem;
         }
         
-        @media screen and (min-width: 992px) {
-            .testimonials-container {
-                width: 750px;
-                margin-left: auto !important;
-                margin-right: auto !important;
-            }
-            .faq-question {
-                font-size: var(--normal-font-size);
-                margin-left: auto;
-            margin-right: auto;
-            }
-         
-        }
+
 
         .testimonial-card {
             background-color: var(--box-color);
@@ -1158,66 +1180,85 @@
 
 
         /* FAQ Section */
-        .faq-container {
-            max-width: 768px;
-            margin-left: auto;
-            margin-right: auto;
-            display: grid;
-            gap: 1.5rem;
-        }
-        .faq-item {
-            background-color: var(--box-color);
-            border-radius: .5rem;
-            padding: 1.25rem;
-            box-shadow: 0 2px 8px hsla(var(--hue-color), 14%, 5%, .5);
-        }
-        .faq-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-            gap: .5rem;
-        }
-        button.faq-header {
-            width: 100%;
-            background: transparent;
-            padding: 0;
-        }
-        .faq-question {
-            font-size: var(--h3-font-size);
-            color: var(--title-color);
-        }
-        .faq-icon {
-            font-size: 1.5rem;
-            color: var(--skin-color);
-            transition: transform .3s;
-        }
-        .faq-content {
-            overflow: hidden;
-            max-height: 0;
-            transition: max-height .3s ease-out;
-        }
-        .faq-answer {
-            font-size: var(--small-font-size);
-            padding-top: 1rem;
-            border-top: 1px solid var(--scroll-thumb-color);
-            margin-top: 1rem;
-            text-align: left;
-        }
+/* FAQ Section */
+#faq .container {
+    max-width: 768px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+    padding: 0 20px;
 
-     
-        /* Active state for FAQ item */
-        .faq-open .faq-icon {
-            transform: rotate(45deg);
-        }
+}
 
-     
-        .faq-open .faq-content {
-             /* Set a max-height large enough for content */
-            max-height: 250px;
-        }
+.faq-container {
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    gap: 1.5rem !important; /* Force the gap */    
+width: 100%
+}
 
+/* Add this to ensure grid layout works properly */
+.faq-container {
+    grid-template-columns: 1fr;
+}
 
+.faq-item {
+    background-color: var(--box-color);
+    border-radius: .5rem;
+    padding: 1.25rem;
+    box-shadow: 0 2px 8px hsla(var(--hue-color), 14%, 5%, .5);
+    width: 100%;
+margin-bottom: 10px;
+}
+
+/* Rest of your FAQ styles remain the same */
+.faq-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    gap: .5rem;
+}
+button.faq-header {
+    width: 100%;
+    background: transparent;
+    padding: 0;
+}
+.faq-question {
+    font-size: var(--h3-font-size);
+    color: var(--title-color);
+    text-align: left;
+    width: 100%;
+}
+.faq-icon {
+    font-size: 1.5rem;
+    color: var(--skin-color);
+    transition: transform .3s;
+    flex-shrink: 0;
+}
+.faq-content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .3s ease-out;
+}
+.faq-answer {
+    font-size: var(--small-font-size);
+    padding-top: 1rem;
+    border-top: 1px solid var(--scroll-thumb-color);
+    margin-top: 1rem;
+    text-align: left;
+}
+
+/* Active state for FAQ item */
+.faq-open .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-open .faq-content {
+    max-height: 250px;
+}
 
 
 
@@ -1507,22 +1548,42 @@
 
 
         /* Media Queries */
+
+/* Media queries */
+@media screen and (max-width: 768px) {
+    #faq .container {
+        padding: 0 15px;
+    }
+    .faq-container {
+        max-width: 100%;
+        gap: 1rem; /* Slightly smaller gap on mobile */
+
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #faq .container {
+        padding: 0 10px;
+    }
+}
+
+
+
+
+
+
+
         @media screen and (max-width: 1408px) {
             .container {
                 margin-left: var(--mb25);
                 margin-right: var(--mb25);
-            }
+           
 
-                        .faq-question {
-                font-size: var(--normal-font-size);
-                margin-left: auto;
-            margin-right: auto;
             }
             
         }
 
-
-
+    
 
 
 
@@ -1541,11 +1602,6 @@
                 gap: 3rem;
             }
 
-                        .faq-question {
-                font-size: var(--normal-font-size);
-                margin-left: auto;
-            margin-right: auto;
-            }
         }
 
 
@@ -1683,17 +1739,22 @@
                 margin-bottom: var(--mb075);
             }
 
-                        .faq-question {
-                font-size: var(--normal-font-size);
-                margin-left: auto;
-            margin-right: auto;
-            }
+
         }
 
 
 
 
 
+        @media screen and (min-width: 992px) {
+            .testimonials-container {
+                width: 750px;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+         
+        }
 
 
 
@@ -1725,13 +1786,6 @@
                 font-size: 1.5rem;
             }
 
-            
-            .faq-question {
-                font-size: var(--normal-font-size);
-                margin-left: auto;
-            margin-right: auto;
-            }
-            
 
             .contact-container {
                 grid-template-columns: 360px;
@@ -1876,13 +1930,6 @@
                 justify-self: flex-start;
             }
 
-            .faq-question {
-                font-size: var(--normal-font-size);
-                margin-left: auto;
-            margin-right: auto;
-            }
-
-            
 
         }
 
@@ -2306,279 +2353,1169 @@
             </div>
         </section>
 
-        <section class="work section" id="work">
+     
+
+
+
+
+
+
+
+
+   <section class="work section" id="work">
+
             <h2 class="section-title" data-heading="Our Valued Clients">Clients we are proud to work with</h2>
+
+
+
             <div class="work-filters">
-                <button type="button" class="work-item active-work" data-filter="all">All</button>
-                <button type="button" class="work-item" data-filter=".digital-office">Digital Offices</button>
-                <button type="button" class="work-item" data-filter=".digital-clinic">Digital Clinics</button>
-                <button type="button" class="work-item" data-filter=".digital-store">Digital Stores</button>
-                <button type="button" class="work-item" data-filter=".digital-menu">Digital Menus</button>
+
+                <span class="work-item active-work" data-filter="all">All</span>
+
+                <span class="work-item" data-filter=".digital-office">Digital Offices</span>
+
+                <span class="work-item" data-filter=".digital-clinic">Digital Clinics</span>
+
+                <span class="work-item" data-filter=".digital-store">Digital Stores</span>
+
+                <span class="work-item" data-filter=".digital-menu">Digital Menus</span>
+
             </div>
+
+
+
             <div class="work-container container grid">
-                <!-- Portfolio items will be dynamically managed by JS -->
+
+
+
+
+                <!-- Digital Offices -->
+
+
+
                 <div class="work-card mix digital-office">
+
                     <img src="https://bucket.mlcdn.com/a/3336/3336910/images/7456eb9f12a3eaf68cd16c33ef7aa0f77b2dc674.jpeg" alt="" class="work-img">
+
                     <h3 class="work-title">Grupo Lisman SRL</h3>
+
                     <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
                     <div class="portfolio-item-details">
+
                         <h3 class="details-title">Digital Office Transformation</h3>
+
                         <p class="details-description">Complete digital office solution with workflow automation and collaboration tools</p>
+
                         <ul class="details-info">
+
                             <li>Created - <span>22 Apr 2025</span></li>
+
                             <li>Technologies - <span>React, Node.js, MongoDB</span></li>
+
                             <li>Role - <span>Digital Transformation</span></li>
+
                             <li>View - <span><a href="#">www.techcorp-solutions.com</a></span></li>
+
                         </ul>
+
                     </div>
+
                 </div>
 
+
+
+
                 <div class="work-card mix digital-office">
+
                     <img src="https://bucket.mlcdn.com/a/3336/3336910/images/44ee407b5d38bf67ab87f4ca9ddd187e6780ede3.jpeg" alt="" class="work-img">
-                    <h3 class="work-title">Fundación Rescued by Love</h3>
-                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
-                    <div class="portfolio-item-details">
-                        <h3 class="details-title">Virtual Workspace Platform</h3>
-                        <p class="details-description">Custom digital office environment for remote teams and project management</p>
-                        <ul class="details-info">
+
+                    
+
+<h3 class="work-title">Fundación Rescued by Love</h3>
+
+                    
+
+<span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
+                    
+
+<div class="portfolio-item-details">
+
+                        
+
+<h3 class="details-title">Virtual Workspace Platform</h3>
+
+                        
+
+<p class="details-description">Custom digital office environment for remote teams and project management</p>
+
+                        
+
+<ul class="details-info">
+
                             <li>Created - <span>15 Apr 2025</span></li>
+
                             <li>Technologies - <span>Vue.js, Firebase, AWS</span></li>
+
                             <li>Role - <span>Platform Development</span></li>
+
                             <li>View - <span><a href="#">www.global-innovations.com</a></span></li>
+
                         </ul>
+
                     </div>
+
                 </div>
 
-                <div class="work-card mix digital-office">
+
+
+
+  <div class="work-card mix digital-office">
+
                     <img src="https://bucket.mlcdn.com/a/3336/3336910/images/102c99b30d59d678c997f2319322e5c8dae89375.jpeg" alt="" class="work-img">
+
                     <h3 class="work-title">Bebell Design Studio</h3>
+
                     <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
                     <div class="portfolio-item-details">
+
                         <h3 class="details-title">Digital Office Transformation</h3>
+
                         <p class="details-description">Complete digital office solution with workflow automation and collaboration tools</p>
+
                         <ul class="details-info">
+
                             <li>Created - <span>22 Apr 2025</span></li>
+
                             <li>Technologies - <span>React, Node.js, MongoDB</span></li>
+
                             <li>Role - <span>Digital Transformation</span></li>
+
                             <li>View - <span><a href="#">www.techcorp-solutions.com</a></span></li>
+
                         </ul>
+
                     </div>
+
                 </div>
 
-                <div class="work-card mix digital-office">
+
+
+  <div class="work-card mix digital-office">
+
                     <img src="https://bucket.mlcdn.com/a/3336/3336910/images/d04530d9f4779d7792be454957de69b4b8dd963c.jpeg" alt="" class="work-img">
+
                     <h3 class="work-title">Divorcio RD</h3>
+
                     <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
                     <div class="portfolio-item-details">
+
                         <h3 class="details-title">Digital Office Transformation</h3>
+
                         <p class="details-description">Complete digital office solution with workflow automation and collaboration tools</p>
+
                         <ul class="details-info">
+
                             <li>Created - <span>22 Apr 2025</span></li>
+
                             <li>Technologies - <span>React, Node.js, MongoDB</span></li>
+
                             <li>Role - <span>Digital Transformation</span></li>
+
                             <li>View - <span><a href="#">www.techcorp-solutions.com</a></span></li>
+
                         </ul>
+
                     </div>
+
                 </div>
 
-                <div class="work-card mix digital-office">
+
+
+<div class="work-card mix digital-office">
+
                     <img src="https://bucket.mlcdn.com/a/3336/3336910/images/39014f0efcc873761f9a8e1c62669333c1fcc124.jpeg" alt="" class="work-img">
+
                     <h3 class="work-title">Farmacia Vegana</h3>
+
                     <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
                     <div class="portfolio-item-details">
+
                         <h3 class="details-title">Digital Office Transformation</h3>
+
                         <p class="details-description">Complete digital office solution with workflow automation and collaboration tools</p>
+
                         <ul class="details-info">
+
                             <li>Created - <span>22 Apr 2025</span></li>
+
                             <li>Technologies - <span>React, Node.js, MongoDB</span></li>
+
                             <li>Role - <span>Digital Transformation</span></li>
+
                             <li>View - <span><a href="#">www.techcorp-solutions.com</a></span></li>
+
                         </ul>
+
                     </div>
+
                 </div>
 
-                <div class="work-card mix digital-office">
+
+
+
+<div class="work-card mix digital-office">
+
                     <img src="https://bucket.mlcdn.com/a/3336/3336910/images/a5c0a36fd7815942be23fdac413c29287579c429.jpeg" alt="" class="work-img">
+
                     <h3 class="work-title">Bicimetro Nacional</h3>
+
                     <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
+
                     <div class="portfolio-item-details">
+
                         <h3 class="details-title">Digital Office Transformation</h3>
+
                         <p class="details-description">Complete digital office solution with workflow automation and collaboration tools</p>
+
                         <ul class="details-info">
+
                             <li>Created - <span>22 Apr 2025</span></li>
+
                             <li>Technologies - <span>React, Node.js, MongoDB</span></li>
+
                             <li>Role - <span>Digital Transformation</span></li>
+
                             <li>View - <span><a href="#">www.techcorp-solutions.com</a></span></li>
+
                         </ul>
+
                     </div>
+
                 </div>
 
-                <div class="work-card mix digital-office">
+
+
+
+
+<div class="work-card mix digital-office">
+
                     <img src="https://bucket.mlcdn.com/a/3336/3336910/images/7ad430b6a54fd2ae52e02805d7208c28b801ea94.jpeg" alt="" class="work-img">
+
                     <h3 class="work-title">Balcacer & Asociados</h3>
+
                     <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
+
+
                     <div class="portfolio-item-details">
+
                         <h3 class="details-title">Digital Office Transformation</h3>
+
                         <p class="details-description">Complete digital office solution with workflow automation and collaboration tools</p>
+
                         <ul class="details-info">
+
                             <li>Created - <span>22 Apr 2025</span></li>
+
                             <li>Technologies - <span>React, Node.js, MongoDB</span></li>
+
                             <li>Role - <span>Digital Transformation</span></li>
+
                             <li>View - <span><a href="#">www.techcorp-solutions.com</a></span></li>
+
                         </ul>
+
                     </div>
+
                 </div>
 
-                <div class="work-card mix digital-office">
+
+
+
+<div class="work-card mix digital-office">
+
                     <img src="https://bucket.mlcdn.com/a/3336/3336910/images/43c7f5cac569068d066f5103fc3c1eb5fb49090f.jpeg" alt="" class="work-img">
+
                     <h3 class="work-title">Nexed - Work & Travel</h3>
+
                     <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
+
+
                     <div class="portfolio-item-details">
+
                         <h3 class="details-title">Digital Office Transformation</h3>
+
                         <p class="details-description">Complete digital office solution with workflow automation and collaboration tools</p>
+
                         <ul class="details-info">
+
                             <li>Created - <span>22 Apr 2025</span></li>
+
                             <li>Technologies - <span>React, Node.js, MongoDB</span></li>
+
                             <li>Role - <span>Digital Transformation</span></li>
+
                             <li>View - <span><a href="#">www.techcorp-solutions.com</a></span></li>
+
                         </ul>
+
                     </div>
+
                 </div>
 
-                <div class="work-card mix digital-office">
+
+
+
+
+<div class="work-card mix digital-office">
+
                     <img src="https://bucket.mlcdn.com/a/3336/3336910/images/5e2c63367745c661a063afe27d140d209e732033.jpeg" alt="" class="work-img">
+
                     <h3 class="work-title">Senses Luxury Spa</h3>
+
                     <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
                     <div class="portfolio-item-details">
+
                         <h3 class="details-title">Digital Office Transformation</h3>
+
                         <p class="details-description">Complete digital office solution with workflow automation and collaboration tools</p>
+
                         <ul class="details-info">
+
                             <li>Created - <span>22 Apr 2025</span></li>
+
                             <li>Technologies - <span>React, Node.js, MongoDB</span></li>
+
                             <li>Role - <span>Digital Transformation</span></li>
+
                             <li>View - <span><a href="#">www.techcorp-solutions.com</a></span></li>
+
                         </ul>
+
                     </div>
+
                 </div>
 
-                <div class="work-card mix digital-office">
+
+
+
+  <div class="work-card mix digital-office">
+
                     <img src="https://bucket.mlcdn.com/a/3336/3336910/images/e545e379b12553835b1e827954e2d0d559a25b2b.jpeg" alt="" class="work-img">
+
                     <h3 class="work-title">Chef Jacada</h3>
+
                     <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
-                    <div class="portfolio-item-details">
+
+
+
+
+
+                <div class="portfolio-item-details">
+
                         <h3 class="details-title">Digital Office Transformation</h3>
+
                         <p class="details-description">Complete digital office solution with workflow automation and collaboration tools</p>
+
                         <ul class="details-info">
+
                             <li>Created - <span>22 Apr 2025</span></li>
+
                             <li>Technologies - <span>React, Node.js, MongoDB</span></li>
+
                             <li>Role - <span>Digital Transformation</span></li>
+
                             <li>View - <span><a href="#">www.techcorp-solutions.com</a></span></li>
+
                         </ul>
+
                     </div>
+
                 </div>
 
-                <div class="work-card mix digital-office">
+
+
+
+
+  <div class="work-card mix digital-office">
+
                     <img src="https://bucket.mlcdn.com/a/3336/3336910/images/960906862f948dedd067674775cbc9a0ad972bb1.jpeg" alt="" class="work-img">
+
                     <h3 class="work-title">Chef Jacada</h3>
+
                     <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
                     <div class="portfolio-item-details">
+
                         <h3 class="details-title">Digital Office Transformation</h3>
+
                         <p class="details-description">Complete digital office solution with workflow automation and collaboration tools</p>
+
                         <ul class="details-info">
+
                             <li>Created - <span>22 Apr 2025</span></li>
+
                             <li>Technologies - <span>React, Node.js, MongoDB</span></li>
+
                             <li>Role - <span>Digital Transformation</span></li>
+
                             <li>View - <span><a href="#">www.techcorp-solutions.com</a></span></li>
+
                         </ul>
+
                     </div>
+
                 </div>
 
-                <div class="work-card mix digital-office">
+
+
+
+<div class="work-card mix digital-office">
+
                     <img src="https://bucket.mlcdn.com/a/3336/3336910/images/f2d579155c32eb4acbdf5891bcabc9a0f922529b.jpeg" alt="" class="work-img">
+
                     <h3 class="work-title">HS Interior Design</h3>
+
                     <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
+
                     <div class="portfolio-item-details">
+
                         <h3 class="details-title">Digital Office Transformation</h3>
+
                         <p class="details-description">Complete digital office solution with workflow automation and collaboration tools</p>
+
                         <ul class="details-info">
+
                             <li>Created - <span>22 Apr 2025</span></li>
+
                             <li>Technologies - <span>React, Node.js, MongoDB</span></li>
+
                             <li>Role - <span>Digital Transformation</span></li>
+
                             <li>View - <span><a href="#">www.techcorp-solutions.com</a></span></li>
+
                         </ul>
+
                     </div>
+
                 </div>
+
+
+
 
                 <!-- Digital Clinics -->
-                <div class="work-card mix digital-clinic">
-                    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/beaf4da3821920fe5c11e50f5effc7fea2a37716.jpeg" alt="" class="work-img">
-                    <h3 class="work-title">Adilya' Lome</h3>
-                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
-                    <div class="portfolio-item-details">
-                        <h3 class="details-title">Telemedicine Platform</h3>
-                        <p class="details-description">Comprehensive digital clinic solution with appointment scheduling and virtual consultations</p>
-                        <ul class="details-info">
-                            <li>Created - <span>10 Apr 2025</span></li>
-                            <li>Technologies - <span>Angular, Python, PostgreSQL</span></li>
-                            <li>Role - <span>Healthcare Solutions</span></li>
-                            <li>View - <span><a href="#">www.medicare-plus.com</a></span></li>
-                        </ul>
-                    </div>
-                </div>
 
                 <div class="work-card mix digital-clinic">
-                    <img src="https://i.postimg.cc/s2DGqyG8/work-4.png" alt="" class="work-img">
-                    <h3 class="work-title">Wellness Center</h3>
+
+                    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/beaf4da3821920fe5c11e50f5effc7fea2a37716.jpeg" alt="" class="work-img">
+
+                    <h3 class="work-title">Adilya' Lome</h3>
+
                     <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
+
                     <div class="portfolio-item-details">
-                        <h3 class="details-title">Health Management System</h3>
-                        <p class="details-description">Digital clinic platform for patient records, billing, and treatment tracking</p>
+
+                        <h3 class="details-title">Telemedicine Platform</h3>
+
+                        <p class="details-description">Comprehensive digital clinic solution with appointment scheduling and virtual consultations</p>
+
                         <ul class="details-info">
-                            <li>Created - <span>4 Apr 2025</span></li>
-                            <li>Technologies - <span>React Native, Node.js, MySQL</span></li>
-                            <li>Role - <span>System Integration</span></li>
-                            <li>View - <span><a href="#">www.wellness-center.com</a></span></li>
+
+                            <li>Created - <span>10 Apr 2025</span></li>
+
+                            <li>Technologies - <span>Angular, Python, PostgreSQL</span></li>
+
+                            <li>Role - <span>Healthcare Solutions</span></li>
+
+                            <li>View - <span><a href="#">www.medicare-plus.com</a></span></li>
+
                         </ul>
+
                     </div>
+
                 </div>
+
+
+
+
+                <div class="work-card mix digital-clinic">
+
+                    <img src="https://i.postimg.cc/s2DGqyG8/work-4.png" alt="" class="work-img">
+
+                    <h3 class="work-title">Wellness Center</h3>
+
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
+
+
+                    <div class="portfolio-item-details">
+
+                        <h3 class="details-title">Health Management System</h3>
+
+                        <p class="details-description">Digital clinic platform for patient records, billing, and treatment tracking</p>
+
+                        <ul class="details-info">
+
+                            <li>Created - <span>4 Apr 2025</span></li>
+
+                            <li>Technologies - <span>React Native, Node.js, MySQL</span></li>
+
+                            <li>Role - <span>System Integration</span></li>
+
+                            <li>View - <span><a href="#">www.wellness-center.com</a></span></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+
+
 
                 <!-- Digital Stores -->
-                <div class="work-card mix digital-store">
-                    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/d1c8c49e3b7fe84e0e4d481c24663d481dae5a79.jpeg" alt="" class="work-img">
-                    <h3 class="work-title">Villa Russo, 1898</h3>
-                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
-                    <div class="portfolio-item-details">
-                        <h3 class="details-title">E-commerce Fashion Platform</h3>
-                        <p class="details-description">Complete digital store with inventory management and seamless checkout experience</p>
-                        <ul class="details-info">
-                            <li>Created - <span>28 Mar 2025</span></li>
-                            <li>Technologies - <span>Shopify, JavaScript, Stripe</span></li>
-                            <li>Role - <span>E-commerce Development</span></li>
-                            <li>View - <span><a href="#">www.fashionhub-store.com</a></span></li>
-                        </ul>
-                    </div>
-                </div>
 
                 <div class="work-card mix digital-store">
-                    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/fed113588440ffe7bcd0bf73e16c923cc1cb47e9.jpeg" alt="" class="work-img">
-                    <h3 class="work-title">Casa Cool RD</h3>
+
+                    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/d1c8c49e3b7fe84e0e4d481c24663d481dae5a79.jpeg" alt="" class="work-img">
+
+                    <h3 class="work-title">Villa Russo, 1898</h3>
+
                     <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
+
                     <div class="portfolio-item-details">
-                        <h3 class="details-title">Electronics E-commerce</h3>
-                        <p class="details-description">Digital store specializing in the latest tech gadgets and accessories</p>
+
+                        <h3 class="details-title">E-commerce Fashion Platform</h3>
+
+                        <p class="details-description">Complete digital store with inventory management and seamless checkout experience</p>
+
                         <ul class="details-info">
-                            <li>Created - <span>20 Mar 2025</span></li>
-                            <li>Technologies - <span>Magento, PHP, PayPal API</span></li>
-                            <li>Role - <span>Store Development</span></li>
-                            <li>View - <span><a href="#">www.techgadgets.com</a></span></li>
+
+                            <li>Created - <span>28 Mar 2025</span></li>
+
+                            <li>Technologies - <span>Shopify, JavaScript, Stripe</span></li>
+
+                            <li>Role - <span>E-commerce Development</span></li>
+
+                            <li>View - <span><a href="#">www.fashionhub-store.com</a></span></li>
+
                         </ul>
+
                     </div>
+
                 </div>
-            </div>
+
+
+
+
+
+                <div class="work-card mix digital-store">
+
+                    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/fed113588440ffe7bcd0bf73e16c923cc1cb47e9.jpeg" alt="" class="work-img">
+
+                    <h3 class="work-title">Casa Cool RD</h3>
+
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
+
+
+                    <div class="portfolio-item-details">
+
+                        <h3 class="details-title">Electronics E-commerce</h3>
+
+                        <p class="details-description">Digital store specializing in the latest tech gadgets and accessories</p>
+
+                        <ul class="details-info">
+
+                            <li>Created - <span>20 Mar 2025</span></li>
+
+                            <li>Technologies - <span>Magento, PHP, PayPal API</span></li>
+
+                            <li>Role - <span>Store Development</span></li>
+
+                            <li>View - <span><a href="#">www.techgadgets.com</a></span></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+ <div class="work-card mix digital-store">
+
+                    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/31cdd958d61344f10993ec1c9f2c9cef4b3e8512.jpeg" alt="" class="work-img">
+
+                    <h3 class="work-title">Virtual Restaurant</h3>
+
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
+
+                    <div class="portfolio-item-details">
+
+                        <h3 class="details-title">Electronics E-commerce</h3>
+
+                        <p class="details-description">Digital store specializing in the latest tech gadgets and accessories</p>
+
+                        <ul class="details-info">
+
+                            <li>Created - <span>20 Mar 2025</span></li>
+
+                            <li>Technologies - <span>Magento, PHP, PayPal API</span></li>
+
+                            <li>Role - <span>Store Development</span></li>
+
+                            <li>View - <span><a href="#">www.techgadgets.com</a></span></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+ <div class="work-card mix digital-store">
+
+                    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/6f4d7fd23fd5c0e8bd4a40552722bd46f5284717.jpeg" alt="" class="work-img">
+
+                    <h3 class="work-title">Yoxo Hair</h3>
+
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
+                    <div class="portfolio-item-details">
+
+                        <h3 class="details-title">Electronics E-commerce</h3>
+
+                        <p class="details-description">Digital store specializing in the latest tech gadgets and accessories</p>
+
+                        <ul class="details-info">
+
+                            <li>Created - <span>20 Mar 2025</span></li>
+
+                            <li>Technologies - <span>Magento, PHP, PayPal API</span></li>
+
+                            <li>Role - <span>Store Development</span></li>
+
+                            <li>View - <span><a href="#">www.techgadgets.com</a></span></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+ <div class="work-card mix digital-store">
+
+                    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/7d532d128406ef5a4dee9e3268c759132188ccf5.jpeg" alt="" class="work-img">
+
+                    <h3 class="work-title">Wyncell Telecom</h3>
+
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
+                    <div class="portfolio-item-details">
+
+                        <h3 class="details-title">Electronics E-commerce</h3>
+
+                        <p class="details-description">Digital store specializing in the latest tech gadgets and accessories</p>
+
+                        <ul class="details-info">
+
+                            <li>Created - <span>20 Mar 2025</span></li>
+
+                            <li>Technologies - <span>Magento, PHP, PayPal API</span></li>
+
+                            <li>Role - <span>Store Development</span></li>
+
+                            <li>View - <span><a href="#">www.techgadgets.com</a></span></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+ <div class="work-card mix digital-store">
+
+                    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/5071fce9be902fd29b1d41e4b73f0b02f2096c9f.jpeg" alt="" class="work-img">
+
+                    <h3 class="work-title">Lurinels</h3>
+
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
+
+
+                    <div class="portfolio-item-details">
+
+                        <h3 class="details-title">Electronics E-commerce</h3>
+
+                        <p class="details-description">Digital store specializing in the latest tech gadgets and accessories</p>
+
+                        <ul class="details-info">
+
+                            <li>Created - <span>20 Mar 2025</span></li>
+
+                            <li>Technologies - <span>Magento, PHP, PayPal API</span></li>
+
+                            <li>Role - <span>Store Development</span></li>
+
+                            <li>View - <span><a href="#">www.techgadgets.com</a></span></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+
+
+ <div class="work-card mix digital-store">
+
+                    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/b860705b5ab6cc5bff3858fa3ccd9a613529d2c3.jpeg" alt="" class="work-img">
+
+                    <h3 class="work-title">Brisa de Mar</h3>
+
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+                    <div class="portfolio-item-details">
+
+                        <h3 class="details-title">Electronics E-commerce</h3>
+
+                        <p class="details-description">Digital store specializing in the latest tech gadgets and accessories</p>
+
+                        <ul class="details-info">
+
+                            <li>Created - <span>20 Mar 2025</span></li>
+
+                            <li>Technologies - <span>Magento, PHP, PayPal API</span></li>
+
+                            <li>Role - <span>Store Development</span></li>
+
+                            <li>View - <span><a href="#">www.techgadgets.com</a></span></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+
+ <div class="work-card mix digital-store">
+
+                    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/87ced504ea6354ca46f47651f1e13522d3057364.jpeg" alt="" class="work-img">
+
+                    <h3 class="work-title">Viejevo Store</h3>
+
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
+                    <div class="portfolio-item-details">
+
+                        <h3 class="details-title">Electronics E-commerce</h3>
+
+                        <p class="details-description">Digital store specializing in the latest tech gadgets and accessories</p>
+
+                        <ul class="details-info">
+
+                            <li>Created - <span>20 Mar 2025</span></li>
+
+                            <li>Technologies - <span>Magento, PHP, PayPal API</span></li>
+
+                            <li>Role - <span>Store Development</span></li>
+
+                            <li>View - <span><a href="#">www.techgadgets.com</a></span></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+ <div class="work-card mix digital-store">
+
+                    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/e046ab77cc855051e655803b64463d3ee6ffb5d9.jpeg" alt="" class="work-img">
+
+                    <h3 class="work-title">Nathalie Hazim</h3>
+
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span> 
+
+
+
+
+                    <div class="portfolio-item-details">
+
+                        <h3 class="details-title">Electronics E-commerce</h3>
+
+                        <p class="details-description">Digital store specializing in the latest tech gadgets and accessories</p>
+
+                        <ul class="details-info">
+
+                            <li>Created - <span>20 Mar 2025</span></li>
+
+                            <li>Technologies - <span>Magento, PHP, PayPal API</span></li>
+
+                            <li>Role - <span>Store Development</span></li>
+
+                            <li>View - <span><a href="#">www.techgadgets.com</a></span></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+
+
+ <div class="work-card mix digital-store">
+
+                    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/f21ff605f2b89c9a49f4421d23d6401631e66763.jpeg" alt="" class="work-img">
+
+                    <h3 class="work-title">Trendísima RD</h3>
+
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
+
+                    <div class="portfolio-item-details">
+
+                        <h3 class="details-title">Electronics E-commerce</h3>
+
+                        <p class="details-description">Digital store specializing in the latest tech gadgets and accessories</p>
+
+                        <ul class="details-info">
+
+                            <li>Created - <span>20 Mar 2025</span></li>
+
+                            <li>Technologies - <span>Magento, PHP, PayPal API</span></li>
+
+                            <li>Role - <span>Store Development</span></li>
+
+                            <li>View - <span><a href="#">www.techgadgets.com</a></span></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Digital Menus -->
+
+                <div class="work-card mix digital-menu">
+
+                    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/227987ffa13606fb05f1eb9f55818a008c6b48aa.jpeg" alt="" class="work-img">
+
+                    <h3 class="work-title">Barra Piantini</h3>
+
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
+                    <div class="portfolio-item-details">
+
+                        <h3 class="details-title">Interactive Restaurant Menu</h3>
+
+                        <p class="details-description">Digital menu system with real-time updates and online ordering capabilities</p>
+
+                        <ul class="details-info">
+
+                            <li>Created - <span>15 Mar 2025</span></li>
+
+                            <li>Technologies - <span>React, Firebase, QR Integration</span></li>
+
+                            <li>Role - <span>Menu Digitalization</span></li>
+
+                            <li>View - <span><a href="#">www.bella-cucina.com</a></span></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="work-card mix digital-menu">
+
+                    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/a4e502e1c15feff776400465cbb1d4f8e9f049e4.jpeg" alt="" class="work-img">
+
+                    <h3 class="work-title">Al Sitio Smash Burger</h3>
+
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
+                    <div class="portfolio-item-details">
+
+                        <h3 class="details-title">Coffee Shop Digital Experience</h3>
+
+                        <p class="details-description">Complete digital menu and ordering system for specialty coffee shop</p>
+
+                        <ul class="details-info">
+
+                            <li>Created - <span>8 Mar 2025</span></li>
+
+                            <li>Technologies - <span>Vue.js, Node.js, Square API</span></li>
+
+                            <li>Role - <span>Customer Experience</span></li>
+
+                            <li>View - <span><a href="#">www.cafe-aroma.com</a></span></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            
+
+
+
+ <div class="work-card mix digital-menu">
+
+                    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/ab35756a2d3458a1a99029cc2eecb793672aeb1f.jpeg" alt="" class="work-img">
+
+                    <h3 class="work-title">MG Kitchen</h3>
+
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
+                    <div class="portfolio-item-details">
+
+                        <h3 class="details-title">Coffee Shop Digital Experience</h3>
+
+                        <p class="details-description">Complete digital menu and ordering system for specialty coffee shop</p>
+
+                        <ul class="details-info">
+
+                            <li>Created - <span>8 Mar 2025</span></li>
+
+                            <li>Technologies - <span>Vue.js, Node.js, Square API</span></li>
+
+                            <li>Role - <span>Customer Experience</span></li>
+
+                            <li>View - <span><a href="#">www.cafe-aroma.com</a></span></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+ <div class="work-card mix digital-menu">
+
+                    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/c9bca20710932f1c54e16e8aaf096e18b911dd2f.jpeg" alt="" class="work-img">
+
+                    <h3 class="work-title">Chicken Rooming</h3>
+
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
+                    <div class="portfolio-item-details">
+
+                        <h3 class="details-title">Coffee Shop Digital Experience</h3>
+
+                        <p class="details-description">Complete digital menu and ordering system for specialty coffee shop</p>
+
+                        <ul class="details-info">
+
+                            <li>Created - <span>8 Mar 2025</span></li>
+
+                            <li>Technologies - <span>Vue.js, Node.js, Square API</span></li>
+
+                            <li>Role - <span>Customer Experience</span></li>
+
+                            <li>View - <span><a href="#">www.cafe-aroma.com</a></span></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="work-card mix digital-menu">
+
+                    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/4090e9c985f3fbf5c996d7ccac1c6c0a98323718.jpeg" alt="" class="work-img">
+
+                    <h3 class="work-title">Gilligan Smash Burgers</h3>
+
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
+                    <div class="portfolio-item-details">
+
+                        <h3 class="details-title">Coffee Shop Digital Experience</h3>
+
+                        <p class="details-description">Complete digital menu and ordering system for specialty coffee shop</p>
+
+                        <ul class="details-info">
+
+                            <li>Created - <span>8 Mar 2025</span></li>
+
+                            <li>Technologies - <span>Vue.js, Node.js, Square API</span></li>
+
+                            <li>Role - <span>Customer Experience</span></li>
+
+                            <li>View - <span><a href="#">www.cafe-aroma.com</a></span></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="work-card mix digital-menu">
+
+                    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/d4f66b5294fbeb7e4a5ea473b8d27fc0b29ddf17.jpeg" alt="" class="work-img">
+
+                    <h3 class="work-title">Sun On The Bay - Beach Hotel</h3>
+
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
+                    <div class="portfolio-item-details">
+
+                        <h3 class="details-title">Coffee Shop Digital Experience</h3>
+
+                        <p class="details-description">Complete digital menu and ordering system for specialty coffee shop</p>
+
+                        <ul class="details-info">
+
+                            <li>Created - <span>8 Mar 2025</span></li>
+
+                            <li>Technologies - <span>Vue.js, Node.js, Square API</span></li>
+
+                            <li>Role - <span>Customer Experience</span></li>
+
+                            <li>View - <span><a href="#">www.cafe-aroma.com</a></span></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+</div>
+
+
             <div class="work-show-more-container">
                 <button id="showMoreBtn" class="button">Show More <i class="uil uil-arrow-down"></i></button>
             </div>
         </section>
+
+
+
+
+
+
 
         <div class="portfolio-popup">
             <div class="portfolio-popup-inner">
@@ -2608,11 +3545,6 @@
 
 
 
-
-
-
-
-
         <div class="video-container" id="video-banner">
              <button class="play-video-btn" id="play-video-btn" aria-label="Play Video">
                 <i class="fas fa-play"></i>
@@ -2631,267 +3563,698 @@
 
 
 
+<!-- ======== SERVICES SECTION ======== -->
+<section class="services section" id="services">
+    <h2 class="section-title" data-heading="Services">What we offer</h2>
+    <div class="services-container container swiper">
+        <div class="swiper-wrapper">
 
-        <section class="services section" id="services">
-            <h2 class="section-title" data-heading="Services">What we offer</h2>
-            <div class="services-container container swiper">
-                <div class="swiper-wrapper">
-                    <div class="services-content swiper-slide">
-                        <div>
-                            <i class="uil uil-web-grid services-icon"></i>
-                            <h3 class="services-title">Digital <br> Architecture</h3>
-                        </div>
-                        <span class="services-button">
-                            View More <i class="uil uil-arrow-right services-button-icon"></i>
-                        </span>
-                        <div class="services-modal">
-                            <div class="services-modal-content">
-                                <i class="uil uil-times services-modal-close"></i>
-                                <h3 class="services-modal-title">Digital Architecture</h3>
-                                <p class="services-modal-description">I provide comprehensive digital infrastructure design with over 15 years of experience, creating scalable systems that unify technology and business strategy.</p>
-                                <ul class="services-modal-services grid">
-                                    <li class="services-modal-service">
-                                        <i class="uil uil-check-circle services-modal-icon"></i>
-                                        <p class="services-modal-info">Digital Ecosystem Design</p>
-                                    </li>
-                                    <li class="services-modal-service">
-                                        <i class="uil uil-check-circle services-modal-icon"></i>
-                                        <p class="services-modal-info">Business Process Architecture</p>
-                                    </li>
-                                    <li class="services-modal-service">
-                                        <i class="uil uil-check-circle services-modal-icon"></i>
-                                        <p class="services-modal-info">Scalable System Design</p>
-                                    </li>
-                                    <li class="services-modal-service">
-                                        <i class="uil uil-check-circle services-modal-icon"></i>
-                                        <p class="services-modal-info">Technology Integration</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Service 1 -->
 
 
-
-
-
-
-
-
-
-
-                    <div class="services-content swiper-slide">
-                        <div>
-                            <i class="uil uil-arrow services-icon"></i>
-                            <h3 class="services-title">Brand <br> Strategy</h3>
-                        </div>
-                        <span class="services-button">
-                            View More <i class="uil uil-arrow-right services-button-icon"></i>
-                        </span>
-                        <div class="services-modal">
-                            <div class="services-modal-content">
-                                <i class="uil uil-times services-modal-close"></i>
-                                <h3 class="services-modal-title">Brand Strategy & Positioning</h3>
-                                <p class="services-modal-description">I develop comprehensive brand architectures that create lasting market presence and emotional connections, with over 12 years of strategic brand development experience.</p>
-                                <ul class="services-modal-services grid">
-                                    <li class="services-modal-service">
-                                        <i class="uil uil-check-circle services-modal-icon"></i>
-                                        <p class="services-modal-info">Brand Architecture Development</p>
-                                    </li>
-                                    <li class="services-modal-service">
-                                        <i class="uil uil-check-circle services-modal-icon"></i>
-                                        <p class="services-modal-info">Market Positioning Strategy</p>
-                                    </li>
-                                    <li class="services-modal-service">
-                                        <i class="uil uil-check-circle services-modal-icon"></i>
-                                        <p class="services-modal-info">Creative Direction</p>
-                                    </li>
-                                    <li class="services-modal-service">
-                                        <i class="uil uil-check-circle services-modal-icon"></i>
-                                        <p class="services-modal-info">Brand Identity Systems</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-                    <div class="services-content swiper-slide">
-                        <div>
-                            <i class="uil uil-edit services-icon"></i>
-                            <h3 class="services-title">Systems <br> Design</h3>
-                        </div>
-                        <span class="services-button">
-                            View More <i class="uil uil-arrow-right services-button-icon"></i>
-                        </span>
-                        <div class="services-modal">
-                            <div class="services-modal-content">
-                                <i class="uil uil-times services-modal-close"></i>
-                                <h3 class="services-modal-title">Automation & Systems Design</h3>
-                                <p class="services-modal-description">I create intelligent automation systems and operational frameworks that streamline business processes and drive efficiency, with over 10 years of systems design expertise.</p>
-                                <ul class="services-modal-services grid">
-                                    <li class="services-modal-service">
-                                        <i class="uil uil-check-circle services-modal-icon"></i>
-                                        <p class="services-modal-info">Marketing Automation Systems</p>
-                                    </li>
-                                    <li class="services-modal-service">
-                                        <i class="uil uil-check-circle services-modal-icon"></i>
-                                        <p class="services-modal-info">Operational Workflow Design</p>
-                                    </li>
-                                    <li class="services-modal-service">
-                                        <i class="uil uil-check-circle services-modal-icon"></i>
-                                        <p class="services-modal-info">Business Process Optimization</p>
-                                    </li>
-                                    <li class="services-modal-service">
-                                        <i class="uil uil-check-circle services-modal-icon"></i>
-                                        <p class="services-modal-info">Product Development Frameworks</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    <div class="services-content swiper-slide">
-                        <div>
-                            <i class="uil uil-web-grid services-icon"></i>
-                            <h3 class="services-title">AI <br> Integration</h3>
-                        </div>
-                        <span class="services-button">
-                            View More <i class="uil uil-arrow-right services-button-icon"></i>
-                        </span>
-                        <div class="services-modal">
-                            <div class="services-modal-content">
-                                <i class="uil uil-times services-modal-close"></i>
-                                <h3 class="services-modal-title">AI Integration</h3>
-                                <p class="services-modal-description">Leveraging cutting-edge AI to automate tasks, gain insights from data, and create personalized customer experiences.</p>
-                                <ul class="services-modal-services grid">
-                                    <li class="services-modal-service">
-                                        <i class="uil uil-check-circle services-modal-icon"></i>
-                                        <p class="services-modal-info">AI-Powered Chatbots</p>
-                                    </li>
-                                    <li class="services-modal-service">
-                                        <i class="uil uil-check-circle services-modal-icon"></i>
-                                        <p class="services-modal-info">Predictive Analytics</p>
-                                    </li>
-                                    <li class="services-modal-service">
-                                        <i class="uil uil-check-circle services-modal-icon"></i>
-                                        <p class="services-modal-info">Process Automation</p>
-                                    </li>
-                                    <li class="services-modal-service">
-                                        <i class="uil uil-check-circle services-modal-icon"></i>
-                                        <p class="services-modal-info">Content Generation</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-                    <div class="services-content swiper-slide">
-                        <div>
-                            <i class="uil uil-arrow services-icon"></i>
-                            <h3 class="services-title">Digital <br> Marketing</h3>
-                        </div>
-                        <span class="services-button">
-                            View More <i class="uil uil-arrow-right services-button-icon"></i>
-                        </span>
-                        <div class="services-modal">
-                            <div class="services-modal-content">
-                                <i class="uil uil-times services-modal-close"></i>
-                                <h3 class="services-modal-title">Digital Marketing</h3>
-                                <p class="services-modal-description">Data-driven marketing strategies to increase your online visibility, engagement, and conversions.</p>
-                                <ul class="services-modal-services grid">
-                                    <li class="services-modal-service">
-                                        <i class="uil uil-check-circle services-modal-icon"></i>
-                                        <p class="services-modal-info">SEO & Content Strategy</p>
-                                    </li>
-                                    <li class="services-modal-service">
-                                        <i class="uil uil-check-circle services-modal-icon"></i>
-                                        <p class="services-modal-info">Paid Advertising (PPC)</p>
-                                    </li>
-                                    <li class="services-modal-service">
-                                        <i class="uil uil-check-circle services-modal-icon"></i>
-                                        <p class="services-modal-info">Social Media Management</p>
-                                    </li>
-                                    <li class="services-modal-service">
-                                        <i class="uil uil-check-circle services-modal-icon"></i>
-                                        <p class="services-modal-info">Email Marketing Automation</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-                    <div class="services-content swiper-slide">
-                        <div>
-                            <i class="uil uil-edit services-icon"></i>
-                            <h3 class="services-title">E-commerce <br> Solutions</h3>
-                        </div>
-                        <span class="services-button">
-                            View More <i class="uil uil-arrow-right services-button-icon"></i>
-                        </span>
-                        <div class="services-modal">
-                            <div class="services-modal-content">
-                                <i class="uil uil-times services-modal-close"></i>
-                                <h3 class="services-modal-title">E-commerce Solutions</h3>
-                                <p class="services-modal-description">Building robust and user-friendly online stores that drive sales and provide a seamless shopping experience.</p>
-                                <ul class="services-modal-services grid">
-                                    <li class="services-modal-service">
-                                        <i class="uil uil-check-circle services-modal-icon"></i>
-                                        <p class="services-modal-info">Shopify Development</p>
-                                    </li>
-                                    <li class="services-modal-service">
-                                        <i class="uil uil-check-circle services-modal-icon"></i>
-                                        <p class="services-modal-info">WooCommerce Integration</p>
-                                    </li>
-                                    <li class="services-modal-service">
-                                        <i class="uil uil-check-circle services-modal-icon"></i>
-                                        <p class="services-modal-info">Payment Gateway Setup</p>
-                                    </li>
-                                    <li class="services-modal-service">
-                                        <i class="uil uil-check-circle services-modal-icon"></i>
-                                        <p class="services-modal-info">Conversion Rate Optimization</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+ <div class="services-content swiper-slide">
+                <div>
+                    <i class="uil uil-web-grid services-icon"></i>
+                    <h3 class="services-title">Digital <br> Architecture</h3>
                 </div>
-                <div class="swiper-scrollbar services-section-scrollbar"></div>
+                <span class="services-button" data-modal="modal-1">
+                    View More <i class="uil uil-arrow-right services-button-icon"></i>
+                </span>
             </div>
-        </section>
+
+
+            <!-- Service 2 -->
+
+
+
+  
+ <div class="services-content swiper-slide">
+                <div>
+                    <i class="uil uil-briefcase-alt services-icon"></i>
+                    <h3 class="services-title">Online Business <br> Development</h3>
+                </div>
+                <span class="services-button" data-modal="modal-8">
+                    View More <i class="uil uil-arrow-right services-button-icon"></i>
+                </span>
+            </div>
+
+
+
+
+
+            <!-- Service 3 -->
+
+
+
+            <div class="services-content swiper-slide">
+                <div>
+                    <i class="uil uil-crosshair services-icon"></i>
+                    <h3 class="services-title">Digital <br> Marketing</h3>
+                </div>
+                <span class="services-button" data-modal="modal-5">
+                    View More <i class="uil uil-arrow-right services-button-icon"></i>
+                </span>
+            </div>
+
+           
+
+
+
+            <!-- Service 4 -->
+
+          <div class="services-content swiper-slide">
+                <div>
+                    <i class="uil uil-swatchbook services-icon"></i>
+                    <h3 class="services-title">Brand Design<br>& Strategy</h3>
+                </div>
+                <span class="services-button" data-modal="modal-2">
+                    View More <i class="uil uil-arrow-right services-button-icon"></i>
+                </span>
+            </div>
+
+
+
+
+            <!-- Service 5 -->
+
+            <div class="services-content swiper-slide">
+                <div>
+                    <i class="uil uil-browser services-icon"></i>
+                    <h3 class="services-title">Website Design <br> & Development</h3>
+                </div>
+                <span class="services-button" data-modal="modal-7">
+                    View More <i class="uil uil-arrow-right services-button-icon"></i>
+                </span>
+            </div>
+
+
+
+
+      
+
+            <!-- Service 6 -->
+            <div class="services-content swiper-slide">
+                <div>
+                    <i class="uil uil-store services-icon"></i>
+                    <h3 class="services-title">E-commerce <br> Solutions</h3>
+                </div>
+                <span class="services-button" data-modal="modal-6">
+                    View More <i class="uil uil-arrow-right services-button-icon"></i>
+                </span>
+            </div>
+
+
+
+
+
+
+            <!-- Service 7 -->
+
+
+
+    <div class="services-content swiper-slide">
+                <div>
+                    <i class="uil uil-mobile-android services-icon"></i>
+                    <h3 class="services-title">Mobile Application <br> Development</h3>
+                </div>
+                <span class="services-button" data-modal="modal-9">
+                    View More <i class="uil uil-arrow-right services-button-icon"></i>
+                </span>
+            </div>
+
+
+
+            <!-- Service 8 -->
+
+            <div class="services-content swiper-slide">
+                <div>
+                    <i class="uil uil-sitemap services-icon"></i>
+                    <h3 class="services-title">Automation & <br>  Systems Design</h3>
+                </div>
+                <span class="services-button" data-modal="modal-3">
+                    View More <i class="uil uil-arrow-right services-button-icon"></i>
+                </span>
+            </div>
+
+
+
+
+            <!-- Service 9 -->
+
+            <div class="services-content swiper-slide">
+                <div>
+                    <i class="uil uil-robot services-icon"></i>
+                    <h3 class="services-title">AI <br> Integration</h3>
+                </div>
+                <span class="services-button" data-modal="modal-4">
+                    View More <i class="uil uil-arrow-right services-button-icon"></i>
+                </span>
+            </div>
+
+
+
+            <!-- Service 10 -->
+
+
+
+
+
+            <div class="services-content swiper-slide">
+                <div>
+                    <i class="uil uil-chart-line services-icon"></i>
+                    <h3 class="services-title">Data <br> Visualization</h3>
+                </div>
+                <span class="services-button" data-modal="modal-11">
+                    View More <i class="uil uil-arrow-right services-button-icon"></i>
+                </span>
+            </div>
+
+
+
+
+
+            <!-- Service 11 -->
+
+            <div class="services-content swiper-slide">
+                <div>
+                    <i class="uil uil-file-search-alt services-icon"></i>
+                    <h3 class="services-title">Research & <br> Investigation</h3>
+                </div>
+                <span class="services-button" data-modal="modal-13">
+                    View More <i class="uil uil-arrow-right services-button-icon"></i>
+                </span>
+            </div>
+
+
+
+            <!-- Service 12 -->
+
+            <div class="services-content swiper-slide">
+                <div>
+                    <i class="uil uil-analytics services-icon"></i>
+                    <h3 class="services-title">Data <br> Analysis</h3>
+                </div>
+                <span class="services-button" data-modal="modal-14">
+                    View More <i class="uil uil-arrow-right services-button-icon"></i>
+                </span>
+            </div>
+
+            
+
+
+
+
+<!-- Service 13 -->
+            <div class="services-content swiper-slide">
+                <div>
+                    <i class="uil uil-search services-icon"></i>
+                    <h3 class="services-title">SEO & <br> Optimization</h3>
+                </div>
+                <span class="services-button" data-modal="modal-10">
+                    View More <i class="uil uil-arrow-right services-button-icon"></i>
+                </span>
+            </div>
+
+
+
+
+
+            <!-- Service 14 -->
+
+            <div class="services-content swiper-slide">
+                <div>
+                    <i class="uil uil-graduation-cap services-icon"></i>
+                    <h3 class="services-title">Education & <br> Empowerment</h3>
+                </div>
+                <span class="services-button" data-modal="modal-15">
+                    View More <i class="uil uil-arrow-right services-button-icon"></i>
+                </span>
+            </div>
+
+
+
+<!-- Service 15 -->
+<div class="services-content swiper-slide">
+    <div>
+        <i class="uil uil-comments services-icon"></i>
+        <h3 class="services-title">Communication & <br> Customer Experience</h3>
+    </div>
+    <span class="services-button" data-modal="modal-16">
+        View More <i class="uil uil-arrow-right services-button-icon"></i>
+    </span>
+</div>
+
+            
+
+
+
+
+
+<!-- Service 16 -->
+
+
+            <div class="services-content swiper-slide">
+                <div>
+                    <i class="uil uil-headphones-alt services-icon"></i>
+                    <h3 class="services-title">Continued <br> Support</h3>
+                </div>
+                <span class="services-button" data-modal="modal-12">
+                    View More <i class="uil uil-arrow-right services-button-icon"></i>
+                </span>
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+        <div class="swiper-scrollbar services-section-scrollbar"></div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<!-- Services Modals (placed outside the swiper, at the bottom of body) -->
+<div class="services-modal" id="modal-1">
+    <div class="services-modal-content">
+        <i class="uil uil-times services-modal-close"></i>
+        <h3 class="services-modal-title">Digital Architecture</h3>
+        <p class="services-modal-description">I provide comprehensive digital infrastructure design with over 15 years of experience, creating scalable systems that unify technology and business strategy.</p>
+        <ul class="services-modal-services grid">
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Digital Ecosystem Design</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Business Process Architecture</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Scalable System Design</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Technology Integration</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="services-modal" id="modal-2">
+    <div class="services-modal-content">
+        <i class="uil uil-times services-modal-close"></i>
+        <h3 class="services-modal-title">Brand Strategy & Positioning</h3>
+        <p class="services-modal-description">I develop comprehensive brand architectures that create lasting market presence and emotional connections, with over 12 years of strategic brand development experience.</p>
+        <ul class="services-modal-services grid">
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Brand Architecture Development</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Market Positioning Strategy</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Creative Direction</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Brand Identity Systems</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="services-modal" id="modal-3">
+    <div class="services-modal-content">
+        <i class="uil uil-times services-modal-close"></i>
+        <h3 class="services-modal-title">Automation & Systems Design</h3>
+        <p class="services-modal-description">I create intelligent automation systems and operational frameworks that streamline business processes and drive efficiency, with over 10 years of systems design expertise.</p>
+        <ul class="services-modal-services grid">
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Marketing Automation Systems</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Operational Workflow Design</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Business Process Optimization</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Product Development Frameworks</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="services-modal" id="modal-4">
+    <div class="services-modal-content">
+        <i class="uil uil-times services-modal-close"></i>
+        <h3 class="services-modal-title">AI Integration</h3>
+        <p class="services-modal-description">Leveraging cutting-edge AI to automate tasks, gain insights from data, and create personalized customer experiences.</p>
+        <ul class="services-modal-services grid">
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">AI-Powered Chatbots</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Predictive Analytics</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Process Automation</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Content Generation</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="services-modal" id="modal-5">
+    <div class="services-modal-content">
+        <i class="uil uil-times services-modal-close"></i>
+        <h3 class="services-modal-title">Digital Marketing</h3>
+        <p class="services-modal-description">Data-driven marketing strategies to increase your online visibility, engagement, and conversions.</p>
+        <ul class="services-modal-services grid">
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">SEO & Content Strategy</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Paid Advertising (PPC)</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Social Media Management</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Email Marketing Automation</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="services-modal" id="modal-6">
+    <div class="services-modal-content">
+        <i class="uil uil-times services-modal-close"></i>
+        <h3 class="services-modal-title">E-commerce Solutions</h3>
+        <p class="services-modal-description">Building robust and user-friendly online stores that drive sales and provide a seamless shopping experience.</p>
+        <ul class="services-modal-services grid">
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Shopify Development</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">WooCommerce Integration</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Payment Gateway Setup</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Conversion Rate Optimization</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+<!-- Service 7 Modal -->
+<div class="services-modal" id="modal-7">
+    <div class="services-modal-content">
+        <i class="uil uil-times services-modal-close"></i>
+        <h3 class="services-modal-title">Website Design & Development</h3>
+        <p class="services-modal-description">
+            We build modern, responsive, and high-performing websites that reflect your brand and convert visitors into customers. Our process combines strategy, design, and technology for a seamless digital experience.
+        </p>
+        <ul class="services-modal-services grid">
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Custom Website Design</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Responsive Web Development</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Landing Pages & Funnels</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Website Maintenance & Optimization</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Service 8 Modal -->
+<div class="services-modal" id="modal-8">
+    <div class="services-modal-content">
+        <i class="uil uil-times services-modal-close"></i>
+        <h3 class="services-modal-title">Online Business Development</h3>
+        <p class="services-modal-description">
+            We help entrepreneurs and businesses build their digital ecosystem — from idea validation to market launch — integrating technology, strategy, and automation to scale efficiently online.
+        </p>
+        <ul class="services-modal-services grid">
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Business Strategy & Consulting</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Digital Transformation Planning</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Automation & Workflow Setup</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Online Product & Service Launch</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Service 9 Modal -->
+<div class="services-modal" id="modal-9">
+    <div class="services-modal-content">
+        <i class="uil uil-times services-modal-close"></i>
+        <h3 class="services-modal-title">Mobile Application Development</h3>
+        <p class="services-modal-description">
+            From concept to launch, we design and develop cross-platform mobile apps that deliver seamless experiences, helping your business stay connected with customers on every device.
+        </p>
+        <ul class="services-modal-services grid">
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">iOS & Android App Development</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">UI/UX Design for Mobile Interfaces</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Progressive Web Apps (PWAs)</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">API & Cloud Integration</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Service 10 Modal -->
+<div class="services-modal" id="modal-10">
+    <div class="services-modal-content">
+        <i class="uil uil-times services-modal-close"></i>
+        <h3 class="services-modal-title">SEO & Optimization</h3>
+        <p class="services-modal-description">
+            We help your business rise in search rankings and improve online visibility through technical SEO, content optimization, and data-driven performance strategies.
+        </p>
+        <ul class="services-modal-services grid">
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Technical SEO Audit</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Keyword & Competitor Analysis</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">On-Page & Off-Page Optimization</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Performance Tracking & Reporting</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Service 11 Modal -->
+<div class="services-modal" id="modal-11">
+    <div class="services-modal-content">
+        <i class="uil uil-times services-modal-close"></i>
+        <h3 class="services-modal-title">Data Visualization</h3>
+        <p class="services-modal-description">
+            Transform raw data into clear, actionable insights with visually engaging dashboards and reports that empower better business decisions.
+        </p>
+        <ul class="services-modal-services grid">
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Custom Dashboards & Reports</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Business Intelligence Integration</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Interactive Data Charts & KPIs</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Real-Time Data Monitoring</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Service 12 Modal -->
+<div class="services-modal" id="modal-12">
+    <div class="services-modal-content">
+        <i class="uil uil-times services-modal-close"></i>
+        <h3 class="services-modal-title">Continued Support</h3>
+        <p class="services-modal-description">
+            We provide ongoing technical and creative support to ensure your digital ecosystem stays optimized, secure, and aligned with your business goals.
+        </p>
+        <ul class="services-modal-services grid">
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Technical Maintenance & Updates</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Security Monitoring & Backups</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Performance Optimization</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Dedicated Client Support Team</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<!-- Service 13 Modal -->
+<div class="services-modal" id="modal-13">
+    <div class="services-modal-content">
+        <i class="uil uil-times services-modal-close"></i>
+        <h3 class="services-modal-title">Research & Investigation</h3>
+        <p class="services-modal-description">
+            We perform deep research and market investigations to uncover opportunities, trends, and insights that shape strategic decisions and drive innovation.
+        </p>
+        <ul class="services-modal-services grid">
+            <li class="services-modal-service"><i class="uil uil-check-circle services-modal-icon"></i><p class="services-modal-info">Market & Industry Research</p></li>
+            <li class="services-modal-service"><i class="uil uil-check-circle services-modal-icon"></i><p class="services-modal-info">Competitor & Trend Analysis</p></li>
+            <li class="services-modal-service"><i class="uil uil-check-circle services-modal-icon"></i><p class="services-modal-info">Consumer Behavior Insights</p></li>
+            <li class="services-modal-service"><i class="uil uil-check-circle services-modal-icon"></i><p class="services-modal-info">Strategic Reporting & Recommendations</p></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Service 14 Modal -->
+<div class="services-modal" id="modal-14">
+    <div class="services-modal-content">
+        <i class="uil uil-times services-modal-close"></i>
+        <h3 class="services-modal-title">Data Analysis</h3>
+        <p class="services-modal-description">
+            We transform complex data into meaningful insights using advanced analytics to help businesses make informed, data-driven decisions.
+        </p>
+        <ul class="services-modal-services grid">
+            <li class="services-modal-service"><i class="uil uil-check-circle services-modal-icon"></i><p class="services-modal-info">Data Cleaning & Visualization</p></li>
+            <li class="services-modal-service"><i class="uil uil-check-circle services-modal-icon"></i><p class="services-modal-info">Business Intelligence Dashboards</p></li>
+            <li class="services-modal-service"><i class="uil uil-check-circle services-modal-icon"></i><p class="services-modal-info">Predictive & Trend Analysis</p></li>
+            <li class="services-modal-service"><i class="uil uil-check-circle services-modal-icon"></i><p class="services-modal-info">Performance & KPI Reporting</p></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Service 15 Modal -->
+<div class="services-modal" id="modal-15">
+    <div class="services-modal-content">
+        <i class="uil uil-times services-modal-close"></i>
+        <h3 class="services-modal-title">Education & Empowerment</h3>
+        <p class="services-modal-description">
+            Through training, mentorship, and courses, we empower entrepreneurs and teams to master the tools, technologies, and mindsets needed to thrive in the digital age.
+        </p>
+        <ul class="services-modal-services grid">
+            <li class="services-modal-service"><i class="uil uil-check-circle services-modal-icon"></i><p class="services-modal-info">Digital Skills Training Programs</p></li>
+            <li class="services-modal-service"><i class="uil uil-check-circle services-modal-icon"></i><p class="services-modal-info">Workshops & Mentorship</p></li>
+            <li class="services-modal-service"><i class="uil uil-check-circle services-modal-icon"></i><p class="services-modal-info">Entrepreneurship & Growth Education</p></li>
+            <li class="services-modal-service"><i class="uil uil-check-circle services-modal-icon"></i><p class="services-modal-info">Access to Tools, Templates & Resources</p></li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2905,20 +4268,10 @@
             <h2 class="section-title" data-heading="Testimonials">Find out what customers say</h2>
             <div class="testimonials-container container swiper">
                 <div class="swiper-wrapper">
-                    <div class="testimonial-card swiper-slide">
-                        <div class="testimonial-quote">
-                            <i class='bx bxs-quote-alt-left'></i>
-                        </div>
-                        <p class="testimonial-description">Overall, we are entirely satisfied with the product and the pre- and post-sale service provided. We highlight that the card has a clean appearance, impeccable text printing, and adequate performance and functionality.</p>
-                        <h3 class="testimonial-date">March 30, 2024</h3>
-                        <div class="testimonial-profile">
-                            <img src="https://i.postimg.cc/MTr9j4Yn/client1.jpg" alt="" class="testimonial-profile-img">
-                            <div class="testimonial-profile-data">
-                                <span class="testimonial-profile-name">Freddy Chacín</span>
-                                <span class="testimonail-profile-detail">Technical Director - Manager</span>
-                            </div>
-                        </div>
-                    </div>
+ 
+
+
+
                     <div class="testimonial-card swiper-slide">
                         <div class="testimonial-quote">
                             <i class='bx bxs-quote-alt-left'></i>
@@ -2926,13 +4279,18 @@
                         <p class="testimonial-description">10/10!! Working with this team is the best! I highly recommend them for anything you need in your companies! Ernesto always keeps us updated and helps immensely with whatever we need!</p>
                         <h3 class="testimonial-date">February 16, 2023</h3>
                         <div class="testimonial-profile">
-                            <img src="https://i.postimg.cc/wvV7f8rB/client2.jpg" alt="" class="testimonial-profile-img">
+                            <img src="https://bucket.mlcdn.com/a/3336/3336910/images/df9d82cd842a2fdaa1c4942f2d5d770809a1cc3f.jpeg" alt="" class="testimonial-profile-img">
                             <div class="testimonial-profile-data">
                                 <span class="testimonial-profile-name">Victoria Chediak</span>
                                 <span class="testimonail-profile-detail">CMO</span>
                             </div>
                         </div>
                     </div>
+
+
+
+
+
                     <div class="testimonial-card swiper-slide">
                         <div class="testimonial-quote">
                             <i class='bx bxs-quote-alt-left'></i>
@@ -2940,13 +4298,17 @@
                         <p class="testimonial-description">Working with the Bebell digital team has been a very good experience. The Bebell team are very professional and friendly people. The customer service is incredible!! They always have a good attitude towards any problems that arise.</p>
                         <h3 class="testimonial-date">February 1, 2023</h3>
                         <div class="testimonial-profile">
-                            <img src="https://i.postimg.cc/pdP9DL0S/client3.jpg" alt="" class="testimonial-profile-img">
+                            <img src="https://bucket.mlcdn.com/a/3336/3336910/images/6e16f5cda6aaf6894c414cfbaad5db785bdfe44d.jpeg" alt="" class="testimonial-profile-img">
                             <div class="testimonial-profile-data">
                                 <span class="testimonial-profile-name">Mariel Álvarez</span>
                                 <span class="testimonail-profile-detail">CEO</span>
                             </div>
                         </div>
                     </div>
+
+
+
+
                     <div class="testimonial-card swiper-slide">
                         <div class="testimonial-quote">
                             <i class='bx bxs-quote-alt-left'></i>
@@ -2954,13 +4316,18 @@
                         <p class="testimonial-description">"A Wonderful Experience" is how I can define it: I found what I was looking for!! Very satisfied with the digital solutions and services that Bebell has provided to my business.</p>
                         <h3 class="testimonial-date">January 21, 2023</h3>
                         <div class="testimonial-profile">
-                            <img src="https://i.postimg.cc/MTr9j4Yn/client1.jpg" alt="" class="testimonial-profile-img">
+                            <img src="https://bucket.mlcdn.com/a/3336/3336910/images/664171b04f9a4ab2eeca76a4409772f84518db70.jpeg" alt="" class="testimonial-profile-img">
                             <div class="testimonial-profile-data">
                                 <span class="testimonial-profile-name">Michelle Goede</span>
                                 <span class="testimonail-profile-detail">Co-Founder & Owner</span>
                             </div>
                         </div>
                     </div>
+
+
+
+
+
                     <div class="testimonial-card swiper-slide">
                         <div class="testimonial-quote">
                             <i class='bx bxs-quote-alt-left'></i>
@@ -2968,13 +4335,18 @@
                         <p class="testimonial-description">For 6 years I've been trying to have a website or online store that is intuitive and with a user-friendly interface. On several occasions I had given up until this wonderful option appeared.</p>
                         <h3 class="testimonial-date">January 20, 2023</h3>
                         <div class="testimonial-profile">
-                            <img src="https://i.postimg.cc/wvV7f8rB/client2.jpg" alt="" class="testimonial-profile-img">
+                            <img src="https://bucket.mlcdn.com/a/3336/3336910/images/b274fc6543d81ac10df70bc19790c983797d0566.jpeg" alt="" class="testimonial-profile-img">
                             <div class="testimonial-profile-data">
                                 <span class="testimonial-profile-name">Andy Valdez</span>
                                 <span class="testimonail-profile-detail">CEO</span>
                             </div>
                         </div>
                     </div>
+
+
+
+
+
                     <div class="testimonial-card swiper-slide">
                         <div class="testimonial-quote">
                             <i class='bx bxs-quote-alt-left'></i>
@@ -2982,12 +4354,15 @@
                         <p class="testimonial-description">After enabling my payment button on the website, I received my first order in one day!! I thank you so much for the work, the time, and the advice ❤️ It would be impossible for me to do it without you.</p>
                         <h3 class="testimonial-date">November 12, 2022</h3>
                         <div class="testimonial-profile">
-                            <img src="https://i.postimg.cc/pdP9DL0S/client3.jpg" alt="" class="testimonial-profile-img">
+                            <img src="https://bucket.mlcdn.com/a/3336/3336910/images/b41b063c581dec1083b41419b2ade9f11d53f648.png" alt="" class="testimonial-profile-img">
                             <div class="testimonial-profile-data">
                                 <span class="testimonial-profile-name">Tahnee Pelliccioni</span>
                                 <span class="testimonail-profile-detail">Owner</span>
                             </div>
                         </div>
+
+
+
                     </div>
                 </div>
                 <div class="swiper-scrollbar"></div>
@@ -3058,12 +4433,6 @@
                 </div>
             </div>
         </section>
-
-
-
-
-
-
 
 
 
@@ -3207,8 +4576,398 @@
     <a href="#" class="back-to-top" id="back-to-top">
         <i class="uil uil-arrow-up"></i>
     </a>
-    
-    <script>
+
+
+
+
+
+
+
+   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Toggling Skill Tabs
+        const tabs = document.querySelectorAll('[data-target]');
+        const tabContent = document.querySelectorAll('[data-content]');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const target = document.querySelector(tab.dataset.target);
+                tabContent.forEach(tabContents => {
+                    tabContents.classList.remove('skills-active');
+                })
+                target.classList.add('skills-active');
+                tabs.forEach(tab => {
+                    tab.classList.remove('skills-active');
+                })
+                tab.classList.add('skills-active');
+            })
+        })
+
+
+
+
+
+        // Initialize MixItUp - FIXED VERSION
+        let mixerPortfolio;
+        if (document.querySelector('.work-container')) {
+            mixerPortfolio = mixitup('.work-container', {
+                selectors: {
+                    target: '.work-card'
+                },
+                animation: {
+                    duration: 300
+                },
+                load: {
+                    filter: 'all'
+                }
+            });
+        }
+
+
+
+
+
+        // Active link changing
+        const linkWork = document.querySelectorAll('.work-item');
+        function activeWork() {
+            linkWork.forEach(l => l.classList.remove('active-work'))
+            this.classList.add('active-work')
+        }
+        linkWork.forEach(l => l.addEventListener('click', activeWork));
+
+
+
+
+
+
+
+        //Portfolio Popup
+        document.addEventListener('click', (e) => {
+            const workButton = e.target.closest('.work-button');
+            const popupClose = e.target.closest('.portfolio-popup-close');
+            if (workButton) {
+                e.preventDefault();
+                togglePortfolioPopup();
+                portfolioItemDetails(workButton.parentElement);
+            }
+            if (popupClose) {
+                e.preventDefault();
+                togglePortfolioPopup();
+            }
+        })
+
+        function togglePortfolioPopup() {
+            document.querySelector('.portfolio-popup').classList.toggle('open');
+        }
+
+        function portfolioItemDetails(portfolioItem) {
+            document.querySelector('.pp-thumbnail img').src = portfolioItem.querySelector('.work-img').src;
+            document.querySelector('.portfolio-popup-subtitle span').innerHTML = portfolioItem.querySelector('.work-title').innerHTML;
+            document.querySelector('.portfolio-popup-body').innerHTML = portfolioItem.querySelector('.portfolio-item-details').innerHTML;
+        }
+
+
+
+
+
+
+
+        //Services Popup
+// Services Modal Functionality - Fixed Version
+const allServiceButtons = document.querySelectorAll('.services-button');
+const allServiceModals = document.querySelectorAll('.services-modal');
+const allServiceCloseButtons = document.querySelectorAll('.services-modal-close');
+
+// Open service modal
+allServiceButtons.forEach((button, index) => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // Prevent event bubbling
+        
+        // Close any currently open modals
+        allServiceModals.forEach(modal => {
+            modal.classList.remove('active-modal');
+        });
+        
+        // Open the clicked service modal
+        if (allServiceModals[index]) {
+            allServiceModals[index].classList.add('active-modal');
+        }
+    });
+});
+
+// Close service modal with close button
+allServiceCloseButtons.forEach(closeBtn => {
+    closeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const modal = closeBtn.closest('.services-modal');
+        if (modal) {
+            modal.classList.remove('active-modal');
+        }
+    });
+});
+
+// Close service modal when clicking outside
+allServiceModals.forEach(modal => {
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active-modal');
+        }
+    });
+});
+
+// Close service modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        allServiceModals.forEach(modal => {
+            modal.classList.remove('active-modal');
+        });
+    }
+});
+
+
+
+
+
+        // Video Modal
+        const playButton = document.getElementById('play-video-btn');
+        const videoModal = document.getElementById('video-modal');
+        const closeModalButton = document.getElementById('video-modal-close');
+        const youtubeIframe = document.getElementById('youtube-video');
+        const videoSrc = "https://www.youtube.com/embed/ITC6UklcTsI?si=jE8b-mDVBORbRb6B";
+
+        if (playButton) {
+            playButton.addEventListener('click', () => {
+                youtubeIframe.src = videoSrc + "?autoplay=1";
+                videoModal.style.display = 'flex';
+            });
+        }
+
+        function closeVideoModal() {
+            if(videoModal) videoModal.style.display = 'none';
+            if(youtubeIframe) youtubeIframe.src = "";
+        }
+
+        if (closeModalButton) {
+            closeModalButton.addEventListener('click', closeVideoModal);
+        }
+        if (videoModal) {
+            videoModal.addEventListener('click', (e) => {
+                if (e.target === videoModal) {
+                    closeVideoModal();
+                }
+            });
+        }
+
+
+
+
+
+        // FAQ Accordion
+        const faqHeaders = document.querySelectorAll('.faq-header');
+        faqHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const openItem = document.querySelector('.faq-item.faq-open');
+                const clickedItem = header.parentElement;
+
+                if (openItem && openItem !== clickedItem) {
+                    openItem.classList.remove('faq-open');
+                }
+                
+                clickedItem.classList.toggle('faq-open');
+            });
+        });
+
+
+
+
+
+
+
+        // Swiper Services
+        let servicesSwiper = new Swiper(".services-container.swiper", {
+            spaceBetween: 24,
+            loop: false,
+            grabCursor: true,
+            scrollbar: {
+                el: ".services-section-scrollbar",
+                draggable: true,
+            },
+            breakpoints: {
+                576: { slidesPerView: 2, },
+                768: { slidesPerView: 2, spaceBetween: 48, },
+                992: { slidesPerView: 3, spaceBetween: 24, }
+            },
+        });
+
+
+
+
+
+
+
+
+        //Swiper Testimonial
+        let testimonialsSwiper = new Swiper(".testimonials-container", {
+            spaceBetween: 24,
+            loop: true,
+            grabCursor: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            scrollbar: {
+                el: '.swiper-scrollbar',
+                draggable: true,
+            },
+            breakpoints: {
+                576: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 48,
+                },
+            },
+        });
+
+
+
+
+
+
+        // Input Animation
+        const inputs = document.querySelectorAll('.input');
+        function focusFunc() {
+            let parent = this.parentNode;
+            parent.classList.add('focus');
+        }
+        function blurFunc() {
+            let parent = this.parentNode;
+            if (this.value == "") {
+                parent.classList.remove('focus');
+            }
+        }
+        inputs.forEach((input) => {
+            input.addEventListener('focus', focusFunc);
+            input.addEventListener('blur', blurFunc);
+        })
+
+
+
+
+
+
+        // Scroll Section Active Link
+        const sections = document.querySelectorAll('section[id]');
+        window.addEventListener('scroll', navHighlighter);
+        function navHighlighter() {
+            let scrollY = window.pageYOffset;
+            sections.forEach(current => {
+                const sectionHeight = current.offsetHeight;
+                const sectionTop = current.offsetTop - 50;
+                const sectionId = current.getAttribute('id');
+                const navLink = document.querySelector('.nav-menu a[href*=' + sectionId + ']');
+                if (navLink) {
+                    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                        navLink.classList.add('active-link');
+                    } else {
+                        navLink.classList.remove('active-link');
+                    }
+                }
+            })
+        }
+
+
+
+
+        // Activating Sidebar
+        const navMenu = document.getElementById('sidebar');
+        const navToggle = document.getElementById('nav-toggle');
+        const navClose = document.getElementById('nav-close');
+        if (navToggle) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.add('show-sidebar');
+            })
+        }
+        if (navClose) {
+            navClose.addEventListener('click', () => {
+                navMenu.classList.remove('show-sidebar');
+            })
+        }
+
+
+
+
+
+
+
+
+/* ================== CORRECTED PORTFOLIO SCRIPT ================== */
+// Show More/Less for Portfolio
+const showMoreBtn = document.getElementById('showMoreBtn');
+
+if (showMoreBtn) {
+    const workContainer = document.querySelector('.work-container');
+    const itemsToShowInitially = 9; // Number of items to show initially
+    let isExpanded = false;
+
+    // This function now correctly manages showing/hiding cards
+    const updateVisibleCards = () => {
+        // Get only the cards that are currently visible after MixItUp filtering
+        const visibleCards = Array.from(workContainer.querySelectorAll('.work-card:not(.mixitup-hidden)'));
+
+        // Hide the "Show More" button if there are not enough items to hide
+        if (visibleCards.length <= itemsToShowInitially) {
+            showMoreBtn.style.display = 'none';
+        } else {
+            showMoreBtn.style.display = 'inline-flex';
+        }
+        
+        // Loop through the visible cards and apply/remove the 'hidden' class
+        visibleCards.forEach((card, index) => {
+            if (isExpanded) {
+                // If expanded, remove hidden class from all
+                card.classList.remove('hidden');
+            } else {
+                // If not expanded, hide cards beyond the initial limit
+                if (index >= itemsToShowInitially) {
+                    card.classList.add('hidden');
+                } else {
+                    card.classList.remove('hidden');
+                }
+            }
+        });
+
+        // Update button text based on the state
+        showMoreBtn.innerHTML = isExpanded 
+            ? 'Show Less <i class="uil uil-arrow-up"></i>' 
+            : 'Show More <i class="uil uil-arrow-down"></i>';
+    };
+
+    // Event listener for the show more button
+    showMoreBtn.addEventListener('click', () => {
+        isExpanded = !isExpanded; // Toggle the expanded state
+        updateVisibleCards();
+    });
+
+    // Listen for the mixEnd event from MixItUp to update cards
+    if (mixerPortfolio) {
+        mixerPortfolio.on('mixEnd', () => {
+            isExpanded = false; // Always reset to collapsed view on filter change
+            updateVisibleCards();
+        });
+    }
+
+    // Initial check when the page loads
+    updateVisibleCards();
+}
+
+
+
+
+
         // Back to Top Button Functionality
         const backToTopButton = document.getElementById('back-to-top');
         
@@ -3227,292 +4986,7 @@
                 behavior: 'smooth'
             });
         });
-    </script>
-
-
-
-
-
-
-
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-
-
-
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Toggling Skill Tabs
-            const tabs = document.querySelectorAll('[data-target]');
-            const tabContent = document.querySelectorAll('[data-content]');
-            tabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    const target = document.querySelector(tab.dataset.target);
-                    tabContent.forEach(tabContents => {
-                        tabContents.classList.remove('skills-active');
-                    })
-                    target.classList.add('skills-active');
-                    tabs.forEach(tab => {
-                        tab.classList.remove('skills-active');
-                    })
-                    tab.classList.add('skills-active');
-                })
-            })
-
-            //Mix it up Sorting
-            let mixerPortfolio = mixitup('.work-container', {
-                selectors: {
-                    target: '.work-card'
-                },
-                animation: {
-                    duration: 300
-                }
-            });
-
-            // Active link changing
-            const linkWork = document.querySelectorAll('.work-item');
-            function activeWork() {
-                linkWork.forEach(l => l.classList.remove('active-work'))
-                this.classList.add('active-work')
-            }
-            linkWork.forEach(l => l.addEventListener('click', activeWork));
-
-            //Portfolio Popup
-            document.addEventListener('click', (e) => {
-                const workButton = e.target.closest('.work-button');
-                const popupClose = e.target.closest('.portfolio-popup-close');
-                if (workButton) {
-                    e.preventDefault();
-                    togglePortfolioPopup();
-                    portfolioItemDetails(workButton.parentElement);
-                }
-                if (popupClose) {
-                    e.preventDefault();
-                    togglePortfolioPopup();
-                }
-            })
-
-            function togglePortfolioPopup() {
-                document.querySelector('.portfolio-popup').classList.toggle('open');
-            }
-
-            function portfolioItemDetails(portfolioItem) {
-                document.querySelector('.pp-thumbnail img').src = portfolioItem.querySelector('.work-img').src;
-                document.querySelector('.portfolio-popup-subtitle span').innerHTML = portfolioItem.querySelector('.work-title').innerHTML;
-                document.querySelector('.portfolio-popup-body').innerHTML = portfolioItem.querySelector('.portfolio-item-details').innerHTML;
-            }
-
-            //Services Popup
-            const allModals = document.querySelectorAll('.services-modal');
-            const allServiceButtons = document.querySelectorAll('.services-button');
-            document.addEventListener('click', (e) => {
-                const serviceButton = e.target.closest('.services-button');
-                if (serviceButton) {
-                    e.preventDefault();
-                    const buttonIndex = Array.from(allServiceButtons).indexOf(serviceButton);
-                    if (buttonIndex !== -1) {
-                        allModals[buttonIndex].classList.add('active-modal');
-                    }
-                }
-                const modalClose = e.target.closest('.services-modal-close');
-                if (modalClose) {
-                    e.preventDefault();
-                    modalClose.closest('.services-modal').classList.remove('active-modal');
-                }
-            });
-
-             // Video Modal
-            const playButton = document.getElementById('play-video-btn');
-            const videoModal = document.getElementById('video-modal');
-            const closeModalButton = document.getElementById('video-modal-close');
-            const youtubeIframe = document.getElementById('youtube-video');
-            const videoSrc = "https://www.youtube.com/embed/ITC6UklcTsI?si=jE8b-mDVBORbRb6B";
-
-            if (playButton) {
-                playButton.addEventListener('click', () => {
-                    youtubeIframe.src = videoSrc + "?autoplay=1";
-                    videoModal.style.display = 'flex';
-                });
-            }
-
-            function closeVideoModal() {
-                if(videoModal) videoModal.style.display = 'none';
-                if(youtubeIframe) youtubeIframe.src = "";
-            }
-
-            if (closeModalButton) {
-                closeModalButton.addEventListener('click', closeVideoModal);
-            }
-            if (videoModal) {
-                videoModal.addEventListener('click', (e) => {
-                    if (e.target === videoModal) {
-                        closeVideoModal();
-                    }
-                });
-            }
-
-            // FAQ Accordion
-            const faqHeaders = document.querySelectorAll('.faq-header');
-            faqHeaders.forEach(header => {
-                header.addEventListener('click', () => {
-                    const openItem = document.querySelector('.faq-item.faq-open');
-                    const clickedItem = header.parentElement;
-
-                    if (openItem && openItem !== clickedItem) {
-                        openItem.classList.remove('faq-open');
-                    }
-                    
-                    clickedItem.classList.toggle('faq-open');
-                });
-            });
-
-
-            // Swiper Services
-            let servicesSwiper = new Swiper(".services-container.swiper", {
-                spaceBetween: 24,
-                loop: false,
-                grabCursor: true,
-                scrollbar: {
-                    el: ".services-section-scrollbar",
-                    draggable: true,
-                },
-                breakpoints: {
-                    576: { slidesPerView: 2, },
-                    768: { slidesPerView: 2, spaceBetween: 48, },
-                    992: { slidesPerView: 3, spaceBetween: 24, }
-                },
-            });
-
-            //Swiper Testimonial
-            let testimonialsSwiper = new Swiper(".testimonials-container", {
-                spaceBetween: 24,
-                loop: true,
-                grabCursor: true,
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
-                scrollbar: {
-                    el: '.swiper-scrollbar',
-                    draggable: true,
-                },
-                breakpoints: {
-                    576: {
-                        slidesPerView: 2,
-                    },
-                    768: {
-                        slidesPerView: 2,
-                        spaceBetween: 48,
-                    },
-                },
-            });
-
-            // Input Animation
-            const inputs = document.querySelectorAll('.input');
-            function focusFunc() {
-                let parent = this.parentNode;
-                parent.classList.add('focus');
-            }
-            function blurFunc() {
-                let parent = this.parentNode;
-                if (this.value == "") {
-                    parent.classList.remove('focus');
-                }
-            }
-            inputs.forEach((input) => {
-                input.addEventListener('focus', focusFunc);
-                input.addEventListener('blur', blurFunc);
-            })
-
-            // Scroll Section Active Link
-            const sections = document.querySelectorAll('section[id]');
-            window.addEventListener('scroll', navHighlighter);
-            function navHighlighter() {
-                let scrollY = window.pageYOffset;
-                sections.forEach(current => {
-                    const sectionHeight = current.offsetHeight;
-                    const sectionTop = current.offsetTop - 50;
-                    const sectionId = current.getAttribute('id');
-                    const navLink = document.querySelector('.nav-menu a[href*=' + sectionId + ']');
-                    if (navLink) {
-                        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                            navLink.classList.add('active-link');
-                        } else {
-                            navLink.classList.remove('active-link');
-                        }
-                    }
-                })
-            }
-
-            // Activating Sidebar
-            const navMenu = document.getElementById('sidebar');
-            const navToggle = document.getElementById('nav-toggle');
-            const navClose = document.getElementById('nav-close');
-            if (navToggle) {
-                navToggle.addEventListener('click', () => {
-                    navMenu.classList.add('show-sidebar');
-                })
-            }
-            if (navClose) {
-                navClose.addEventListener('click', () => {
-                    navMenu.classList.remove('show-sidebar');
-                })
-            }
-
-             // Show More/Less for Portfolio
-            const showMoreBtn = document.getElementById('showMoreBtn');
-            if (showMoreBtn) {
-                const workContainer = document.querySelector('.work-container');
-                const itemsToShow = 9;
-                let isExpanded = false;
-
-                function updateVisibleCards() {
-                    const allCards = workContainer.querySelectorAll('.work-card');
-                    // Correctly filter cards based on mixitup's inline style, not computed style
-                    const visibleFilteredCards = Array.from(allCards).filter(card => card.style.display !== 'none');
-                    
-                    if (isExpanded) {
-                        visibleFilteredCards.forEach(card => card.classList.remove('hidden'));
-                        showMoreBtn.innerHTML = 'Show Less <i class="uil uil-arrow-up"></i>';
-                    } else {
-                        visibleFilteredCards.forEach((card, index) => {
-                            if (index >= itemsToShow) {
-                                card.classList.add('hidden');
-                            } else {
-                                card.classList.remove('hidden');
-                            }
-                        });
-                        showMoreBtn.innerHTML = 'Show More <i class="uil uil-arrow-down"></i>';
-                    }
-                    
-                    if (visibleFilteredCards.length <= itemsToShow) {
-                        showMoreBtn.style.display = 'none';
-                    } else {
-                        showMoreBtn.style.display = 'inline-flex';
-                    }
-                }
-
-                showMoreBtn.addEventListener('click', () => {
-                    isExpanded = !isExpanded;
-                    updateVisibleCards();
-                });
-                
-                const filterItems = document.querySelectorAll('.work-item');
-                filterItems.forEach(item => {
-                    item.addEventListener('click', () => {
-                        isExpanded = false; 
-                        setTimeout(updateVisibleCards, 350);
-                    });
-                });
-                
-                // Initial setup
-                updateVisibleCards();
-            }
-        });
-    </script>
+    });
+</script>
 </body>
 </html>
