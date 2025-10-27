@@ -2018,6 +2018,93 @@ button.faq-header {
   }
 
 
+
+/* Footer Logo Styles */
+.footer-logo {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* If you want the logo to be larger */
+.footer-logo.large {
+    width: 80px;
+}
+
+/* If you want the logo to be smaller */
+.footer-logo.small {
+    width: 40px;
+}
+
+/* Optional: Add hover effect */
+.footer-logo:hover {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+/* Ensure proper spacing with the existing footer content */
+.footer-container > div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Fix for the duplicate class names in links */
+.footer-links li a {
+    /* Your existing footer link styles */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .footer-logo {
+        width: 40px; /* Smaller on mobile */
+        margin-bottom: 0.75rem;
+    }
+    
+    .footer-container > div:first-child {
+        align-items: center;
+        text-align: center;
+    }
+}
+
+
+
+
+
+/* Community Button Styles */
+.community-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.community-button {
+    font-size: var(--h3-font-size);
+    padding: 1rem 2rem;
+    border-radius: .5rem;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(255, 80, 17, 0.3);
+}
+
+.community-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 80, 17, 0.4);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .community-button {
+        font-size: var(--normal-font-size);
+        padding: 0.875rem 1.75rem;
+    }
+}
+
+
+
+
+		
         
     </style>
 
@@ -2203,7 +2290,7 @@ button.faq-header {
                         <i class="uil uil-envelope-edit info-icon"></i>
                         <div>
                             <h3 class="info-title">Email</h3>
-                            <span class="info-subtitle">barclay@bebelldigitalsolutions.com</span>
+                            <span class="info-subtitle">barclay@project-freedom.club</span>
                         </div>
                     </div>
                 </div>
@@ -4749,13 +4836,64 @@ button.faq-header {
             </div>
         </section>
 
-        <footer class="footer">
+        
+		<section class="contact section" id="contact">
+    <h2 class="section-title" data-heading="Get in Touch">Book a Free Consultation</h2>
+    <div class="contact-container container grid">
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-card">
+                    <i class="uil uil-envelope-edit contact-card-icon"></i>
+                    <h3 class="contact-card-title">Email</h3>
+                    <span class="contact-card-data">info@project-freedom.club</span>
+                    <span class="contact-button">Write us <i class="uil uil-arrow-right contact-button-icon"></i></span>
+                </div>
+                <div class="contact-card">
+                    <i class="uil uil-whatsapp contact-card-icon"></i>
+                    <h3 class="contact-card-title">Whatsapp</h3>
+                    <span class="contact-card-data">+1305-990-0196</span>
+                    <span class="contact-button">Write us <i class="uil uil-arrow-right contact-button-icon"></i></span>
+                </div>
+                <div class="contact-card">
+                    <i class="uil uil-youtube contact-card-icon"></i>
+                    <h3 class="contact-card-title">YouTube</h3>
+                    <span class="contact-card-data">@bebelldigitalsolutions</span>
+                    <span class="contact-button">Subscribe to our channel <i class="uil uil-arrow-right contact-button-icon"></i></span>
+                </div>
+ <div class="community-button-container">
+                <a href="/p/project-freedom" class="button community-button">
+                    <i class="uil uil-calendar-alt button-icon"></i>Book a Consultation
+                </a></div>
+
+            </div>
+
+        </div>
+        <div class="contact-content">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.6123061284534!2d-69.99182832354592!3d18.50121228258862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf8bf4ad7e79f5%3A0xa740152ca507d853!2sBebell%20Digital%20Solutions!5e0!3m2!1sen!2sdo!4v1761304863720!5m2!1sen!2sdo" width="100%" height="480px" style="border:2;border-radius:10px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- Added Join the Community button -->
+            <div class="community-button-container">
+                <a href="/p/project-freedom" class="button community-button">
+                    <i class="uil uil-navigator button-icon"></i>Join the Community
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+		
+		
+		
+		
+		<footer class="footer">
             <div class="footer-bg">
                 <div class="footer-container container grid">
-                    <div>
-                        <h3 class="footer-title">Project Freedom</h3>
-                        <span class="footer-subtitle">Designing Freedom From Within.</span>
-                    </div>
+                    <div class="footer-brand">
+    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/494966047320c2c5be07bd50754a7183ffcda611.png" alt="Project Freedom Logo" class="footer-logo">
+    <div class="footer-brand-text">
+        <h3 class="footer-title">Project Freedom</h3>
+        <span class="footer-subtitle">Designing Freedom From Within.</span>
+    </div>
+</div>
+					
                     <ul class="footer-links">
                         <li>
                             <a href="#home" class="footer-links">Home</a>
