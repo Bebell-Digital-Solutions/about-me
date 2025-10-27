@@ -91,7 +91,25 @@
 
         html {
             scroll-behavior: smooth;
+			
         }
+
+
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.swiper {
+    overflow: hidden;
+}
+
+.video-container {
+    max-width: 100vw;
+    overflow: hidden;
+}
+		
 
         body,
         button,
@@ -732,52 +750,66 @@
         }
 
 
-        .video-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.85);
-            z-index: var(--z-modal);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            padding: 1rem;
-        }
+       /* Video Modal - Fixed Proportions */
+.video-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.95);
+    z-index: var(--z-modal);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
 
-        .video-modal-content {
-            position: relative;
-            width: 90vw;
-            max-width: 1024px;
-height: auto;
-        }
+.video-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 1200px; /* Increased max-width for 1920x1080 proportion */
+    aspect-ratio: 16 / 9; /* This ensures proper 1920x1080 proportion */
+}
 
-        .video-modal-content iframe {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            border: 3px solid var(--box-color);
-            border-radius: .5rem;
-            display: block;
-        }
+.video-modal-content iframe {
+    width: 100%;
+    height: 100%;
+    border: 3px solid var(--box-color);
+    border-radius: .5rem;
+    display: block;
+}
 
+.video-modal-close {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+    transition: color .3s;
+    z-index: 1001;
+}
 
+.video-modal-close:hover {
+    color: var(--skin-color);
+}
 
-
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .video-modal {
+        padding: 1rem;
+    }
     
-        .video-modal-close {
-            position: absolute;
-            top: -45px;
-            right: 0;
-            font-size: 2.5rem;
-            color: #fff;
-            cursor: pointer;
-            transition: color .3s;
-        }
-        .video-modal-close:hover {
-            color: var(--skin-color);
-        }
-
+    .video-modal-content {
+        width: 95%;
+    }
+    
+    .video-modal-close {
+        top: -40px;
+        font-size: 2rem;
+    }
+}
 
         /* Main - Work */
         .work-container {
