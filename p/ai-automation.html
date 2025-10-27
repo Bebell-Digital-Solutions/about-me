@@ -167,11 +167,11 @@
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 30px;
       margin-top: 30px;
+margin-bottom: 50px;
     }
 
     .contact-card {
       text-align: center;
-      background: white;
       border-radius: 12px;
       padding: 20px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -213,7 +213,7 @@
 
     .contact-card button:hover {
       background-color: #f1f1f1;
-      color: #df1783;
+      color: #ff5011;
     } 
    
     /* Timeline Styling */
@@ -431,6 +431,168 @@
 color: #d53f14;
 }
 
+
+
+   .app-container {
+  width: 100%;
+  max-width: min(800px, 90vw); /* Responsive max-width */
+  padding: 1rem;
+  margin: 0 auto;
+  /* Ensure it's truly centered */
+  box-sizing: border-box;
+}
+
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Navigation Bar - RESPONSIVE VERTICAL ALIGNMENT */
+.navigation-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.navigation-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  border-radius: 50px;
+  padding: clamp(0.4rem, 2vw, 0.8rem) clamp(0.6rem, 3vw, 1.2rem); /* Responsive padding */
+  min-width: min(160px, 80vw); /* Responsive min-width */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  height: auto;
+  min-height: clamp(40px, 8vw, 50px); /* Responsive min-height */
+  gap: clamp(0.5rem, 2vw, 1rem); /* Responsive gap */
+}
+
+.nav-arrow {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(32px, 8vw, 40px); /* Responsive button size */
+  height: clamp(32px, 8vw, 40px); /* Responsive button size */
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  padding: 0;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.nav-arrow:hover {
+  background: #ff5011;
+}
+
+.nav-arrow:focus {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+.nav-arrow svg {
+  width: clamp(16px, 4vw, 20px); /* Responsive icon size */
+  height: clamp(16px, 4vw, 20px); /* Responsive icon size */
+  fill: white;
+  display: block;
+  margin: auto;
+}
+
+.slide-counter {
+  color: white;
+  font-size: clamp(0.75rem, 3vw, 0.875rem); /* Responsive font size */
+  font-weight: 600;
+  margin: 0 clamp(0.5rem, 2vw, 1rem); /* Responsive margin */
+  user-select: none;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding: 0;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Carousel Viewport and Slides - RESPONSIVE */
+.carousel-viewport {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: clamp(8px, 2vw, 12px); /* Responsive border radius */
+}
+
+.slides-container {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-radius: clamp(8px, 2vw, 12px); /* Responsive border radius */
+}
+
+.slide {
+  flex: 1 0 100%;
+  padding: 0;
+  scroll-snap-align: start;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: clamp(8px, 2vw, 12px); /* Responsive border radius */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  background-color: #e9ecef;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 480px) {
+  .app-container {
+    max-width: 95vw;
+    padding: 0.5rem;
+  }
+  
+  .navigation-bar-content {
+    min-width: 140px; /* Slightly smaller on very small screens */
+    padding: 0.3rem 0.5rem;
+  }
+  
+  .nav-arrow {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .nav-arrow svg {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .slide-counter {
+    font-size: 0.7rem;
+    margin: 0 0.3rem;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .app-container {
+    max-width: min(700px, 85vw);
+  }
+}
+
+/* Large desktop adjustments */
+@media (min-width: 1200px) {
+  .app-container {
+    max-width: min(900px, 80vw);
+  }
+}
+
+
+
   </style>
 </head>
 
@@ -460,10 +622,33 @@ color: #d53f14;
   
   <div class="main-content">
     <section id="intro">
-      <iframe src="https://gamma.app/embed/v48spvfuiolvp9i" 
-              style="max-width: 100%; width: 100%; height: auto;" 
-              allow="fullscreen" 
-              title="AI-Powered Automation as a Service"></iframe>
+  <div class="app-container">
+    <div class="carousel-container">
+      <!-- Navigation bar -->
+      <div class="navigation-bar">
+        <div class="navigation-bar-content">
+          <button class="nav-arrow prev" aria-label="Previous slide">
+            <svg viewBox="0 0 24 24">
+              <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/>
+            </svg>
+          </button>
+          <div class="slide-counter" aria-live="polite"></div>
+          <button class="nav-arrow next" aria-label="Next slide">
+            <svg viewBox="0 0 24 24">
+              <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Carousel with slides -->
+      <div class="carousel-viewport">
+        <div class="slides-container">
+          <!-- Slides will be added by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </div>
       
       <h1>What Is An AI Automation System?</h1>
       <p>An AI Automation System is a solution that combines Artificial Intelligence (AI) with automation tools to complete tasks, make decisions, and improve workflows without constant human intervention.</p>
@@ -915,7 +1100,7 @@ color: #d53f14;
         allow="microphone"
         src="https://asistente.chatterbot.support/chatbot-iframe/dffeb15f02e54f87974a5a03fedae81a"
         id="chatbot-iframe"
-        style="border: 1px solid #e5e7eb; width: 100%; max-width: 460px; height: 800px;"
+        style="border: 1px solid #e5e7eb; width: 100%; max-width: 100%; height: 800px;"
         frameborder="0"
       ></iframe>
     </section>
@@ -930,7 +1115,7 @@ color: #d53f14;
 
     
     <section id="contact">
-      <h2 style="text-align: center; font-size: 40px;">Get in Touch</h2>
+      <h2 style="text-align: center; font-size: 40px;">Get In Touch With Us</h2>
       <div class="contact-grid">
         <div class="contact-card">
           <a href="https://bebelldigitalsolutions.com/pages/reservas">
@@ -994,6 +1179,100 @@ color: #d53f14;
     <img src="https://bucket.mlcdn.com/a/3336/3336910/images/972c5065cffe83955d5322557dcdce28eca170e5.png" alt="Volver arriba" style="width: 40px; height: 40px;">
   </div>
 
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const slidesContainer = document.querySelector('.slides-container');
+      const carouselViewport = document.querySelector('.carousel-viewport');
+      const prevBtn = document.querySelector('.prev');
+      const nextBtn = document.querySelector('.next');
+      const slideCounter = document.querySelector('.slide-counter');
+      
+      const imageUrls = [
+        'https://ik.imagekit.io/bebell/Project%20Freedom/Artificial%20Intelligence/AI%20AUTOMATION/12.png',
+        'https://ik.imagekit.io/bebell/Project%20Freedom/Artificial%20Intelligence/AI%20AUTOMATION/13.png',
+        'https://ik.imagekit.io/bebell/Project%20Freedom/Artificial%20Intelligence/AI%20AUTOMATION/14.png',
+        'https://ik.imagekit.io/bebell/Project%20Freedom/Artificial%20Intelligence/AI%20AUTOMATION/15.png',
+        'https://ik.imagekit.io/bebell/Project%20Freedom/Artificial%20Intelligence/AI%20AUTOMATION/16.png',
+        'https://ik.imagekit.io/bebell/Project%20Freedom/Artificial%20Intelligence/AI%20AUTOMATION/17.png',
+        'https://ik.imagekit.io/bebell/Project%20Freedom/Artificial%20Intelligence/AI%20AUTOMATION/18.png',
+        'https://ik.imagekit.io/bebell/Project%20Freedom/Artificial%20Intelligence/AI%20AUTOMATION/19.png',
+        'https://ik.imagekit.io/bebell/Project%20Freedom/Artificial%20Intelligence/AI%20AUTOMATION/20.png',
+        'https://ik.imagekit.io/bebell/Project%20Freedom/Artificial%20Intelligence/AI%20AUTOMATION/21.png',
+        
+      ];
+      
+      let currentSlide = 0;
+      let totalSlides = imageUrls.length;
+      let touchStartX = 0;
+      
+      // Create slides
+      function setupCarousel() {
+        imageUrls.forEach((url, index) => {
+          const slide = document.createElement('div');
+          slide.className = 'slide';
+          slide.setAttribute('role', 'group');
+          slide.setAttribute('aria-label', `slide ${index + 1} of ${totalSlides}`);
+          
+          const img = document.createElement('img');
+          img.src = url;
+          img.alt = `Slide ${index + 1}`;
+          img.loading = index < 3 ? "eager" : "lazy"; // Eager load first few images
+          
+          slide.appendChild(img);
+          slidesContainer.appendChild(slide);
+        });
+        updateCarousel();
+      }
+      
+      // Update counter and transform
+      function updateCarousel() {
+        slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+        slideCounter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+      }
+      
+      // Go to slide
+      function goToSlide(index) {
+        currentSlide = (index + totalSlides) % totalSlides;
+        updateCarousel();
+      }
+      
+      // Navigation events
+      prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+      nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+      
+      // Touch events for mobile swipe
+      carouselViewport.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, {passive: true});
+      
+      carouselViewport.addEventListener('touchend', (e) => {
+        const touchEndX = e.changedTouches[0].screenX;
+        const difference = touchStartX - touchEndX;
+        if (Math.abs(difference) > 50) { // Swipe threshold
+          goToSlide(currentSlide + (difference > 0 ? 1 : -1));
+        }
+      });
+      
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          goToSlide(currentSlide - 1);
+        } else if (e.key === 'ArrowRight') {
+          goToSlide(currentSlide + 1);
+        }
+      });
+      
+      // Initialize
+      if (totalSlides > 0) {
+        setupCarousel();
+      } else {
+        carouselViewport.innerHTML = '<p style="text-align: center; padding: 2rem;">No images to display.</p>';
+        document.querySelector('.navigation-bar').style.display = 'none';
+      }
+    });
+  </script>
 
 
 
