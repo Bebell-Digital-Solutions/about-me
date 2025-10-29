@@ -353,7 +353,7 @@ html, body {
         }
 
         .home {
-            background: url('https://ik.imagekit.io/bebell/Project%20Freedom/Barclay%20Bellande/hero-banner-nameisbarclay%20(1).png');
+            background: url('https://ik.imagekit.io/bebell/Project%20Freedom/Barclay%20Bellande/bd79b95c-b75e-4cdc-8b17-9156b4cd6674.jpg');
             background-size: cover;
             background-position: center center;
             height: 100vh;
@@ -627,7 +627,12 @@ html, body {
 
 
 
-
+/* Simple mobile background override */
+@media screen and (max-width: 576px) {
+    .home {
+        background: var(--box-color) !important;
+    }
+}
 
 
 
