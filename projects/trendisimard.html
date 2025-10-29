@@ -9,6 +9,13 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Add these font imports -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@400;700&display=swap" rel="stylesheet">
+    
+    
+    
+    
         <style>
         /* Your existing CSS variables and base styles */
         :root {
@@ -95,6 +102,56 @@
             background-color: var(--body-color);
             color: var(--text-color);
         }
+        
+        
+        
+        
+                .home-social {
+            position: absolute;
+            top: 1.8rem;
+            left: 0;
+            display: flex;
+            align-items: center;
+            column-gap: 3.5rem;
+        }
+
+        .home-social-follow {
+            font-weight: var(--font-medium);
+            position: relative;
+        }
+
+        .home-social-follow::after {
+            content: '';
+            position: absolute;
+            width: 1rem;
+            height: 2px;
+            background-color: var(--skin-color);
+            right: -45%;
+            top: 50%;
+        }
+
+        .home-social-links {
+            display: inline-flex;
+            column-gap: 1rem;
+        }
+
+        .home-social-link {
+            font-size: 1.08rem;
+            color: var(--text-color);
+            transition: .4s;
+        }
+
+        .home-social-link:hover {
+            transform: translateY(.25rem);
+        }
+        
+        
+        
+        
+        
+        
+        
+        
 
         /* --- NEW: Top Menu Bar --- */
 /* --- NEW: Top Menu Bar --- */
@@ -113,6 +170,16 @@
     padding: 0.5rem 1.5rem; /* Reduced padding */
     box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
+
+
+
+
+
+
+
+
+
+
 
         .top-menu-content {
             display: flex;
@@ -818,12 +885,54 @@
                 font-size: var(--small-font-size);
             }
         }
+        
+        
+        
+        
+        
+        
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
     </style>
 </head>
 <body>
 
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- === NEW: FLOATING NAV BAR === -->
     <header class="top-menu-bar">
+    
+
         <div class="top-menu-content">
             <a href="#" class="logo-container">
                 <img src="https://bucket.mlcdn.com/a/3336/3336910/images/494966047320c2c5be07bd50754a7183ffcda611.png" alt="Bebell Digital Solutions Logo" class="logo-image">
@@ -838,10 +947,29 @@
             </nav>
         </div>
     </header>
-    <!-- === END: FLOATING NAV BAR === -->
+    <!-- === END: FLOATING NAV BAR === -->  
+    
+    
+    
+  
 
+                
+                
+                
+                
+                
+                
+                
+                
 
     <section class="case-study" id="trendisimard">
+    
+    
+ 
+    
+    
+    
+
         <!-- HERO SECTION -->
         <!-- This section was correct -->
         <div class="hero relative flex items-center justify-center text-center text-white bg-black overflow-hidden">
@@ -849,6 +977,8 @@
                 <!-- MODIFIED: Updated video source -->
                 <source src="https://cdn.shopify.com/videos/c/o/v/eb62a1e6ae224ec2978cb39683ab7b79.mp4" type="video/mp4">
             </video>
+            
+          
             <div class="relative z-10 px-6 container">
                 <h1 class="text-5xl md:text-6xl font-bold mb-4 animate-fadeInUp">From Boutique Chaos to a Scalable Fashion Empire</h1>
                 <p class="text-lg opacity-90 mb-6">How Bebell Digital Solutions built TrendísimaRD's digital foundation for growth.</p>
@@ -1045,6 +1175,29 @@
             </div>
         </div>
     </section>
+    
+    
+    
+    
+    
+    
+    <!-- Back to Top Button -->
+ 
+
+
+<!-- Widget Volver arriba -->
+<div id="back-to-top" onclick="scrollToTop()">
+    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/972c5065cffe83955d5322557dcdce28eca170e5.png" alt="Volver arriba" style="width: 40px; height: 40px;">
+</div>
+
+
+    
+    
+    
+    
+    
+    
+    
 
     <!-- ANIMATIONS -->
     <!-- FIXED: Combined scripts and moved counter logic inside the observer -->
@@ -1098,6 +1251,33 @@
         // Observe all sections
         sections.forEach(section => observer.observe(section));
     </script>
+    
+    
+    
+    
+    <script>
+    // Add this function
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Also add the scroll event listener to show/hide the back-to-top button
+window.addEventListener('scroll', function() {
+    const backToTop = document.getElementById('back-to-top');
+    if (window.scrollY > 300) {
+        backToTop.style.display = 'block';
+    } else {
+        backToTop.style.display = 'none';
+    }
+});
+    
+</script>    
+    
+    
+    
 </body>
 </html>
 
