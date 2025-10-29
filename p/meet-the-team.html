@@ -1,1 +1,1757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a FREE Consultation today!</title>
+    <!-- Comment: Icons are correctly linked -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Add these font imports -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://bucket.mlcdn.com/a/3336/3336910/images/1b3c402d665f8293883141de5a7d564769906d78.png">  
+    
+    <style>
+        /* Your existing CSS variables and base styles */
+        :root {
+            --hue-color: 242;
+            --skin-color: #ff5011;
+            --mirage-color: hsl(210, 10%, 23%);
+            --title-color: hsl(var(--hue-color), 8%, 95%);
+            --text-color: hsl(var(--hue-color), 8%, 85%);
+            --body-color: hsl(var(--hue-color), 19%, 5%);
+            --box-color: hsl(var(--hue-color), 14%, 10%);
+            --scroll-box-color: hsl(var(--hue-color), 12%, 38%);
+            --scroll-thumb-color: hsl(var(--hue-color), 12%, 26%);
+            --body-font: 'Poppins', sans-serif;
+            --signature-font: 'Turret Road', cursive;
+            --biggest-font-size: 3rem;
+            --h1-font-size: 3rem;
+            --h2-font-size: 3rem;
+            --h3-font-size: 1.25rem;
+            --normal-font-size: 1rem;
+            --small-font-size: .875rem;
+            --smaller-font-size: .813rem;
+            --font-medium: 500;
+            --font-bold: 600;
+            --mb025: .25rem;
+            --mb05: .5rem;
+            --mb075: .75rem;
+            --mb1: 1rem;
+            --mb15: 1.5rem;
+            --mb2: 2rem;
+            --mb25: 2.5rem;
+            --mb3: 3rem;
+            --z-fixed: 10;
+            --z-modal: 1000;
+        }
 
+        @media screen and (max-width: 1024px) {
+            :root {
+                --biggest-font-size: 2rem;
+                --h1-font-size: 3rem;
+                --h2-font-size: 1.25rem;
+                --h3-font-size: 1.125rem;
+                --normal-font-size: .938rem;
+                --small-font-size: .813rem;
+                --smaller-font-size: .75rem;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--body-font);
+            font-size: var(--normal-font-size);
+            background-color: var(--body-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            color: var(--title-color);
+            font-weight: var(--font-bold);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Case Study Specific Styles */
+        .case-study {
+            font-family: var(--body-font);
+            background-color: var(--body-color);
+            color: var(--text-color);
+        }
+        
+        /* FIX: Remove blank space above hero section */
+        .home-social {
+            display: none;
+        }
+
+        .hero {
+            padding-top: 0;
+            height: 100vh; /* Keep full height */
+        }
+
+        .hero .relative {
+            padding-top: 40px; /* Reduced from 80px to bring content up */
+        }   
+            
+        /* EMERGENCY FIX - Add this to your CSS */
+        .hero {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+        }
+
+        .hero > .relative {
+            padding-top: 20px !important;
+            margin-top: 0 !important;
+        }
+
+        .hero video {
+            top: 0 !important;
+        }
+
+        /* FIX: Hero video positioning */
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.5;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding-top: 80px; /* Adjust this value to control spacing below nav */
+            text-align: center;
+        }
+
+        /* Remove the old conflicting hero video styles */
+        .hero video {
+            /* Remove any existing styles that might conflict */
+        }
+
+        /* --- NEW: Top Menu Bar --- */
+        .top-menu-bar {
+            position: sticky;
+            top: 2.5rem; /* Closer to top */
+            z-index: 50;
+            max-width: 1100px;
+            margin: 0 auto;
+            width: calc(100% - 2rem);
+            background-color: hsla(var(--hue-color), 14%, 10%, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--scroll-thumb-color);
+            border-radius: 0.75rem;
+            padding: 0.5rem 1.5rem; /* Reduced padding */
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .top-menu-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-container .logo-image {
+            height: 32px; /* Control image height */
+            width: 32px;
+            object-fit: contain;
+            border-radius: 4px; /* Slightly rounded corners for the logo */
+        }
+        
+        .logo-container .logo-text { /* Renamed from span for clarity */
+            font-size: 1.1rem; /* Slightly smaller to fit */
+            font-weight: var(--font-bold); 
+            color: var(--title-color); 
+            white-space: nowrap; /* Prevent wrapping */
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            font-weight: var(--font-medium);
+            transition: color 0.3s ease;
+            font-size: var(--small-font-size);
+        }
+
+        .nav-links a:hover {
+            color: var(--skin-color);
+        }
+
+        .nav-cta-btn {
+            background: linear-gradient(to right, var(--skin-color), #d43a00);
+            color: var(--title-color);
+            /* MODIFIED: Standardized padding */
+            padding: 0.75rem 1.75rem;
+            border-radius: 0.5rem;
+            font-weight: var(--font-medium);
+            font-size: var(--small-font-size);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(255, 80, 17, 0.2);
+        }
+
+        .nav-cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 80, 17, 0.3);
+            color: #fff; /* Ensure text remains readable */
+        }
+        /* --- End Top Menu Bar --- */
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: flex-start; 
+            justify-content: center;
+            text-align: center;
+            color: var(--title-color);
+            background-color: var(--body-color);
+            overflow: hidden;
+            /* REMOVED: padding-top: 150px; */
+        }
+
+        .hero .relative {
+            position: relative;
+            z-index: 10;
+            padding: 0 1.5rem;
+            max-width: 980px;
+            margin: 0 auto;
+            /* REDUCED: Less padding to push content lower but not too much */
+            padding-top: 80px; /* Changed from 150px */
+        }
+
+        .hero video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.5;
+        }
+
+        .hero h1 {
+            font-size: var(--h1-font-size);
+            font-weight: var(--font-bold);
+            margin-bottom: var(--mb1);
+            animation: fadeInUp 1s ease-out;
+            /* ADDED: Reduce top margin if needed */
+            margin-top: 0;
+            color: var(--skin-color);
+        }
+
+        .hero p {
+            font-size: var(--h3-font-size);
+            opacity: 0.9;
+            margin-bottom: var(--mb1); /* Reduced from mb15 */
+        }
+
+        .hero-cta {
+            display: inline-block;
+            /* MODIFIED: Standardized padding */
+            padding: 0.75rem 1.75rem;
+            background: linear-gradient(to right, var(--skin-color), #d43a00);
+            color: var(--title-color);
+            font-weight: var(--font-medium);
+            /* MODIFIED: Standardized border-radius */
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 15px rgba(255, 80, 17, 0.3);
+            transition: all 0.3s;
+            position: relative;
+            z-index: 1;
+            margin-bottom: var(--mb3);
+        }
+
+        .hero-cta::after {
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--mirage-color);
+            z-index: -1;
+            transform-origin: center;
+            transform: scale(0);
+            /* MODIFIED: Standardized border-radius */
+            border-radius: 0.5rem;
+            transition: .3s;
+        }
+
+        .hero-cta:hover::after {
+            transform: scale(1);
+        }
+
+        /* Laptop Component - FIXED */
+        .macbook-wrapper {
+            position: relative;
+            background: transparent;
+            padding: 20px;
+            border-radius: 8px;
+            /* REDUCED: Much smaller margin to show complete laptop */
+            margin-bottom: 50px; /* Changed from 500px and 100px */
+        }
+
+        .macbook-wrapper .macbook {
+            padding: 4% 6%;
+            margin: 0 auto;
+            max-width: 1500px;
+            background: transparent;
+            border-radius: 8px;
+            /* REMOVED: margin-bottom: 100px; */
+        }
+
+        .macbook-wrapper .screen {
+            background: #000;
+            border-radius: 3% 3% 0.5% 0.5% / 5%;
+            margin: 0 auto;
+            position: relative;
+            width: 80%;
+        }
+
+        .macbook-wrapper .screen:before {
+            border: 2px solid #cacacc;
+            border-radius: 3% 3% 0.5% 0.5% / 5%;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.8) inset, 0 0 1px 2px rgba(255, 255, 255, 0.3) inset;
+            content: "";
+            display: block;
+            padding-top: 67%;
+        }
+
+        .macbook-wrapper .viewport {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            margin: 4.3% 3.2%;
+            background: #F2F1FB;
+            border-radius: 4px;
+        }
+
+        .macbook-wrapper .base {
+            position: relative;
+            width: 100%;
+            background: transparent;
+            border-radius: 8px;
+        }
+
+        .macbook-wrapper .base:before {
+            content: "";
+            display: block;
+            padding-top: 3.3%;
+            background: linear-gradient(#eaeced, #edeef0 55%, #fff 55%, #8a8b8f 56%, #999ba0 61%, #4B4B4F 84%, #262627 89%, rgba(0, 0, 0, .01) 98%);
+            border-radius: 0 0 10% 10%/ 0 0 50% 50%;
+        }
+
+        .macbook-wrapper .notch {
+            background: #ddd;
+            border-radius: 0 0 7% 7% / 0 0 95% 95%;
+            box-shadow: -5px -1px 3px rgba(0, 0, 0, 0.2) inset, 5px -1px 3px rgba(0, 0, 0, 0.2) inset;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -3.5%;
+            z-index: 2;
+            position: relative;
+            width: 14%;
+        }
+
+        .macbook-wrapper .notch:before {
+            content: "";
+            display: block;
+            padding-top: 10%;
+        }
+
+        .macbook-wrapper .macbook .viewport {
+            transition: background-position 20s ease;
+            background-position: 0 0;
+            background-size: 100% auto;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .macbook-wrapper .macbook:hover .viewport {
+            background-position: 0 100%;
+        }
+
+        .macbook-wrapper .macbook .viewport:after {
+            background: radial-gradient(circle at right bottom, transparent 75%, rgba(255, 255, 255, 0.05) 75%, transparent);
+            bottom: 0;
+            content: "";
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        /* PROJECT INFO */
+        .info {
+            background-color: var(--box-color);
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+
+        .info .grid {
+            display: grid;
+            /* MODIFIED: Changed to 3 columns */
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .info h3 {
+            font-size: var(--small-font-size);
+            font-weight: var(--font-medium);
+            color: var(--skin-color);
+            margin-bottom: var(--mb05);
+        }
+
+        .info p {
+            font-size: var(--normal-font-size);
+            color: var(--title-color);
+        }
+
+        .info a {
+            color: var(--skin-color);
+            transition: color 0.3s;
+        }
+
+        .info a:hover {
+            color: var(--title-color);
+        }
+
+        /* STORY SECTIONS */
+        .story {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 1.5rem;
+        }
+
+        /* --- NEW: Icon Section Styles (Restored) --- */
+        .icon-section {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: var(--mb2);
+        }
+        .icon-container {
+            flex-shrink: 0;
+            width: 70px;
+            height: 70px;
+            background: var(--box-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            border: 2px solid var(--skin-color);
+        }
+        .icon-container:hover {
+            background: var(--skin-color);
+            transform: scale(1.1);
+        }
+        .icon-container i {
+            font-size: 1.8rem;
+            color: var(--skin-color);
+            transition: color 0.3s ease;
+        }
+        .icon-container:hover i {
+            color: var(--title-color);
+        }
+        .icon-content {
+            flex: 1;
+        }
+        .icon-content h3 {
+            font-size: var(--h3-font-size);
+            font-weight: var(--font-medium);
+            margin-bottom: var(--mb05);
+            color: var(--title-color);
+        }
+        .icon-content p {
+            color: var(--text-color);
+        }
+        /* --- End Icon Section Styles --- */
+
+        .fade-section {
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-section.animate-fadeInUp {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-with-image {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .section-image {
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .section-image:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .story h2 {
+            font-size: var(--h2-font-size);
+            font-weight: var(--font-bold);
+            margin-bottom: var(--mb1);
+            color: var(--skin-color);
+        }
+
+        .story p {
+            font-size: var(--normal-font-size);
+            line-height: 1.7;
+            color: var(--text-color);
+            margin-bottom: var(--mb1);
+        }
+
+        .story ul {
+            list-style: disc;
+            margin-left: 1.5rem;
+            color: var(--text-color);
+        }
+        
+        /* --- NEW: Dark Background Section --- */
+        .dark-bg-section {
+            background-color: var(--box-color);
+            padding: 3rem 1.5rem;
+            border-radius: 0.5rem;
+            margin: 2rem 0;
+        }
+        
+        /* --- NEW: Testimonial Section --- */
+        .testimonial {
+            text-align: center;
+            max-width: 800px;
+            margin: 3rem auto 4rem auto; /* Added top margin */
+            padding: 2rem;
+            background-color: var(--box-color);
+            border-radius: 0.5rem;
+            border: 1px solid var(--scroll-thumb-color);
+        }
+
+        .testimonial img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: var(--mb1);
+            border: 3px solid var(--skin-color);
+        }
+
+        .testimonial-stars {
+            color: #f39c12; /* Gold color for stars */
+            font-size: 1.25rem;
+            margin-bottom: var(--mb15);
+        }
+
+        .testimonial-text {
+            font-size: var(--h3-font-size);
+            font-style: italic;
+            color: var(--title-color);
+            line-height: 1.6;
+            margin-bottom: var(--mb15);
+        }
+
+        .testimonial-author {
+            font-weight: var(--font-bold);
+            color: var(--skin-color);
+            font-size: var(--normal-font-size);
+        }
+        /* --- End Testimonial Section --- */
+
+        /* PROGRESS BARS */
+        .progress-section {
+            margin-bottom: var(--mb15);
+        }
+        
+        /* --- NEW: Challenges Section Styling --- */
+        .challenges-section {
+            max-width: 980px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center; 
+        }
+        /* --- End Challenges Section Styling --- */
+
+        .progress-title {
+            font-weight: var(--font-medium);
+            color: var(--title-color);
+            margin-bottom: var(--mb05);
+        }
+
+        .progress-bar {
+            background-color: var(--scroll-box-color);
+            border-radius: 0.25rem;
+            height: 5px;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .progress-fill {
+            background: linear-gradient(to right, var(--skin-color), #d43a00);
+            height: 100%;
+            border-radius: 0.25rem;
+            animation: grow 1.5s ease-out forwards;
+        }
+
+        @keyframes grow {
+            from { width: 0%; }
+        }
+
+        /* RESULTS SECTION */
+        #results {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: var(--mb3);
+        }
+
+        .result-item {
+            background: var(--box-color);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .result-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .result-item h3 {
+            font-size: var(--h1-font-size);
+            font-weight: var(--font-bold);
+            color: var(--skin-color);
+            margin-bottom: var(--mb1);
+        }
+
+        .result-item p {
+            font-size: var(--normal-font-size);
+            color: var(--text-color);
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--scroll-thumb-color);
+            text-align: center;
+        }
+
+        .cta-section h3 {
+            font-size: var(--h3-font-size);
+            font-weight: var(--font-medium);
+            margin-bottom: var(--mb2);
+            color: var(--title-color);
+        }
+
+        .cta-button {
+            display: inline-block;
+            /* MODIFIED: Standardized padding */
+            padding: 0.75rem 1.75rem;
+            background: linear-gradient(to right, var(--skin-color), #d43a00);
+            color: var(--title-color);
+            font-weight: var(--font-medium);
+            /* MODIFIED: Standardized border-radius */
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 15px rgba(255, 80, 17, 0.3);
+            transition: all 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button::after {
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--skin-color);
+            z-index: -1;
+            transform-origin: center;
+            transform: scale(0);
+            /* MODIFIED: Standardized border-radius */
+            border-radius: 0.5rem;
+            transition: .3s;
+        }
+
+        .cta-button:hover::after {
+            transform: scale(1);
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media screen and (max-width: 1024px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            /* MODIFIED: Removed rule for .info .grid */
+            
+            .results-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            
+            .section-with-image {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-image {
+                order: -1;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            
+            /* --- NEW: Responsive Nav --- */
+            .nav-links {
+                gap: 0.5rem; /* Reduce gap */
+            }
+            .nav-links a:not(.nav-cta-btn) {
+                display: none; /* Hide text links */
+            }
+            .logo-container .logo-text {
+                display: none; /* Hide brand text */
+            }
+            .top-menu-bar {
+                padding: 0.5rem 1rem; /* Smaller padding */
+            }
+            /* --- End Responsive Nav --- */
+
+            .hero {
+                height: auto;
+                min-height: 100vh;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: var(--normal-font-size);
+            }
+            
+            .info .grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .story {
+                padding: 3rem 1rem;
+            }
+            
+            .story h2 {
+                font-size: 1.5rem;
+            }
+            
+            .icon-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .icon-container {
+                margin: 0 auto;
+            }
+            
+            .macbook-wrapper {
+                padding: 10px;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            
+            /* --- NEW: Responsive Nav --- */
+            .nav-cta-btn {
+                /* MODIFIED: Standardized responsive padding */
+                padding: 0.6rem 1.25rem;
+                font-size: var(--smaller-font-size);
+            }
+            /* --- End Responsive Nav --- */
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+            
+            .hero-cta, .cta-button {
+                /* MODIFIED: Standardized responsive padding */
+                padding: 0.6rem 1.25rem;
+                font-size: var(--small-font-size);
+            }
+        }
+        
+        /* Add space above iCal calendar */
+        #my-cal-inline-booking-project-freedom {
+            margin-top: 50px;
+            padding-top: 50px;
+        }
+
+        /* Ensure the calendar is properly positioned */
+        #my-cal-inline-booking-project-freedom,
+        #my-cal-inline-booking-project-freedom ~ script {
+            position: relative;
+            z-index: 1;
+        }    
+        
+        /* Back to Top Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        /* Footer */
+        .footer {
+            padding-top: 2rem;
+            margin-top: auto;
+        }
+
+        .footer-container {
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 1.6rem;
+            display: grid;
+        }
+
+        .footer-bg {
+            background-color: var(--box-color);
+            padding: 3rem 0 3.5rem;
+        }
+
+        .footer-title {
+            font-size: var(--h3-font-size);
+            margin-bottom: var(--mb025);
+        }
+
+        .footer-subtitle {
+            font-size: var(--small-font-size);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-self: center;
+            column-gap: 2rem;
+            list-style: none; /* Remove bullet points */
+        }
+
+        .footer-links li a {
+            color: var(--title-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links li a:hover {
+            color: var(--skin-color);
+        }
+
+        .footer-socials {
+            justify-self: flex-end;
+        }
+
+        .footer-social {
+            font-size: 1.25rem;
+            margin-right: var(--mb15);
+            color: var(--title-color);
+            text-decoration: none;
+        }
+
+        .footer-social:hover {
+            color: var(--skin-color);
+        }
+
+        .footer-copy {
+            font-size: var(--smaller-font-size);
+            text-align: center;
+            margin-top: 4.5rem;
+            color: var(--title-color);
+        }
+
+        .footer-copy a {
+            font-family: var(--signature-font);
+            color: var(--title-color);
+            text-decoration: none;
+        }
+
+        .footer-copy a:hover {
+            color: var(--skin-color);
+        }
+
+        .footer-title,
+        .footer-subtitle {
+            color: var(--title-color);
+        }
+
+        /* Footer Logo Styles */
+        .footer-logo {
+            width: 50px;
+            height: auto;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+            
+            .footer-links {
+                justify-self: center;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .footer-socials {
+                justify-self: center;
+            }
+            
+            .footer-brand {
+                align-items: center;
+            }
+            
+            .footer-logo {
+                width: 40px;
+            }
+        }
+
+        /* TEAM SECTION STYLES - FIXED */
+        .section {
+            display: grid;
+            max-inline-size: 100%;
+            min-block-size: 100svb;
+            overflow-x: clip;
+            padding-block: 80px;
+            place-items: center;
+        }
+
+        .section-wrapper {
+            display: grid;
+            place-items: center;
+        }
+
+        .header {
+            display: grid;
+            place-items: center;
+            gap: 16px;
+            z-index: 2;
+            
+
+            /* lg-n-above */
+            @media (width >=1024px) {
+                /* Placing header and cards in the same grid cell to stack them */
+                /* Both elements use grid-area: 1/1 to overlap within the same area */
+                grid-area: 1/1;
+            }
+        }
+
+        .hgroup {
+            display: grid;
+            place-items: center;
+            gap: 8px;
+        }
+
+        .headline {
+            font: var(--display-small);
+            font-size: 2.25rem;
+            font-weight: 400;
+            line-height: 2.75rem;
+            color: var(--skin-color);
+
+            /* lg-n-above */
+            @media (width >=1200px) {
+                font-size: 3.562rem;
+                line-height: 4rem;
+            }
+        }
+
+        .section-link {
+            color: var(--skin-color);
+            text-decoration: underline;
+            font-weight: 500;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+
+            /* lg-n-below */
+            @media (width < 1024px) {
+                display: none;
+            }
+        }
+
+        .cards {
+            list-style: none;
+            padding: 0;
+
+            /* lg-n-below */
+            @media (width < 1024px) {
+                display: grid;
+                grid-auto-flow: column;
+                gap: 32px;
+                max-inline-size: 100%;
+                overflow-x: scroll;
+                padding-block: 32px;
+                padding-inline: 32px;
+            }
+
+            /* lg-n-above */
+            @media (width >=1024px) {
+                --avatar-opacity: 1;
+                --avatar-img-scale: 1;
+                --tooltip-visibility: hidden;
+                --tooltip-opacity: 0;
+                --animation-state: running;
+
+                display: grid;
+                /* Placing header and cards in the same grid cell to stack them */
+                /* Both elements use grid-area: 1/1 to overlap within the same area */
+                grid-area: 1/1;
+                min-block-size: 700px;
+                place-items: center;
+
+                &:has(.avatar-link-wrapper:is(:hover, :focus-visible, :active)) {
+                    --animation-state: paused;
+                    /* Reduces opacity of non-hovered avatars to create a layered effect */
+                    --avatar-opacity: 0.4;
+                }
+            }
+        }
+
+        .card {
+            padding: 0;
+
+            /* lg-n-above */
+            @media (width >=1024px) {
+                --radius: min(620px, 40cqi);
+                --offset-per-child: calc(360deg / (var(--nth-siblings) + 1));
+                --angle-offset: calc(var(--nth-child) * var(--offset-per-child));
+                --inline-ratio: 1/1;
+                /* Keeps the horizontal scaling unchanged */
+                --block-ratio: 1/2;
+                /* Reduces vertical scaling, making it an oval */
+
+                /* Adjusts tooltip direction based on avatar position */
+                /* Future improvement: Replace with the sign() CSS function when it becomes widely supported */
+                /* Reference: https://developer.mozilla.org/en-US/docs/Web/CSS/sign */
+                --direction: min(max(calc(cos((var(--angle) + var(--angle-offset))) * -100), -1), 1);
+
+                /* Stack all cards in the same grid cell */
+                grid-area: 1/1;
+
+                /* Based on Bramus' article, modified with inline/block ratios to create an oval shape */
+                /* Source: https://web.dev/articles/css-trig-functions */
+
+                translate: calc(cos((var(--angle) + var(--angle-offset))) * var(--radius) * var(--inline-ratio))
+                  calc(sin((var(--angle) + var(--angle-offset))) * var(--radius) * var(--block-ratio) * -1);
+
+                animation: adjust-angle linear 40s infinite reverse var(--animation-state);
+            }
+        }
+
+        /* Continuously rotates the avatars in a circular motion */
+        @keyframes adjust-angle {
+            to {
+                --angle: 360deg;
+            }
+        }
+
+        .avatar-link-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--text-color);
+
+            &:is(:hover, :focus-visible, :active) {
+                --avatar-img-scale: 1.1;
+                --avatar-opacity: 1;
+                --tooltip-opacity: 1;
+                --tooltip-visibility: visible;
+            }
+
+            /* lg-n-below */
+            @media (width < 1024px) {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+
+        .visual {
+            aspect-ratio: 1;
+            border-radius: 1rem;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+            inline-size: 240px;
+            opacity: var(--avatar-opacity, 1);
+            overflow: clip;
+            transition: opacity 0.3s ease;
+
+            /* lg-n-above */
+            @media (width >=1024px) {
+                inline-size: 144px;
+                border-radius: 1e5px;
+            }
+        }
+
+        .avatar-img {
+            background-color: var(--surface-2, var(--box-color));
+            block-size: 100%;
+            display: block;
+            inline-size: 100%;
+            object-fit: cover;
+            scale: var(--avatar-img-scale, 1);
+            transition: scale 0.3s ease;
+        }
+
+        .tooltiptext {
+            display: grid;
+            gap: 4px;
+
+            /* lg-n-above */
+            @media (width >=1024px) {
+                position: absolute;
+                /* Adjusts tooltip placement based on avatar position */
+                /* Moves the tooltip to the left or right depending on the avatar's location */
+                /* --direction is either 1 (right) or -1 (left) */
+                max-inline-size: 20ch;
+                opacity: var(--tooltip-opacity, 0);
+                transition-duration: 0.3s;
+                transition-property: opacity, visibility;
+                transition-timing-function: ease;
+                translate: 110% 0;
+                visibility: var(--tooltip-visibility, hidden);
+
+                /* make the tooltips non-interactive */
+                pointer-events: none;
+                user-select: none;
+
+                /* Adjusts text alignment based on avatar position */
+                /* Ensures the tooltip text aligns properly when shifted left or right */
+                @container style(--direction: -1) {
+                    text-align: end;
+                    translate: -110% 0;
+                }
+            }
+        }
+
+        .team-name {
+            font-size: 1.375rem;
+            line-height: 1.75rem;
+            font-weight: 400;
+            color: var(--title-color);
+        }
+
+        .team-title {
+            color: var(--skin-color);
+            font-weight: 500;
+        }
+
+        .team-bio {
+            color: var(--text-color);
+            margin-top: 0.5rem;
+        }
+
+        /* Fallback for browsers that don't support @property */
+        .card {
+            --angle: 0deg;
+        }
+        
+        
+   /* === ADD THESE ANIMATION STYLES === */
+
+/* Property definitions for CSS trigonometric animations */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@property --direction {
+  syntax: '<number>';
+  initial-value: 1;
+  inherits: true;
+}
+
+/* CSS Layer structure */
+@layer reset, base, utilities, components, layout, overrides;
+
+@layer reset {
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+
+  :where(:not(dialog)) {
+    margin: 0;
+  }
+
+  :where(html) {
+    -webkit-text-size-adjust: none;
+    scroll-behavior: smooth;
+  }
+
+  :where(body) {
+    min-block-size: 100svb;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer base {
+  :root {
+    --surface-1: hsl(210, 10%, 23%);
+    --surface-2: hsl(242, 14%, 10%);
+    --text-1: hsl(242, 8%, 85%);
+    --display: 400 3.562rem/4rem 'Poppins', sans-serif;
+    --display-small: 400 2.25rem/2.75rem 'Poppins', sans-serif;
+    --label: 500 0.875rem/1.25rem 'Poppins', sans-serif;
+    --title: 400 1.375rem/1.75rem 'Poppins', sans-serif;
+  }
+}
+
+/* Team section specific animations */
+@layer layout {
+  /* Continuously rotates the avatars in a circular motion */
+  @keyframes adjust-angle {
+    to {
+      --angle: 360deg;
+    }
+  }
+
+  /* Ensure the team cards have the animation applied */
+  .cards {
+    /* lg-n-above */
+    @media (width >= 1024px) {
+      --avatar-opacity: 1;
+      --avatar-img-scale: 1;
+      --tooltip-visibility: hidden;
+      --tooltip-opacity: 0;
+      --animation-state: running;
+    }
+  }
+
+  .card {
+    /* lg-n-above */
+    @media (width >= 1024px) {
+      animation: adjust-angle linear 40s infinite reverse var(--animation-state, running);
+    }
+  }
+}
+
+/* Fallback for browsers that don't support @property */
+.card {
+  --angle: 0deg;
+}
+
+/* Ensure the team section has proper styling */
+.section {
+  display: grid;
+  max-inline-size: 100%;
+  min-block-size: 100svb;
+  overflow-x: clip;
+  padding-block: 80px;
+  place-items: center;
+}
+
+.section-wrapper {
+  display: grid;
+  place-items: center;
+}
+
+.header {
+  display: grid;
+  place-items: center;
+  gap: 16px;
+  z-index: 2;
+}
+
+/* Mobile responsiveness for team section */
+@media (max-width: 1023px) {
+  .cards {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 32px;
+    max-inline-size: 100%;
+    overflow-x: scroll;
+    padding-block: 32px;
+    padding-inline: 32px;
+  }
+  
+  .avatar-link-wrapper {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .visual {
+    inline-size: 240px;
+  }
+}
+
+/* Desktop styles for team section */
+@media (min-width: 1024px) {
+  .header {
+    grid-area: 1/1;
+  }
+  
+  .cards {
+    grid-area: 1/1;
+    min-block-size: 700px;
+    place-items: center;
+    
+    &:has(.avatar-link-wrapper:is(:hover, :focus-visible, :active)) {
+      --animation-state: paused;
+      --avatar-opacity: 0.4;
+    }
+  }
+  
+  .visual {
+    inline-size: 144px;
+    border-radius: 1e5px;
+  }
+  
+  .tooltiptext {
+    position: absolute;
+    max-inline-size: 20ch;
+    opacity: var(--tooltip-opacity, 0);
+    transition-duration: 0.3s;
+    transition-property: opacity, visibility;
+    transition-timing-function: ease;
+    translate: 110% 0;
+    visibility: var(--tooltip-visibility, hidden);
+    pointer-events: none;
+    user-select: none;
+  }
+}     
+        
+        
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: hsl(242, 14%, 15%); /* Slightly lighter than body-color */
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--skin-color); /* Your orange skin color */
+    border-radius: 8px;
+    border: 2px solid hsl(242, 14%, 15%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff6b3d; /* Slightly lighter orange on hover */
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #d43a00; /* Darker orange when clicked */
+}
+
+/* Firefox Support */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--skin-color) hsl(242, 14%, 15%);
+}
+
+/* Optional: For specific elements with scrolling */
+.scrollable-element::-webkit-scrollbar-track {
+    background: hsl(242, 14%, 15%);
+}
+
+.scrollable-element::-webkit-scrollbar-thumb {
+    background: var(--skin-color);
+}        
+        
+    </style>
+</head>
+<body>
+
+    <!-- === NEW: FLOATING NAV BAR === -->
+    <header class="top-menu-bar">
+        <div class="top-menu-content">
+            <a href="#" class="logo-container">
+                <img src="https://bucket.mlcdn.com/a/3336/3336910/images/494966047320c2c5be07bd50754a7183ffcda611.png" alt="Bebell Digital Solutions Logo" class="logo-image">
+                <span class="logo-text">Behind the Box</span>
+            </a>
+            <nav class="nav-links">
+                <a href="https://project-freedom.club">Home</a>
+                <a href="#">Meet the team</a>
+                <a href="#">Portfolio</a>
+                
+                <a href="#" class="nav-cta-btn">Join the Community</a>
+            </nav>
+        </div>
+    </header>
+    <!-- === END: FLOATING NAV BAR === -->  
+    
+    <!-- Team Container embed code begins -->
+
+    <section class="section">
+        <div class="section-wrapper">
+            <header class="header">
+                <hgroup class="hgroup">
+                    <h2 class="headline">Meet Our Team!</h2>
+                    <p class="tagline">Talented & Creative minds shaping the future with the help of AI Technology.</p>
+                </hgroup>
+                <a href="#" class="section-link"> View All </a>
+            </header>
+            
+            
+            
+            
+            <!-- nth-siblings = Total cards count - 1; update this whenever you add/remove a card  -->
+            <ul class="cards" style="--nth-siblings: 5">
+                <li class="card" style="--nth-child: 1">
+                    <a href="#" class="avatar-link-wrapper">
+                        <div class="visual">
+                            <img class="avatar-img"
+                                src="https://ik.imagekit.io/bebell/Project%20Freedom/Meet%20Our%20Team/Ernesto.png?updatedAt=1761773448819"
+                                width="144" height="144" alt="Ethan B., DevOps Engineer" />
+                        </div>
+                        <div class="tooltiptext">
+                            <h3 class="team-name">Barclay B.</h3>
+                            <div class="team-content-wrapper">
+                                <p class="team-title">Founder & CEO</p>
+                                <p class="team-bio">
+                                    Leads strategy, innovation, and overall company direction.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="card" style="--nth-child: 2">
+                    <a href="#" class="avatar-link-wrapper">
+                        <div class="visual">
+                            <img class="avatar-img"
+                                src="https://ik.imagekit.io/bebell/Project%20Freedom/Meet%20Our%20Team/Elenia.jpg?updatedAt=1761773980399"
+                                width="144" height="144" alt="Elenia L., Recepcionist" />
+                        </div>
+                        <div class="tooltiptext">
+                            <h3 class="team-name">Elenia R.</h3>
+                            <div class="team-content-wrapper">
+                                <p class="team-title">Recepcionist</p>
+                                <p class="team-bio">
+                                    Welcomes clients and manages communication flow.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="card" style="--nth-child: 3">
+                    <a href="#" class="avatar-link-wrapper">
+                        <div class="visual">
+                            <img class="avatar-img"
+                                src="https://ik.imagekit.io/bebell/Project%20Freedom/Meet%20Our%20Team/aaron-with-no-headset.jpg"
+                                width="144" height="144" alt="Aaron E., Technical Support" />
+                        </div>
+                        <div class="tooltiptext">
+                            <h3 class="team-name">Aaron E.</h3>
+                            <div class="team-content-wrapper">
+                                <p class="team-title">Technical Support</p>
+                                <p class="team-bio">
+                                    Maintains systems, automations, and client tech solutions.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="card" style="--nth-child: 4">
+                    <a href="#" class="avatar-link-wrapper">
+                        <div class="visual">
+                            <img class="avatar-img"
+                                src="https://ik.imagekit.io/bebell/Project%20Freedom/Meet%20Our%20Team/Anisia.jpg?updatedAt=1761774012711"
+                                width="144" height="144" alt="Anisia D., Administrative Assitant" />
+                        </div>
+                        <div class="tooltiptext">
+                            <h3 class="team-name">Anisia D.</h3>
+                            <div class="team-content-wrapper">
+                                <p class="team-title">Administrative Assitant</p>
+                                <p class="team-bio">
+                                    Organizes operations and supports client coordination.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="card" style="--nth-child: 5">
+                    <a href="#" class="avatar-link-wrapper">
+                        <div class="visual">
+                            <img class="avatar-img"
+                                src="https://ik.imagekit.io/bebell/Project%20Freedom/Meet%20Our%20Team/Cristofer.png"
+                                width="144" height="144" alt="Codey X, AI Code Assistant" />
+                        </div>
+                        <div class="tooltiptext">
+                            <h3 class="team-name">Cristofer S.</h3>
+                            <div class="team-content-wrapper">
+                                <p class="team-title">UI-UX Design & Developer</p>
+                                <p class="team-bio">
+                                    Designs and builds modern, user-focused digital interfaces.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="card" style="--nth-child: 6">
+                    <a href="#" class="avatar-link-wrapper">
+                        <div class="visual">
+                            <img class="avatar-img"
+                                src="https://ik.imagekit.io/bebell/Project%20Freedom/Meet%20Our%20Team/melissa.png"
+                                width="144" height="144" alt="Maya R., Project Manager" />
+                        </div>
+                        <div class="tooltiptext">
+                            <h3 class="team-name">Melissa R.</h3>
+                            <div class="team-content-wrapper">
+                                <p class="team-title">Graphic Design</p>
+                                <p class="team-bio">
+                                    Creates visual identities and digital marketing graphics.
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- Team container inline embed code ends -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- Back to Top Button -->
+    <div id="back-to-top" onclick="scrollToTop()">
+        <img src="https://bucket.mlcdn.com/a/3336/3336910/images/972c5065cffe83955d5322557dcdce28eca170e5.png" alt="Volver arriba" style="width: 40px; height: 40px;">
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-bg">
+            <div class="footer-container container grid">
+                <div class="footer-brand">
+                    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/494966047320c2c5be07bd50754a7183ffcda611.png" alt="Project Freedom Logo" class="footer-logo">
+                    <div class="footer-brand-text">
+                        <h3 class="footer-title">Project Freedom</h3>
+                        <span class="footer-subtitle">Designing Freedom From Within.</span>
+                    </div>
+                </div>
+
+                <ul class="footer-links" style="list-style: none; padding-left: 0;">
+                    <li>
+                        <a href="#home" class="footer-link">Home</a>
+                    </li>
+                    <li>
+                        <a href="#about" class="footer-link">About</a>
+                    </li>
+                    <li>
+                        <a href="#services" class="footer-link">Services</a>
+                    </li>
+                    <li>
+                        <a href="#work" class="footer-link">Work</a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="footer-link">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/bebelldigitalsolutions" target="_blank" class="footer-social">
+                        <i class="uil uil-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/bebelldigitalsolutions" target="_blank" class="footer-social">
+                        <i class="uil uil-instagram"></i>
+                    </a>
+                    <a href="www.linkedin.com/in/bebell-digital-solutions-9a4b5a239" target="_blank" class="footer-social">
+                        <i class="uil uil-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+            <p class="footer-copy">Copyright &#169; 2024 • All rights reserved.<br>Developed with 🧡 by <a href="https://bebelldigitalsolutions.com">Bebell Digital Solutions</a></p>
+        </div>
+    </footer>
+
+    <!-- ANIMATIONS -->
+    <script>
+        // Scroll fade-in animation
+        const sections = document.querySelectorAll('.fade-section');
+        const options = { threshold: 0.1 };
+        let counterAnimated = false; // Flag to ensure counters only run once
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    // Add fade-in animation class
+                    entry.target.classList.add('animate-fadeInUp');
+
+                    // Check if this is the results section and counters haven't animated
+                    if (entry.target.id === 'results' && !counterAnimated) {
+                        counterAnimated = true; // Mark as animated
+                        
+                        // Counter animation
+                        const counters = document.querySelectorAll('.counter');
+                        counters.forEach(counter => {
+                            const updateCount = () => {
+                                const target = +counter.getAttribute('data-target');
+                                const count = +counter.innerText;
+                                const increment = target / 100;
+                                
+                                if(count < target){
+                                    let newCount = Math.ceil(count + increment);
+                                    // Ensure we don't overshoot the target
+                                    if (newCount > target) {
+                                        newCount = target;
+                                    }
+                                    counter.innerText = newCount;
+                                    setTimeout(updateCount, 40);
+                                } else {
+                                    // This handles target=0 and the final step
+                                    counter.innerText = target;
+                                }
+                            };
+                            updateCount(); // Start the count for this counter
+                        });
+                    }
+                    
+                    // Stop observing this section
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        // Observe all sections
+        sections.forEach(section => observer.observe(section));
+    </script>
+    
+    <script>
+        // Add this function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Also add the scroll event listener to show/hide the back-to-top button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+
+        // Team component animation fallback for browsers that don't support @property
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            let angle = 0;
+            
+            function animateTeam() {
+                angle += 0.5;
+                if (angle >= 360) angle = 0;
+                
+                cards.forEach((card, index) => {
+                    const offset = (360 / (cards.length)) * index;
+                    const currentAngle = angle + offset;
+                    const radius = 300;
+                    const x = Math.cos(currentAngle * Math.PI / 180) * radius;
+                    const y = Math.sin(currentAngle * Math.PI / 180) * radius * 0.5; // Oval shape
+                    
+                    card.style.transform = `translate(${x}px, ${y}px)`;
+                });
+                
+                requestAnimationFrame(animateTeam);
+            }
+            
+            // Check if @property is supported
+            if (!CSS.supports('--angle', '0deg')) {
+                animateTeam();
+            }
+        });
+    </script>    
+    
+</body>
+</html>
