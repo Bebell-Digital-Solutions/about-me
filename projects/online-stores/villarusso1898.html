@@ -3,26 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrendísimaRD Case Study</title>
-    <!-- Comment: Icons are correctly linked -->
+    <title>Villa Russo 1898 Case Study</title>
+    <!-- Icons -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Add these font imports -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@400;700&display=swap" rel="stylesheet">
-    
-    
-  
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- Favicon -->
-<link rel="icon" href="https://bucket.mlcdn.com/a/3336/3336910/images/1b3c402d665f8293883141de5a7d564769906d78.png">
-
-
+    <link rel="icon" href="https://bucket.mlcdn.com/a/3336/3336910/images/1b3c402d665f8293883141de5a7d564769906d78.png">
     
-    
-        <style>
+    <style>
         /* Your existing CSS variables and base styles */
         :root {
             --hue-color: 242;
@@ -109,10 +103,7 @@
             color: var(--text-color);
         }
         
-        
-        
-        
-                .home-social {
+        .home-social {
             position: absolute;
             top: 1.8rem;
             left: 0;
@@ -151,41 +142,22 @@
             transform: translateY(.25rem);
         }
         
-        
-        
-        
-        
-        
-        
-        
-
-        /* --- NEW: Top Menu Bar --- */
-/* --- NEW: Top Menu Bar --- */
-.top-menu-bar {
-    position: sticky;
-    top: 1.5rem; /* Closer to top */
-    z-index: 50;
-    max-width: 1100px;
-    margin: 0 auto;
-    width: calc(100% - 2rem);
-    background-color: hsla(var(--hue-color), 14%, 10%, 0.7);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid var(--scroll-thumb-color);
-    border-radius: 0.75rem;
-    padding: 0.5rem 1.5rem; /* Reduced padding */
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-}
-
-
-
-
-
-
-
-
-
-
+        /* --- Top Menu Bar --- */
+        .top-menu-bar {
+            position: sticky;
+            top: 1.5rem;
+            z-index: 50;
+            max-width: 1100px;
+            margin: 0 auto;
+            width: calc(100% - 2rem);
+            background-color: hsla(var(--hue-color), 14%, 10%, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--scroll-thumb-color);
+            border-radius: 0.75rem;
+            padding: 0.5rem 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
 
         .top-menu-content {
             display: flex;
@@ -200,17 +172,17 @@
         }
 
         .logo-container .logo-image {
-            height: 32px; /* Control image height */
+            height: 32px;
             width: 32px;
             object-fit: contain;
-            border-radius: 4px; /* Slightly rounded corners for the logo */
+            border-radius: 4px;
         }
         
-        .logo-container .logo-text { /* Renamed from span for clarity */
-            font-size: 1.1rem; /* Slightly smaller to fit */
+        .logo-container .logo-text {
+            font-size: 1.1rem;
             font-weight: var(--font-bold); 
             color: var(--title-color); 
-            white-space: nowrap; /* Prevent wrapping */
+            white-space: nowrap;
         }
 
         .nav-links {
@@ -233,7 +205,6 @@
         .nav-cta-btn {
             background: linear-gradient(to right, var(--skin-color), #d43a00);
             color: var(--title-color);
-            /* MODIFIED: Standardized padding */
             padding: 0.75rem 1.75rem;
             border-radius: 0.5rem;
             font-weight: var(--font-medium);
@@ -245,42 +216,35 @@
         .nav-cta-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(255, 80, 17, 0.3);
-            color: #fff; /* Ensure text remains readable */
+            color: #fff;
         }
         /* --- End Top Menu Bar --- */
 
+        /* HERO SECTION - ADAPTIVE HEIGHT */
+        .hero {
+            position: relative;
+            /* CHANGED: Removed fixed height, now adapts to content */
+            min-height: 100vh; /* Ensures at least full viewport height */
+            display: flex;
+            align-items: flex-start; 
+            justify-content: center;
+            text-align: center;
+            color: var(--title-color);
+            background-color: var(--body-color);
+            overflow: hidden;
+            /* ADDED: Padding to ensure content doesn't touch edges */
+            padding: 80px 0 60px; /* Top padding for nav, bottom for laptop margin */
+        }
 
-        /* HERO SECTION */
-
-
-/* HERO SECTION */
-.hero {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    align-items: flex-start; 
-    justify-content: center;
-    text-align: center;
-    color: var(--title-color);
-    background-color: var(--body-color);
-    overflow: hidden;
-    /* REMOVED: padding-top: 150px; */
-}
-
-
-
-.hero .relative {
-    position: relative;
-    z-index: 10;
-    padding: 0 1.5rem;
-    max-width: 980px;
-    margin: 0 auto;
-    /* REDUCED: Less padding to push content lower but not too much */
-    padding-top: 80px; /* Changed from 150px */
-}
-
-
-
+        .hero .relative {
+            position: relative;
+            z-index: 10;
+            padding: 0 1.5rem;
+            max-width: 980px;
+            margin: 0 auto;
+            /* REMOVED: padding-top: 80px; - now handled by hero padding */
+            width: 100%; /* Ensure full width for proper centering */
+        }
 
         .hero video {
             position: absolute;
@@ -291,33 +255,26 @@
             opacity: 0.5;
         }
 
+        .hero h1 {
+            font-size: var(--h1-font-size);
+            font-weight: var(--font-bold);
+            margin-bottom: var(--mb1);
+            animation: fadeInUp 1s ease-out;
+            margin-top: 0;
+        }
 
-.hero h1 {
-    font-size: var(--h1-font-size);
-    font-weight: var(--font-bold);
-    margin-bottom: var(--mb1);
-    animation: fadeInUp 1s ease-out;
-    /* ADDED: Reduce top margin if needed */
-    margin-top: 0;
-}
-
-.hero p {
-    font-size: var(--h3-font-size);
-    opacity: 0.9;
-    margin-bottom: var(--mb1); /* Reduced from mb15 */
-}
-
-
-
+        .hero p {
+            font-size: 24px;
+            opacity: 0.9;
+            margin-bottom: var(--mb1);
+        }
 
         .hero-cta {
             display: inline-block;
-            /* MODIFIED: Standardized padding */
             padding: 0.75rem 1.75rem;
             background: linear-gradient(to right, var(--skin-color), #d43a00);
             color: var(--title-color);
             font-weight: var(--font-medium);
-            /* MODIFIED: Standardized border-radius */
             border-radius: 0.5rem;
             box-shadow: 0 4px 15px rgba(255, 80, 17, 0.3);
             transition: all 0.3s;
@@ -337,7 +294,6 @@
             z-index: -1;
             transform-origin: center;
             transform: scale(0);
-            /* MODIFIED: Standardized border-radius */
             border-radius: 0.5rem;
             transition: .3s;
         }
@@ -346,113 +302,105 @@
             transform: scale(1);
         }
 
-        /* Laptop Component - FIXED */
-  /* Isolated MacBook styles - only affects .macbook-wrapper and its children */
-/* Laptop Component - FIXED */
-.macbook-wrapper {
-    position: relative;
-    background: transparent;
-    padding: 20px;
-    border-radius: 8px;
-    /* REDUCED: Much smaller margin to show complete laptop */
-    margin-bottom: 50px; /* Changed from 500px and 100px */
-}
+        /* Laptop Component - FIXED with 60px bottom margin */
+        .macbook-wrapper {
+            position: relative;
+            background: transparent;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 60px; /* Changed to exactly 60px */
+        }
 
-.macbook-wrapper .macbook {
-    padding: 4% 6%;
-    margin: 0 auto;
-    max-width: 1500px;
-    background: transparent;
-    border-radius: 8px;
-    /* REMOVED: margin-bottom: 100px; */
-}
+        .macbook-wrapper .macbook {
+            padding: 4% 6%;
+            margin: 0 auto;
+            max-width: 1500px;
+            background: transparent;
+            border-radius: 8px;
+        }
 
-  .macbook-wrapper .screen {
-    background: #000;
-    border-radius: 3% 3% 0.5% 0.5% / 5%;
-    margin: 0 auto;
-    position: relative;
-    width: 80%;
-  }
+        .macbook-wrapper .screen {
+            background: #000;
+            border-radius: 3% 3% 0.5% 0.5% / 5%;
+            margin: 0 auto;
+            position: relative;
+            width: 80%;
+        }
 
-  .macbook-wrapper .screen:before {
-    border: 2px solid #cacacc;
-    border-radius: 3% 3% 0.5% 0.5% / 5%;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.8) inset, 0 0 1px 2px rgba(255, 255, 255, 0.3) inset;
-    content: "";
-    display: block;
-    padding-top: 67%;
-  }
+        .macbook-wrapper .screen:before {
+            border: 2px solid #cacacc;
+            border-radius: 3% 3% 0.5% 0.5% / 5%;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.8) inset, 0 0 1px 2px rgba(255, 255, 255, 0.3) inset;
+            content: "";
+            display: block;
+            padding-top: 67%;
+        }
 
-  .macbook-wrapper .viewport {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    margin: 4.3% 3.2%;
-    background: #F2F1FB;
-    border-radius: 4px;
-  }
+        .macbook-wrapper .viewport {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            margin: 4.3% 3.2%;
+            background: #F2F1FB;
+            border-radius: 4px;
+        }
 
-  .macbook-wrapper .base {
-    position: relative;
-    width: 100%;
-    background: transparent;
-    border-radius: 8px;
-  }
+        .macbook-wrapper .base {
+            position: relative;
+            width: 100%;
+            background: transparent;
+            border-radius: 8px;
+        }
 
-  .macbook-wrapper .base:before {
-    content: "";
-    display: block;
-    padding-top: 3.3%;
-    background: linear-gradient(#eaeced, #edeef0 55%, #fff 55%, #8a8b8f 56%, #999ba0 61%, #4B4B4F 84%, #262627 89%, rgba(0, 0, 0, .01) 98%);
-    border-radius: 0 0 10% 10%/ 0 0 50% 50%;
-  }
+        .macbook-wrapper .base:before {
+            content: "";
+            display: block;
+            padding-top: 3.3%;
+            background: linear-gradient(#eaeced, #edeef0 55%, #fff 55%, #8a8b8f 56%, #999ba0 61%, #4B4B4F 84%, #262627 89%, rgba(0, 0, 0, .01) 98%);
+            border-radius: 0 0 10% 10%/ 0 0 50% 50%;
+        }
 
-  .macbook-wrapper .notch {
-    background: #ddd;
-    border-radius: 0 0 7% 7% / 0 0 95% 95%;
-    box-shadow: -5px -1px 3px rgba(0, 0, 0, 0.2) inset, 5px -1px 3px rgba(0, 0, 0, 0.2) inset;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -3.5%;
-    z-index: 2;
-    position: relative;
-    width: 14%;
-  }
+        .macbook-wrapper .notch {
+            background: #ddd;
+            border-radius: 0 0 7% 7% / 0 0 95% 95%;
+            box-shadow: -5px -1px 3px rgba(0, 0, 0, 0.2) inset, 5px -1px 3px rgba(0, 0, 0, 0.2) inset;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -3.5%;
+            z-index: 2;
+            position: relative;
+            width: 14%;
+        }
 
-  .macbook-wrapper .notch:before {
-    content: "";
-    display: block;
-    padding-top: 10%;
-  }
+        .macbook-wrapper .notch:before {
+            content: "";
+            display: block;
+            padding-top: 10%;
+        }
 
-  .macbook-wrapper .macbook .viewport {
-    transition: background-position 20s ease;
-    background-position: 0 0;
-    background-size: 100% auto;
-    overflow: hidden;
-    cursor: pointer;
-  }
+        .macbook-wrapper .macbook .viewport {
+            transition: background-position 20s ease;
+            background-position: 0 0;
+            background-size: 100% auto;
+            overflow: hidden;
+            cursor: pointer;
+        }
 
-  .macbook-wrapper .macbook:hover .viewport {
-    background-position: 0 100%;
-  }
+        .macbook-wrapper .macbook:hover .viewport {
+            background-position: 0 100%;
+        }
 
-  .macbook-wrapper .macbook .viewport:after {
-    background: radial-gradient(circle at right bottom, transparent 75%, rgba(255, 255, 255, 0.05) 75%, transparent);
-    bottom: 0;
-    content: "";
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  
-  
-  
-  
+        .macbook-wrapper .macbook .viewport:after {
+            background: radial-gradient(circle at right bottom, transparent 75%, rgba(255, 255, 255, 0.05) 75%, transparent);
+            bottom: 0;
+            content: "";
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
 
         /* PROJECT INFO */
         .info {
@@ -463,7 +411,6 @@
 
         .info .grid {
             display: grid;
-            /* MODIFIED: Changed to 3 columns */
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             max-width: 1200px;
@@ -498,7 +445,7 @@
             padding: 5rem 1.5rem;
         }
 
-        /* --- NEW: Icon Section Styles (Restored) --- */
+        /* --- Icon Section Styles --- */
         .icon-section {
             display: flex;
             align-items: flex-start;
@@ -599,26 +546,19 @@
             color: var(--text-color);
         }
         
+        /* --- Dark Background Section --- */
+        .dark-bg-section {
+            background-color: var(--box-color);
+            padding: 3rem 1.5rem;
+            border-radius: 0.5rem;
+            margin: 2rem 0;
+        }
         
-       
-       /* --- NEW: Dark Background Section --- */
-.dark-bg-section {
-    background-color: var(--box-color);
-    padding: 3rem 1.5rem;
-    border-radius: 0.5rem;
-    margin: 2rem 0;
-}
-       
-        
-        
-        
-        
-
-        /* --- NEW: Testimonial Section --- */
+        /* --- Testimonial Section --- */
         .testimonial {
             text-align: center;
             max-width: 800px;
-            margin: 3rem auto 4rem auto; /* Added top margin */
+            margin: 3rem auto 4rem auto;
             padding: 2rem;
             background-color: var(--box-color);
             border-radius: 0.5rem;
@@ -635,7 +575,7 @@
         }
 
         .testimonial-stars {
-            color: #f39c12; /* Gold color for stars */
+            color: #f39c12;
             font-size: 1.25rem;
             margin-bottom: var(--mb15);
         }
@@ -660,7 +600,7 @@
             margin-bottom: var(--mb15);
         }
         
-        /* --- NEW: Challenges Section Styling --- */
+        /* --- Challenges Section Styling --- */
         .challenges-section {
             max-width: 980px;
             margin-left: auto;
@@ -702,7 +642,7 @@
 
         .results-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
             margin-top: var(--mb3);
         }
@@ -747,12 +687,10 @@
 
         .cta-button {
             display: inline-block;
-            /* MODIFIED: Standardized padding */
             padding: 0.75rem 1.75rem;
             background: linear-gradient(to right, var(--skin-color), #d43a00);
             color: var(--title-color);
             font-weight: var(--font-medium);
-            /* MODIFIED: Standardized border-radius */
             border-radius: 0.5rem;
             box-shadow: 0 4px 15px rgba(255, 80, 17, 0.3);
             transition: all 0.3s;
@@ -771,7 +709,6 @@
             z-index: -1;
             transform-origin: center;
             transform: scale(0);
-            /* MODIFIED: Standardized border-radius */
             border-radius: 0.5rem;
             transition: .3s;
         }
@@ -792,126 +729,17 @@
             }
         }
 
-        /* RESPONSIVE DESIGN */
-        @media screen and (max-width: 1024px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            /* MODIFIED: Removed rule for .info .grid */
-            
-            .results-grid {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-            }
-            
-            .section-with-image {
-                grid-template-columns: 1fr;
-            }
-            
-            .section-image {
-                order: -1;
-            }
+        /* Back to Top Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            cursor: pointer;
+            z-index: 1000;
         }
 
-        @media screen and (max-width: 768px) {
-            
-            /* --- NEW: Responsive Nav --- */
-            .nav-links {
-                gap: 0.5rem; /* Reduce gap */
-            }
-            .nav-links a:not(.nav-cta-btn) {
-                display: none; /* Hide text links */
-            }
-            .logo-container .logo-text {
-                display: none; /* Hide brand text */
-            }
-            .top-menu-bar {
-                padding: 0.5rem 1rem; /* Smaller padding */
-            }
-            /* --- End Responsive Nav --- */
-
-            .hero {
-                height: auto;
-                min-height: 100vh;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: var(--normal-font-size);
-            }
-            
-            .info .grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .story {
-                padding: 3rem 1rem;
-            }
-            
-            .story h2 {
-                font-size: 1.5rem;
-            }
-            
-            .icon-section {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .icon-container {
-                margin: 0 auto;
-            }
-            
-            .macbook-wrapper {
-                padding: 10px;
-            }
-        }
-
-        @media screen and (max-width: 576px) {
-            
-            /* --- NEW: Responsive Nav --- */
-            .nav-cta-btn {
-                /* MODIFIED: Standardized responsive padding */
-                padding: 0.6rem 1.25rem;
-                font-size: var(--smaller-font-size);
-            }
-            /* --- End Responsive Nav --- */
-
-            .hero h1 {
-                font-size: 1.75rem;
-            }
-            
-            .hero-cta, .cta-button {
-                /* MODIFIED: Standardized responsive padding */
-                padding: 0.6rem 1.25rem;
-                font-size: var(--small-font-size);
-            }
-        }
-        
-        
-        
-        
-        
-        
-
-/* Back to Top Button */
-#back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-
-
-
-          /* Footer */
+        /* Footer */
         .footer {
             padding-top: 2rem;
             margin-top: auto;
@@ -941,7 +769,7 @@
             display: flex;
             justify-self: center;
             column-gap: 2rem;
-            list-style: none; /* Remove bullet points */
+            list-style: none;
         }
 
         .footer-links li a {
@@ -1005,7 +833,107 @@
             align-items: flex-start;
         }
 
-        /* Responsive adjustments */
+        /* RESPONSIVE DESIGN */
+        @media screen and (max-width: 1024px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .results-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2.5rem;
+            }
+            
+            .section-with-image {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-image {
+                order: -1;
+            }
+            
+            .info .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            /* Responsive Nav */
+            .nav-links {
+                gap: 0.5rem;
+            }
+            .nav-links a:not(.nav-cta-btn) {
+                display: none;
+            }
+            .logo-container .logo-text {
+                display: none;
+            }
+            .top-menu-bar {
+                padding: 0.5rem 1rem;
+            }
+
+            .hero {
+                /* Adjust padding for mobile */
+                padding: 60px 0 40px;
+                min-height: auto; /* Remove min-height on mobile */
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: var(--normal-font-size);
+            }
+            
+            .info .grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .story {
+                padding: 3rem 1rem;
+            }
+            
+            .story h2 {
+                font-size: 1.5rem;
+            }
+            
+            .icon-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .icon-container {
+                margin: 0 auto;
+            }
+            
+            .macbook-wrapper {
+                padding: 10px;
+            }
+            
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .nav-cta-btn {
+                padding: 0.6rem 1.25rem;
+                font-size: var(--smaller-font-size);
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+            
+            .hero-cta, .cta-button {
+                padding: 0.6rem 1.25rem;
+                font-size: var(--small-font-size);
+            }
+        }
+        
+        /* Responsive adjustments for footer */
         @media screen and (max-width: 768px) {
             .footer-container {
                 grid-template-columns: 1fr;
@@ -1031,33 +959,11 @@
                 width: 40px;
             }
         }
-     
-        
-        
-        
-        
-        
-        
     </style>
 </head>
 <body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- === NEW: FLOATING NAV BAR === -->
+    <!-- === FLOATING NAV BAR === -->
     <header class="top-menu-bar">
-    
-
         <div class="top-menu-content">
             <a href="#" class="logo-container">
                 <img src="https://bucket.mlcdn.com/a/3336/3336910/images/494966047320c2c5be07bd50754a7183ffcda611.png" alt="Bebell Digital Solutions Logo" class="logo-image">
@@ -1074,343 +980,271 @@
         </div>
     </header>
     <!-- === END: FLOATING NAV BAR === -->  
-    
-    
-    
-  
 
-                
-                
-                
-                
-                
-                
-                
-                
-
-    <section class="case-study" id="trendisimard">
-    
-    
- 
-    
-    
-    
-
-        <!-- HERO SECTION -->
-        <!-- This section was correct -->
+    <section class="case-study" id="villaruso1898">
+        <!-- HERO SECTION - NOW WITH ADAPTIVE HEIGHT -->
         <div class="hero relative flex items-center justify-center text-center text-white bg-black overflow-hidden">
             <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-50">
-                <!-- MODIFIED: Updated video source -->
-                <source src="https://cdn.shopify.com/videos/c/o/v/eb62a1e6ae224ec2978cb39683ab7b79.mp4" type="video/mp4">
+                <source src="https://ik.imagekit.io/bebell/Customers/Villa%20Russo,%201898/Video%20Banner%20Asset%20(1).mp4" type="video/mp4">
             </video>
-            
           
             <div class="relative z-10 px-6 container">
-                <h1 class="text-5xl md:text-6xl font-bold mb-4 animate-fadeInUp">From Boutique Chaos to a Scalable Fashion Empire</h1>
-                <p class="text-lg opacity-90 mb-6">How Bebell Digital Solutions built TrendísimaRD's digital foundation for growth.</p>
+                <h1 class="text-5xl md:text-6xl font-bold mb-4 animate-fadeInUp">Digitizing Elegance: How We Revived a Century-Old Luxury Brand for the Modern Shopper.</h1>
+                <p class="text-lg opacity-90 mb-6">From a forgotten local icon to a digital house of refinement — Villa Russo's timeless artistry now lives online.</p>
                 <a href="#results" class="hero-cta">See Results</a>
                 
-                <!-- Laptop Component - FIXED -->
-               <div class="macbook-wrapper">
-  <div class="macbook">
-    <div class="screen">
-      <div class="viewport" style="background-image: url('https://ik.imagekit.io/bebell/Customers/TrendisimaRD/Developed%20with%20by%20Bebell%20Digital%20Solutions%20(2).png');">
-      </div>
-    </div>
-    <div class="base"></div>
-    <div class="notch"></div>
-    
-    
-    </div>
+                <!-- Laptop Component - NOW DISPLAYS PROPERLY -->
+                <div class="macbook-wrapper">
+                    <div class="macbook">
+                        <div class="screen">
+                            <div class="viewport" style="background-image: url('https://ik.imagekit.io/bebell/Customers/Villa%20Russo,%201898/2.png?updatedAt=1761696686987');">
+                            </div>
+                        </div>
+                        <div class="base"></div>
+                        <div class="notch"></div>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- PROJECT INFO -->
-        <!-- FIXED: Removed conflicting utility classes. Your .info CSS will now apply. -->
         <div class="info">
             <div class="grid container">
-                <div><h3>Since</h3><p>Feb 13, 2021</p></div>
-                <!-- MODIFIED: Removed Domain Section -->
-                <div><h3>Industry</h3><p>Fashion & E-commerce</p></div>
-                <div><h3>Tagline</h3><p>Moda joven, digital y sin límites.</p></div>
+                <div><h3>Since</h3><p>25 September 2019</p></div>
+              
+                <div><h3>Industry</h3><p>Luxury Retail & Heritage Lifestyle</p></div>
+                <div><h3>Tagline</h3><p>Arte de la Mesa, Joyería, Perfumería y Más</p></div>
             </div>
         </div>
 
         <!-- STORY SECTIONS -->
-        <!-- FIXED: Removed conflicting utility classes (space-y-16) -->
         <div class="story container">
-
             <!-- Problem -->
-            <!-- FIXED: Removed conflicting utility classes from h2 and p -->
             <div class="fade-section section-with-image">
                 <div>
-                    <h2> Problem & Protagonist</h2>
-                    <p>TrendísimaRD, a Dominican fashion brand for young women, was thriving on social media but struggling to convert followers into customers. Orders were handled manually through DMs, inventory often went out of sync, and payments required constant confirmation.</p>
-                    <p>The founder faced daily operational challenges that limited growth potential and created customer service bottlenecks.</p>
+                    <h2>Problem & Protagonist</h2>
+                    <p>For over a century, <strong>Villa Russo 1898</strong> had been synonymous with sophistication — a curated destination for fine tableware, jewelry, and perfumery. But by 2019, its legacy was at risk of fading in a fast-moving digital marketplace. The brand's charm lived within its physical store walls, yet online it had no voice.</p>
+                    <p>Their website was static, unsearchable, and disconnected from the elegance of the in-store experience. The lack of e-commerce, SEO visibility, and modern design meant that younger audiences — the next generation of luxury buyers — never discovered them.</p>
+                    <blockquote style="border-left: 3px solid var(--skin-color); padding-left: 1rem; margin: 1.5rem 0; font-style: italic;">
+                        "People recognized our name from their grandparents' stories, but no one knew how to reach us today," shared the store director.
+                    </blockquote>
                 </div>
                 <div class="section-image">
-                    <img src="https://ik.imagekit.io/bebell/Customers/TrendisimaRD/image-asset-portfolio.gif" alt="Problem illustration - chaotic boutique management">
+                    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/2ca1a21980f9d345b096739d36d8dd6f668cd546.gif" alt="Problem illustration - Villa Russo's legacy at risk">
                 </div>
             </div>
 
             <!-- Aspiration -->
-            <!-- FIXED: Removed conflicting utility classes from h2 and p -->
             <div class="fade-section section-with-image">
                 <div class="section-image">
-                    <img src="https://ik.imagekit.io/bebell/Customers/TrendisimaRD/50836275-0ee7-441c-9f8a-c71a18d4c6b0.jpg" alt="Aspiration illustration - modern e-commerce vision">
+                    <img src="https://ik.imagekit.io/bebell/Customers/Villa%20Russo,%201898/image-asset-portfolio.png?updatedAt=1761787085731" alt="Aspiration illustration - modern e-commerce vision">
                 </div>
                 <div>
-                    <h2> Aspiration & Agitation</h2>
-                    <p>The founder dreamed of transforming TrendísimaRD into a modern, automated e-commerce brand that could sell 24/7, manage inventory in real time, and deliver a smooth buying experience with local payment options. Every viral post brought more chaos than conversion.</p>
-                    <p>The vision was clear: create a seamless digital shopping experience that matched the brand's vibrant social media presence.</p>
+                    <h2>Aspiration & Agitation</h2>
+                    <p>The goal was bold: <strong>to modernize Villa Russo without losing its soul.</strong></p>
+                    <p>They wanted a digital experience that felt as curated as their store — one that could host a full online catalog, manage wedding registries, and present designer collections in an editorial, magazine-like format.</p>
+                    <p>Every click needed to evoke craftsmanship, elegance, and exclusivity.</p>
                 </div>
             </div>
 
-          <!-- Strategic Solution - FIXED ICONS -->
-<div class="fade-section dark-bg-section">
-    <h2>Strategic Solution</h2>
-    
-    <div class="icon-section">
-        <div class="icon-container">
-            <i class="fas fa-shopping-cart"></i>
-        </div>
-        <div class="icon-content">
-            <h3>Full E-commerce Store</h3>
-            <p>Built complete online store with product catalog, shopping cart, and secure checkout system.</p>
-        </div>
-    </div>
-    
-    <div class="icon-section">
-        <div class="icon-container">
-            <i class="fas fa-boxes"></i>
-        </div>
-        <div class="icon-content">
-            <h3>Inventory Management</h3>
-            <p>Integrated custom inventory management system with real-time synchronization.</p>
-        </div>
-    </div>
-    
-    <div class="icon-section">
-        <div class="icon-container">
-            <i class="fas fa-credit-card"></i>
-        </div>
-        <div class="icon-content">
-            <h3>Payment Gateway</h3>
-            <p>Set up Azul Dominicana payment gateway for local payment processing.</p>
-        </div>
-    </div>
-    
-    <div class="icon-section">
-        <div class="icon-container">
-            <i class="fas fa-camera"></i>
-        </div>
-        <div class="icon-content">
-            <h3>Professional Photoshoots</h3>
-            <p>Directed professional product photoshoots to enhance brand visual identity.</p>
-        </div>
-    </div>
-    
-    <div class="icon-section">
-        <div class="icon-container">
-            <i class="fas fa-robot"></i>
-        </div>
-        <div class="icon-content">
-            <h3>Marketing Automation</h3>
-            <p>Implemented marketing automation and abandoned cart recovery systems.</p>
-        </div>
-    </div>
-</div>
+            <!-- Strategic Solution -->
+            <div class="fade-section dark-bg-section">
+                <h2>Strategic Solution</h2>
+                <p>Bebell Digital Solutions didn't just build a store — <strong>we built a digital legacy.</strong></p>
+                <p>Our team crafted a luxury e-commerce ecosystem that fused <strong>design heritage with digital performance.</strong></p>
+                
+                <div class="icon-section">
+                    <div class="icon-container">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="icon-content">
+                        <h3>Brand Translation</h3>
+                        <p>We distilled Villa Russo's visual heritage into a modern digital aesthetic — merging historical typography, cream-gold tones, and minimalist photography.</p>
+                    </div>
+                </div>
+                
+                <div class="icon-section">
+                    <div class="icon-container">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <div class="icon-content">
+                        <h3>Experience Architecture</h3>
+                        <p>Designed a multi-category e-commerce experience for <em>Arte de la Mesa, Joyería, Perfumería, Decoración y Accesorios</em> with seamless browsing and collection storytelling.</p>
+                    </div>
+                </div>
+                
+                <div class="icon-section">
+                    <div class="icon-container">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <div class="icon-content">
+                        <h3>Registry Innovation</h3>
+                        <p>Introduced a digital wedding registry system, transforming a traditional service into an automated, shareable, and trackable online experience.</p>
+                    </div>
+                </div>
+                
+                <div class="icon-section">
+                    <div class="icon-container">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="icon-content">
+                        <h3>SEO & Content Foundation</h3>
+                        <p>Implemented metadata and structured product content aligned with luxury lifestyle keywords, giving the brand authority in its niche.</p>
+                    </div>
+                </div>
+            </div>
 
-            <!-- Challenges - FIXED PROGRESS BARS -->
-            <!-- FIXED: Removed conflicting utility classes from h2, p, and divs -->
-            <!-- MODIFIED: Added .challenges-section class -->
+            <!-- Challenges -->
             <div class="fade-section challenges-section">
-                <h2> Challenges & Conquest</h2>
-                <p>Synchronizing hundreds of product variations while maintaining accuracy and speed required creative engineering.</p>
-
-                <div>
+                <h2>Challenges & Conquest</h2>
+                <p><strong>The Challenge:</strong> Preserving the brand's <em>heritage aesthetic</em> while making it fully interactive and mobile-first.</p>
+                <p>Villa Russo's existing photography and product data were incomplete and inconsistent — some pieces had only analog records dating back decades.</p>
+                
+                <h3 style="margin-top: 2rem; color: var(--skin-color);">Our Conquest:</h3>
+                <p>We built a <strong>hybrid catalog digitization workflow</strong>, combining AI-assisted image enhancement with manual product categorization.</p>
+                <p>This allowed us to recover, classify, and publish <strong>over 2,000 SKUs</strong> without compromising visual elegance — all while keeping load times under 3 seconds.</p>
+                
+                <div style="margin-top: 2rem;">
                     <div class="progress-section">
-                        <p class="progress-title">Data Synchronization Complexity</p>
+                        <p class="progress-title">Catalog Digitization</p>
                         <div class="progress-bar">
-                            <div class="progress-fill" style="width: 85%"></div>
+                            <div class="progress-fill" style="width: 95%"></div>
                         </div>
                     </div>
                     <div class="progress-section">
-                        <p class="progress-title">Photo Processing Optimization</p>
+                        <p class="progress-title">Visual Quality Preservation</p>
                         <div class="progress-bar">
-                            <div class="progress-fill" style="width: 60%"></div>
+                            <div class="progress-fill" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="progress-section">
+                        <p class="progress-title">Performance Optimization</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%"></div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Results -->
-            <!-- FIXED: Removed conflicting utility classes -->
             <div id="results" class="fade-section">
-                <h2> Amazing Results</h2>
+                <h2>Amazing Results</h2>
                 
                 <div class="results-grid">
-                    <!-- This was missing the counter content, restoring it -->
                     <div class="result-item">
-                        <h3 class="counter" data-target="187">0</h3>
-                        <p>Increase in online sales</p>
+                        <h3 class="counter" data-target="180">0</h3>
+                        <p>Increase in qualified website visitors</p>
                     </div>
                     <div class="result-item">
-                        <h3 class="counter" data-target="3">0</h3>
-                        <p>Times faster order processing</p>
+                        <h3 class="counter" data-target="1">0</h3>
+                        <p>First digital wedding registry in Dominican luxury retail</p>
                     </div>
                     <div class="result-item">
-                        <h3 class="counter" data-target="0">0</h3>
-                        <p>Payment errors after Azul integration</p>
+                        <h3 class="counter" data-target="65">0</h3>
+                        <p>More inquiries from international buyers</p>
+                    </div>
+                    <div class="result-item">
+                        <h3 class="counter" data-target="2000">0</h3>
+                        <p>SKUs digitized and published</p>
                     </div>
                 </div>
                 
-                <div class="section-image" style="margin-top: var(--mb3);"> <!-- Added style for margin -->
-                    <img src="https://ik.imagekit.io/bebell/Customers/TrendisimaRD/mediamodifier_image.png?updatedAt=1761690094029" alt="Results illustration - growth metrics">
+                <div class="testimonial">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Bebell didn't just modernize us — they helped us rediscover who we are in the digital age."</p>
+                    <p class="testimonial-author">— Management Team, Villa Russo 1898</p>
+                </div>
+                
+                <div class="section-image" style="margin-top: var(--mb3);">
+                    <img src="https://ik.imagekit.io/bebell/Customers/Villa%20Russo,%201898/mediamodifier_image.png" alt="Results illustration - Villa Russo website">
                 </div>
             </div>
-
-            <!-- === NEW: TESTIMONIAL SECTION === -->
-            <div class="fade-section testimonial">
-                <img src="https://ik.imagekit.io/bebell/Customers/TrendisimaRD/3207937f-41e2-4fa6-9dd7-c1dccc1b0ee2.png?updatedAt=1761685073835" alt="Testimonial author">
-                <div class="testimonial-stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">"My experience with Bebell Digital Solutions has been excellent. They have helped me progress and offer more convenience to my clients."</p>
-                <p class="testimonial-author">— Massiel Rosario, Founder of TrendísimaRD</p>
-            </div>
-            <!-- === END: TESTIMONIAL SECTION === -->
 
             <!-- Lesson -->
-            <!-- FIXED: Replaced utility classes with inline styles -->
             <div class="fade-section" style="text-align: center; max-width: 48rem; margin-left: auto; margin-right: auto;">
-                <h2>Lesson & Long-term Vision</h2>
-                <p>The TrendísimaRD project proved that digital elegance isn't just visual — it's operational. By systemizing sales, automation, and brand communication, we built a scalable business ready to dominate the Dominican fashion scene.</p>
+                <h2>Lesson & Long-Term Vision</h2>
+                <p>This project demonstrated that <strong>timeless brands can thrive in a digital world</strong> — if technology respects tradition.</p>
+                <p>Villa Russo's success is not only in its online sales, but in how it reclaims its identity: a bridge between <em>art, craftsmanship, and modern lifestyle.</em></p>
+                <p>Today, Villa Russo 1898 stands as a living example of how Bebell builds <strong>digital legacies, not just websites.</strong></p>
             </div>
 
-            <!-- CTA - FIXED -->
+            <!-- CTA -->
             <div class="cta-section">
-                <h3>Ready to build your own profit engine?</h3>
-                <a href="/contact" class="cta-button">Let's Architect Your Growth Story</a>
+                <h3>Ready to build your own digital legacy?</h3>
+                <a href="/booking-page" class="cta-button">Let's Architect Your Growth Story</a>
             </div>
         </div>
     </section>
     
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-    
     <!-- Back to Top Button -->
- 
-
-
-<!-- Widget Volver arriba -->
-<div id="back-to-top" onclick="scrollToTop()">
-    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/972c5065cffe83955d5322557dcdce28eca170e5.png" alt="Volver arriba" style="width: 40px; height: 40px;">
-</div>
-
-
+    <div id="back-to-top" onclick="scrollToTop()">
+        <img src="https://bucket.mlcdn.com/a/3336/3336910/images/972c5065cffe83955d5322557dcdce28eca170e5.png" alt="Volver arriba" style="width: 40px; height: 40px;">
+    </div>
     
-    
-   
-    
-    
-<footer class="footer">
-    <div class="footer-bg">
-        <div class="footer-container container grid">
-            <div class="footer-brand">
-                <img src="https://bucket.mlcdn.com/a/3336/3336910/images/494966047320c2c5be07bd50754a7183ffcda611.png" alt="Project Freedom Logo" class="footer-logo">
-                <div class="footer-brand-text">
-                    <h3 class="footer-title">Project Freedom</h3>
-                    <span class="footer-subtitle">Designing Freedom From Within.</span>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bg">
+            <div class="footer-container container grid">
+                <div class="footer-brand">
+                    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/494966047320c2c5be07bd50754a7183ffcda611.png" alt="Project Freedom Logo" class="footer-logo">
+                    <div class="footer-brand-text">
+                        <h3 class="footer-title">Project Freedom</h3>
+                        <span class="footer-subtitle">Designing Freedom From Within.</span>
+                    </div>
+                </div>
+
+                <ul class="footer-links" style="list-style: none; padding-left: 0;">
+                    <li>
+                        <a href="https://project-freedom.com" class="footer-link">Home</a>
+                    </li>
+                    <li>
+                        <a href="/p/meet-the-team" class="footer-link">About</a>
+                    </li>
+                    <li>
+                        <a href="/p/projects" class="footer-link">Work</a>
+                    </li>
+                    <li>
+                        <a href="/p/contact-us" class="footer-link">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/bebelldigitalsolutions" target="_blank" class="footer-social">
+                        <i class="uil uil-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/bebelldigitalsolutions" target="_blank" class="footer-social">
+                        <i class="uil uil-instagram"></i>
+                    </a>
+                    <a href="https://easylistings.github.io/html-editor-pro/www.linkedin.com/in/bebell-digital-solutions-9a4b5a239" target="_blank" class="footer-social">
+                        <i class="uil uil-linkedin"></i>
+                    </a>
                 </div>
             </div>
-
-            <ul class="footer-links" style="list-style: none; padding-left: 0;">
-                <li>
-                    <a href="https://project-freedom.com" class="footer-link">Home</a>
-                </li>
-                <li>
-                    <a href="/p/meet-the-team" class="footer-link">About</a>
-                </li>
-
-                <li>
-                    <a href="/p/projects" class="footer-link">Work</a>
-                </li>
-                <li>
-                    <a href="/p/contact-us" class="footer-link">Contact</a>
-                </li>
-            </ul>
-
-            <div class="footer-socials">
-                <a href="https://www.facebook.com/bebelldigitalsolutions" target="_blank" class="footer-social">
-                    <i class="uil uil-facebook-f"></i>
-                </a>
-                <a href="https://www.instagram.com/bebelldigitalsolutions" target="_blank" class="footer-social">
-                    <i class="uil uil-instagram"></i>
-                </a>
-                <a href="https://easylistings.github.io/html-editor-pro/www.linkedin.com/in/bebell-digital-solutions-9a4b5a239" target="_blank" class="footer-social">
-                    <i class="uil uil-linkedin"></i>
-                </a>
-            </div>
+            <p class="footer-copy">Copyright &#169; 2024 • All rights reserved.<br>Developed with 🧡 by <a href="https://bebelldigitalsolutions.com">Bebell Digital Solutions</a></p>
         </div>
-        <p class="footer-copy">Copyright &#169; 2024 • All rights reserved.<br>Developed with 🧡 by <a href="https://bebelldigitalsolutions.com">Bebell Digital Solutions</a></p>
-    </div>
-</footer>
-    
-       
-    
-    
-    
-    
+    </footer>
 
     <!-- ANIMATIONS -->
-    <!-- FIXED: Combined scripts and moved counter logic inside the observer -->
     <script>
         // Scroll fade-in animation
         const sections = document.querySelectorAll('.fade-section');
         const options = { threshold: 0.1 };
-        let counterAnimated = false; // Flag to ensure counters only run once
+        let counterAnimated = false;
 
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if(entry.isIntersecting){
-                    // Add fade-in animation class
                     entry.target.classList.add('animate-fadeInUp');
 
-                    // Check if this is the results section and counters haven't animated
                     if (entry.target.id === 'results' && !counterAnimated) {
-                        counterAnimated = true; // Mark as animated
+                        counterAnimated = true;
                         
-                        // Counter animation
                         const counters = document.querySelectorAll('.counter');
                         counters.forEach(counter => {
                             const updateCount = () => {
@@ -1420,59 +1254,42 @@
                                 
                                 if(count < target){
                                     let newCount = Math.ceil(count + increment);
-                                    // Ensure we don't overshoot the target
                                     if (newCount > target) {
                                         newCount = target;
                                     }
                                     counter.innerText = newCount;
                                     setTimeout(updateCount, 40);
                                 } else {
-                                    // This handles target=0 and the final step
                                     counter.innerText = target;
                                 }
                             };
-                            updateCount(); // Start the count for this counter
+                            updateCount();
                         });
                     }
                     
-                    // Stop observing this section
                     observer.unobserve(entry.target);
                 }
             });
         }, options);
 
-        // Observe all sections
         sections.forEach(section => observer.observe(section));
-    </script>
-    
-    
-    
-    
-    <script>
-    // Add this function
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}
 
-// Also add the scroll event listener to show/hide the back-to-top button
-window.addEventListener('scroll', function() {
-    const backToTop = document.getElementById('back-to-top');
-    if (window.scrollY > 300) {
-        backToTop.style.display = 'block';
-    } else {
-        backToTop.style.display = 'none';
-    }
-});
-    
-</script>    
-    
-    
-    
+        // Back to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+    </script>    
 </body>
 </html>
-
-
-
