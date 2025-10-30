@@ -334,106 +334,147 @@
             transform: scale(1);
         }
 
-        /* Laptop Component - FIXED with 60px bottom margin */
-        .macbook-wrapper {
-            position: relative;
-            background: transparent;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 60px; /* Changed to exactly 60px */
-        }
+/* Laptop Component - FULL WIDTH */
+.macbook-wrapper {
+    position: relative;
+    background: transparent;
+    padding: 20px 0; /* Remove horizontal padding */
+    border-radius: 8px;
+    margin-bottom: 60px;
+    width: 100%; /* Take full width */
+    max-width: 100%; /* Remove max-width constraint */
+}
 
-        .macbook-wrapper .macbook {
-            padding: 4% 6%;
-            margin: 0 auto;
-            max-width: 1500px;
-            background: transparent;
-            border-radius: 8px;
-        }
+.macbook-wrapper .macbook {
+    padding: 4% 2%; /* Reduce horizontal padding */
+    margin: 0 auto;
+    width: 100%; /* Full width */
+    max-width: none; /* Remove max-width constraint */
+    background: transparent;
+    border-radius: 8px;
+}
 
-        .macbook-wrapper .screen {
-            background: #000;
-            border-radius: 3% 3% 0.5% 0.5% / 5%;
-            margin: 0 auto;
-            position: relative;
-            width: 80%;
-        }
+.macbook-wrapper .screen {
+    background: #000;
+    border-radius: 3% 3% 0.5% 0.5% / 5%;
+    margin: 0 auto;
+    position: relative;
+    width: 95%; /* Increased width for more screen coverage */
+    max-width: 1400px; /* Generous max-width for large screens */
+}
 
-        .macbook-wrapper .screen:before {
-            border: 2px solid #cacacc;
-            border-radius: 3% 3% 0.5% 0.5% / 5%;
-            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.8) inset, 0 0 1px 2px rgba(255, 255, 255, 0.3) inset;
-            content: "";
-            display: block;
-            padding-top: 67%;
-        }
+.macbook-wrapper .screen:before {
+    border: 2px solid #cacacc;
+    border-radius: 3% 3% 0.5% 0.5% / 5%;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.8) inset, 0 0 1px 2px rgba(255, 255, 255, 0.3) inset;
+    content: "";
+    display: block;
+    padding-top: 60%; /* Slightly adjusted for better full-width appearance */
+}
 
-        .macbook-wrapper .viewport {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            top: 0;
-            margin: 4.3% 3.2%;
-            background: #F2F1FB;
-            border-radius: 4px;
-        }
+.macbook-wrapper .viewport {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 3.5% 2.8%; /* Slightly adjusted margins for full-width */
+    background: #F2F1FB;
+    border-radius: 4px;
+}
 
-        .macbook-wrapper .base {
-            position: relative;
-            width: 100%;
-            background: transparent;
-            border-radius: 8px;
-        }
+.macbook-wrapper .base {
+    position: relative;
+    width: 100%;
+    background: transparent;
+    border-radius: 8px;
+}
 
-        .macbook-wrapper .base:before {
-            content: "";
-            display: block;
-            padding-top: 3.3%;
-            background: linear-gradient(#eaeced, #edeef0 55%, #fff 55%, #8a8b8f 56%, #999ba0 61%, #4B4B4F 84%, #262627 89%, rgba(0, 0, 0, .01) 98%);
-            border-radius: 0 0 10% 10%/ 0 0 50% 50%;
-        }
+.macbook-wrapper .base:before {
+    content: "";
+    display: block;
+    padding-top: 3.3%;
+    background: linear-gradient(#eaeced, #edeef0 55%, #fff 55%, #8a8b8f 56%, #999ba0 61%, #4B4B4F 84%, #262627 89%, rgba(0, 0, 0, .01) 98%);
+    border-radius: 0 0 10% 10%/ 0 0 50% 50%;
+}
 
-        .macbook-wrapper .notch {
-            background: #ddd;
-            border-radius: 0 0 7% 7% / 0 0 95% 95%;
-            box-shadow: -5px -1px 3px rgba(0, 0, 0, 0.2) inset, 5px -1px 3px rgba(0, 0, 0, 0.2) inset;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: -3.5%;
-            z-index: 2;
-            position: relative;
-            width: 14%;
-        }
+.macbook-wrapper .notch {
+    background: #ddd;
+    border-radius: 0 0 7% 7% / 0 0 95% 95%;
+    box-shadow: -5px -1px 3px rgba(0, 0, 0, 0.2) inset, 5px -1px 3px rgba(0, 0, 0, 0.2) inset;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -3.5%;
+    z-index: 2;
+    position: relative;
+    width: 14%;
+}
 
-        .macbook-wrapper .notch:before {
-            content: "";
-            display: block;
-            padding-top: 10%;
-        }
+.macbook-wrapper .notch:before {
+    content: "";
+    display: block;
+    padding-top: 10%;
+}
 
-        .macbook-wrapper .macbook .viewport {
-            transition: background-position 20s ease;
-            background-position: 0 0;
-            background-size: 100% auto;
-            overflow: hidden;
-            cursor: pointer;
-        }
+.macbook-wrapper .macbook .viewport {
+    transition: background-position 20s ease;
+    background-position: 0 0;
+    background-size: 100% auto;
+    overflow: hidden;
+    cursor: pointer;
+}
 
-        .macbook-wrapper .macbook:hover .viewport {
-            background-position: 0 100%;
-        }
+.macbook-wrapper .macbook:hover .viewport {
+    background-position: 0 100%;
+}
 
-        .macbook-wrapper .macbook .viewport:after {
-            background: radial-gradient(circle at right bottom, transparent 75%, rgba(255, 255, 255, 0.05) 75%, transparent);
-            bottom: 0;
-            content: "";
-            left: 0;
-            position: absolute;
-            right: 0;
-            top: 0;
-        }
+.macbook-wrapper .macbook .viewport:after {
+    background: radial-gradient(circle at right bottom, transparent 75%, rgba(255, 255, 255, 0.05) 75%, transparent);
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
 
+/* Responsive adjustments for full-width laptop */
+@media screen and (max-width: 1024px) {
+    .macbook-wrapper .screen {
+        width: 98%; /* Even wider on tablets */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .macbook-wrapper {
+        padding: 15px 0; /* Reduce padding on mobile */
+        margin-bottom: 40px;
+    }
+    
+    .macbook-wrapper .screen {
+        width: 100%; /* Full width on mobile */
+        border-radius: 2% 2% 0.5% 0.5% / 3%; /* Slightly reduced radius for mobile */
+    }
+    
+    .macbook-wrapper .screen:before {
+        padding-top: 65%; /* Adjust aspect ratio for mobile */
+    }
+    
+    .macbook-wrapper .viewport {
+        margin: 3% 2.5%; /* Tighter margins on mobile */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .macbook-wrapper {
+        padding: 10px 0;
+        margin-bottom: 30px;
+    }
+    
+    .macbook-wrapper .screen:before {
+        padding-top: 70%; /* Taller aspect ratio for very small screens */
+    }
+}
         /* PROJECT INFO */
         .info {
             background-color: var(--box-color);
