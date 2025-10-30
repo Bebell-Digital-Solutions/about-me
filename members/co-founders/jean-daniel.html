@@ -1,1 +1,3506 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Jean-Daniel</title>
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+    
+    <!-- Favicon -->
+<link rel="icon" href="https://bucket.mlcdn.com/a/3336/3336910/images/1b3c402d665f8293883141de5a7d564769906d78.png">
+
+
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Turret+Road:wght@200;300;400;500;700;800&display=swap');
+
+        :root {
+            --hue-color: 242;
+	--title: "About Barclay Ernest Bellande";
+	--autor: "Bebell Digital Solutions";
+	--contact: "info@bebelldigitalsolutions.com";
+	--description: "";
+	--keywords: "";
+	--last-modified: "2025-10-26";
+	--content-language: "en";
+	--generator: "HTML5, CSS3, JavaScript,";
+            --skin-color: #ff5011;
+            --mirage-color: hsl(210, 10%, 23%);
+            --title-color: hsl(var(--hue-color), 8%, 95%);
+            --text-color: hsl(var(--hue-color), 8%, 85%);
+            --body-color: hsl(var(--hue-color), 19%, 5%);
+            --box-color: hsl(var(--hue-color), 14%, 10%);
+            --scroll-box-color: hsl(var(--hue-color), 12%, 38%);
+            --scroll-thumb-color: #ff5011;
+
+            --body-font: 'Poppins', sans-serif;
+            --signature-font: 'Turret', sans-serif;
+
+            --biggest-font-size: 3rem;
+            --h1-font-size: 3rem;
+            --h2-font-size: 3rem;
+            --h3-font-size: 1.25rem;
+            --normal-font-size: 1rem;
+            --small-font-size: .875rem;
+            --smaller-font-size: .813rem;
+
+            --font-medium: 500;
+            --font-bold: 600;
+
+            --mb025: .25rem;
+            --mb05: .5rem;
+            --mb075: .75rem;
+            --mb1: 1rem;
+            --mb15: 1.5rem;
+            --mb2: 2rem;
+            --mb25: 2.5rem;
+            --mb3: 3rem;
+
+            --z-fixed: 10;
+            --z-modal: 1000;
+        }
+
+        @media screen and (max-width: 1024px) {
+            :root {
+                --biggest-font-size: 2rem;
+                --h1-font-size: 3rem;
+                --h2-font-size: 1.25rem;
+                --h3-font-size: 1.125rem;
+                --normal-font-size: .938rem;
+                --small-font-size: .813rem;
+                --smaller-font-size: .75rem;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+			
+        }
+
+
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.swiper {
+    overflow: hidden;
+}
+
+.video-container {
+    max-width: 100vw;
+    overflow: hidden;
+}
+		
+
+        body,
+        button,
+        input {
+            font-family: var(--body-font);
+            font-size: var(--normal-font-size);
+        }
+
+        body {
+            background-color: var(--body-color);
+            color: var(--text-color);
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--title-color);
+            font-weight: var(--font-bold);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        button,
+        input {
+            border: none;
+            outline: none;
+        }
+
+        .container {
+            max-width: 1250px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .grid {
+            display: grid;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            column-gap: .5rem;
+            background-color: var(--skin-color);
+            color: var(--title-color);
+            padding: 0.75rem 1.4rem;
+            border-radius: .25rem;
+            font-weight: var(--font-medium);
+            position: relative;
+            z-index: 1;
+            transition: .4s;
+        }
+
+        .button::after {
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--mirage-color);
+            z-index: -1;
+            transform-origin: center;
+            transform: scale(0);
+            border-radius: .25rem;
+            transition: .3s;
+        }
+
+        .button:hover::after {
+            transform: scale(1);
+        }
+
+        .section {
+            padding: 6.5rem 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: var(--h1-font-size);
+            margin-bottom: var(--mb3);
+        }
+
+        .section-title::before {
+            content: attr(data-heading);
+            display: block;
+            font-size: var(--normal-font-size);
+            font-weight: var(--font-medium);
+            color: var(--skin-color);
+        }
+
+        ::-webkit-scrollbar {
+            width: 0.6rem;
+            background-color: var(--scroll-box-color);
+            border-radius: .5rem;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--scroll-thumb-color);
+            border-radius: .5rem;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            width: 100px;
+            height: 100vh;
+            background-color: var(--body-color);
+            border-right: 1px solid var(--box-color);
+        }
+
+        .nav-logo {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 1.8rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: transparent;
+            text-align: center;
+            margin: auto;
+        }
+
+        .nav-logo-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .nav-logo-text {
+            font-size: 1.125rem;
+            color: var(--title-color);
+            font-weight: var(--font-bold);
+            line-height: 40px;
+        }
+
+        .nav-menu {
+            position: fixed;
+            transform: rotate(-90deg) translateX(-100%);
+            transform-origin: left top;
+            width: 100vh;
+        }
+
+        .menu {
+            display: flex;
+        }
+
+        .nav-list {
+            display: flex;
+            flex-direction: row-reverse;
+            margin: -2px auto 0 auto;
+        }
+
+        .nav-link {
+            float: right;
+            height: 100%;
+            line-height: 100px;
+            padding: 0 1rem;
+            color: var(--title-color);
+            font-weight: var(--font-medium);
+            position: relative;
+            transition: .4s;
+        }
+
+        .nav-toggle {
+            height: 32px;
+            width: 36px;
+            cursor: pointer;
+            position: fixed;
+            right: 1.5rem;
+            top: 2rem;
+            font-size: 1.2rem;
+            border-radius: .25rem;
+            background-color: var(--skin-color);
+            color: var(--title-color);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .nav-close {
+            font-size: 1.5rem;
+            position: absolute;
+            top: 1rem;
+            right: 1.25rem;
+            cursor: pointer;
+            display: none;
+        }
+
+        .nav-link.active-link,
+        .nav-link:hover {
+            color: var(--skin-color);
+        }
+
+        .nav-link.active-link::after,
+        .nav-link:hover::after {
+            position: absolute;
+            content: '';
+            width: 6px;
+            height: 6px;
+            background-color: var(--skin-color);
+            border-radius: 50%;
+            bottom: 1.8rem;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .btn-share {
+            position: absolute;
+            bottom: 1.8rem;
+            left: 0;
+            right: 0;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .social-share {
+            font-size: 1.5rem;
+        }
+
+        /* Main - Home */
+        .main {
+            margin-left: 100px;
+        }
+
+        .home {
+            background: url('https://ik.imagekit.io/bebell/Project%20Freedom/Jean%20Daniel%20Stines/Jean-Daniel%20Stines.png');
+            background-size: cover;
+            background-position: center center;
+            height: 100vh;
+        }
+
+        .home-container {
+            position: relative;
+            height: 100%;
+            align-items: center;
+        }
+
+        .home-social {
+            position: absolute;
+            top: 1.8rem;
+            left: 0;
+            display: flex;
+            align-items: center;
+            column-gap: 3.5rem;
+        }
+
+        .home-social-follow {
+            font-weight: var(--font-medium);
+            position: relative;
+        }
+
+        .home-social-follow::after {
+            content: '';
+            position: absolute;
+            width: 1rem;
+            height: 2px;
+            background-color: var(--skin-color);
+            right: -45%;
+            top: 50%;
+        }
+
+        .home-social-links {
+            display: inline-flex;
+            column-gap: 1rem;
+        }
+
+        .home-social-link {
+            font-size: 1.08rem;
+            color: var(--text-color);
+            transition: .4s;
+        }
+
+        .home-social-link:hover {
+            transform: translateY(.25rem);
+        }
+
+        .home-img {
+            display: none;
+        }
+
+        .home-title {
+            font-size: var(--biggest-font-size);
+        }
+
+        .wave-emoji {
+            display: inline-block;
+            animation: wave-animation 2.5s infinite;
+            transform-origin: 70% 70%;
+        }
+
+        @keyframes wave-animation {
+            0% { transform: rotate(0.0deg) }
+            10% { transform: rotate(14.0deg) }
+            20% { transform: rotate(-8.0deg) }
+            30% { transform: rotate(14.0deg) }
+            40% { transform: rotate(-4.0deg) }
+            50% { transform: rotate(10.0deg) }
+            60% { transform: rotate(0.0deg) }
+            100% { transform: rotate(0.0deg) }
+        }
+
+        .home-subtitle {
+            font-size: var(--h3-font-size);
+            font-weight: var(--font-medium);
+            margin-bottom: var(--mb075);
+        }
+
+        .home-description {
+            max-width: 450px;
+            margin-bottom: var(--mb2);
+        }
+
+        .my-info {
+            display: flex;
+            column-gap: 1.8rem;
+            position: absolute;
+            left: 0;
+            bottom: 1.8rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .info-title,
+        .info-subtitle {
+            font-size: var(--small-font-size);
+        }
+
+        .info-title {
+            font-weight: var(--font-medium);
+        }
+
+        .info-icon {
+            font-size: 1.8rem;
+            color: var(--skin-color);
+            margin-right: var(--mb075);
+        }
+
+
+
+
+
+        
+        /* Main - About */
+        .about-container {
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 4rem;
+            align-items: center;
+        }
+
+        .about-img {
+            width: 480px;
+            border-radius: .75rem;
+            justify-self: center;
+        }
+
+        .about-heading {
+            font-size: var(--h3-font-size);
+            margin-bottom: var(--mb075);
+        }
+
+        .about-description {
+            text-align: left;
+            padding-right: 6rem;
+            margin-bottom: var(--mb2);
+        }
+
+        .about-info {
+            display: grid;
+            grid-template-columns: repeat(3, 140px);
+            column-gap: .5rem;
+            margin-bottom: var(--mb3);
+        }
+
+        .about-box {
+            text-align: center;
+            border-radius: .25rem;
+            padding: 1rem 1.25rem;
+            background-color: var(--box-color);
+        }
+
+        .about-icon {
+            font-size: 1.5rem;
+            color: var(--skin-color);
+            margin-bottom: var(--mb075);
+        }
+
+        .about-title {
+            font-size: var(--small-font-size);
+        }
+
+        .about-subtitle {
+            font-size: var(--small-font-size);
+        }
+
+
+
+
+
+
+
+
+        /* Philosophy Section */
+        .philosophy-section {
+            padding: 80px 0;
+          
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-top: 40px;
+        }
+        
+        .philosophy-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            padding: 0 20px;
+        }
+        
+ 
+        
+        .philosophy-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 1.2rem;
+            color: #6b7280;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .philosophy-quote {
+            font-family: 'Caveat', cursive;
+            font-size: 2.8rem;
+            line-height: 1.3;
+            color: #ff5011;
+            margin-bottom: 30px;
+            position: relative;
+            padding: 0 20px;
+        }
+        
+        .quote-decoration {
+            position: absolute;
+            font-size: 5rem;
+            color: #fff;
+            z-index: -1;
+        }
+        
+        .quote-left {
+            top: -20px;
+            left: 0;
+        }
+        
+        .quote-right {
+            bottom: -40px;
+            right: 0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .philosophy-section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .philosophy-quote {
+                font-size: 2.2rem;
+            }
+            
+            .quote-decoration {
+                font-size: 4rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .philosophy-quote {
+                font-size: 1.8rem;
+                padding: 0 10px;
+            }
+            
+            .quote-decoration {
+                font-size: 3rem;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+        
+        /* Main - Qualification */
+        .qualification-container {
+            grid-template-columns: repeat(2, 340px);
+            column-gap: 3rem;
+            justify-content: center;
+        }
+
+        .qualification-title {
+            font-size: var(--h3-font-size);
+            font-weight: var(--font-medium);
+            margin-bottom: var(--mb2);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: var(--mb25);
+            padding-left: 3rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            width: 1px;
+            position: absolute;
+            left: 0.48rem;
+            top: 0;
+            height: 100%;
+            background-color: var(--skin-color);
+        }
+
+        .circle-dot {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 1rem;
+            width: 1rem;
+            border: 2px solid var(--skin-color);
+            border-radius: 50%;
+            background-color: var(--skin-color);
+            transition: .4s;
+        }
+
+        .timeline-item:hover .circle-dot {
+            background-color: var(--body-color);
+        }
+
+        .timeline-title {
+            font-size: var(--normal-font-size);
+            font-weight: var(--font-medium);
+            margin-bottom: var(--mb025);
+        }
+
+        .timeline-text {
+            font-size: var(--smaller-font-size);
+            margin-bottom: var(--mb1);
+        }
+
+        .timeline-date {
+            display: flex;
+            align-items: center;
+            column-gap: .4rem;
+            font-size: var(--normal-font-size);
+            color: var(--skin-color);
+        }
+
+
+
+
+
+
+        
+        /* Main - Skills */
+        .skills-container {
+            grid-template-columns: 360px 320px;
+            column-gap: 3rem;
+            justify-content: center;
+        }
+
+        .skills-header {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .skills-header:not(:last-child) {
+            margin-bottom: var(--mb25);
+        }
+
+        .skills-icon,
+        .skills-arrow {
+            font-size: 2rem;
+            color: var(--skin-color);
+        }
+
+        .skills-icon {
+            margin-right: var(--mb075);
+        }
+
+        .skills-arrow {
+            margin-left: auto;
+        }
+
+        .skills-active .skills-arrow {
+            transform: rotate(-90deg);
+            transition: .4s;
+        }
+
+        .skills-title {
+            font-size: var(--h3-font-size);
+            font-weight: var(--font-medium);
+        }
+
+        .skills-subtitle {
+            font-size: var(--small-font-size);
+        }
+
+        .skills-list {
+            row-gap: 1.8rem;
+        }
+
+        .skills-titles {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--mb05);
+        }
+
+        .skills-name {
+            font-size: var(--normal-font-size);
+            font-weight: var(--font-medium);
+        }
+
+        .skills-bar,
+        .skills-percentage {
+            height: 5px;
+            border-radius: .25rem;
+        }
+
+        .skills-bar {
+            background-color: var(--box-color);
+        }
+
+        .skills-percentage {
+            display: block;
+            background-color: var(--skin-color);
+        }
+
+        .skills [data-content] {
+            display: none;
+        }
+
+        .skills-active[data-content] {
+            display: block;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            margin-top: 150px;
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        @keyframes pulse-animation {
+            0% {
+                transform: translate(-50%, -50%) scale(0.95);
+                box-shadow: 0 0 0 0 rgba(255, 57, 0, 0.7);
+            }
+            70% {
+                transform: translate(-50%, -50%) scale(1.1);
+                box-shadow: 0 0 0 25px rgba(255, 57, 0, 0);
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(0.95);
+                box-shadow: 0 0 0 0 rgba(255, 57, 0, 0);
+            }
+        }
+
+        .play-video-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 5;
+            width: 90px;
+            height: 90px;
+            background-color: var(--skin-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            color: white;
+            cursor: pointer;
+            border: none;
+            animation: pulse-animation 2s infinite;
+        }
+
+
+
+       .play-video-btn i {
+            font-size: 30px;
+            color: white;
+            margin-left: 3px; /* Adjusts play icon positioning */
+        }
+
+
+       /* Video Modal - Fixed Proportions */
+.video-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.95);
+    z-index: var(--z-modal);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.video-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 1200px; /* Increased max-width for 1920x1080 proportion */
+    aspect-ratio: 16 / 9; /* This ensures proper 1920x1080 proportion */
+}
+
+.video-modal-content iframe {
+    width: 100%;
+    height: 100%;
+    border: 3px solid var(--box-color);
+    border-radius: .5rem;
+    display: block;
+}
+
+.video-modal-close {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+    transition: color .3s;
+    z-index: 1001;
+}
+
+.video-modal-close:hover {
+    color: var(--skin-color);
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .video-modal {
+        padding: 1rem;
+    }
+    
+    .video-modal-content {
+        width: 95%;
+    }
+    
+    .video-modal-close {
+        top: -40px;
+        font-size: 2rem;
+    }
+}
+
+        /* Main - Work */
+        .work-container {
+            grid-template-columns: repeat(3, 330px);
+            gap: 1.8rem;
+            justify-content: center;
+            padding-top: 1rem;
+        }
+        
+        .work-card.hidden {
+            display: none;
+        }
+
+        .work-show-more-container {
+            text-align: center;
+            margin-top: 2.5rem;
+        }
+
+        .work-filters {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: .65rem;
+            margin-bottom: 2rem;
+        }
+
+        .work-item {
+            cursor: pointer;
+            color: var(--title-color);
+            padding: 0.25rem .75rem;
+            font-weight: var(--font-medium);
+            border-radius: .5rem;
+        }
+
+        .work-card {
+            background-color: var(--box-color);
+            padding: 1.25rem;
+            border-radius: .5rem;
+        }
+
+        .portfolio-item-details {
+            display: none;
+        }
+
+        .work-img {
+            border-radius: .5rem;
+            margin-bottom: var(--mb1);
+        }
+
+        .work-title {
+            font-size: var(--normal-font-size);
+            font-weight: var(--font-medium);
+            margin-bottom: var(--mb05);
+        }
+
+        .work-button {
+            color: var(--skin-color);
+            font-size: var(--small-font-size);
+            display: flex;
+            align-items: center;
+            column-gap: .25rem;
+            cursor: pointer;
+        }
+
+        .work-button-icon {
+            font-size: 1rem;
+            transition: .4s;
+        }
+
+        .work-button:hover .work-button-icon {
+            transform: translateX(.25rem);
+        }
+
+        .active-work {
+            background-color: var(--skin-color);
+            color: var(--title-color);
+        }
+
+        .portfolio-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, .5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 1rem;
+            opacity: 0;
+            visibility: hidden;
+            z-index: var(--z-modal);
+            transition: .4s;
+        }
+
+        .portfolio-popup.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .portfolio-popup-inner {
+            background-color: var(--box-color);
+            width: 900px;
+            border-radius: .5rem;
+            padding: 2.5rem;
+            position: relative;
+        }
+
+        .portfolio-popup-content {
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            column-gap: 3rem;
+        }
+
+        .portfolio-popup-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 1.5rem;
+            color: var(--skin-color);
+            cursor: pointer;
+        }
+
+        .portfolio-popup-img {
+            border-radius: .5rem;
+        }
+
+        .portfolio-popup-subtitle {
+            font-size: var(--smaller-font-size);
+            margin-bottom: var(--mb025);
+        }
+
+        .details-title {
+            font-size: var(--h3-font-size);
+            font-weight: var(--font-medium);
+            margin-bottom: var(--mb1);
+        }
+
+        .details-description {
+            font-size: var(--small-font-size);
+            margin-bottom: var(--mb2);
+        }
+
+        .details-info li {
+            margin-bottom: var(--mb075);
+            text-transform: capitalize;
+            font-size: var(--small-font-size);
+        }
+
+        .details-info li:last-child {
+            margin-bottom: 0;
+        }
+
+        .details-info li span {
+            font-weight: normal;
+        }
+
+        .details-info li a {
+            text-transform: lowercase;
+            color: var(--skin-color);
+        }
+
+        /* Main - Services */
+        .services-container {
+            /* Styles removed to allow swiper to control layout */
+        }
+        .services-container.swiper {
+            padding-bottom: 2.5rem;
+        }
+        .services-section-scrollbar {
+            bottom: 0 !important;
+        }
+
+        .services-content {
+            position: relative;
+            background-color: var(--box-color);
+            padding: 6rem 0 2rem 2.5rem;
+            border-radius: .25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .services-icon {
+            display: block;
+            font-size: 1.8rem;
+            color: var(--skin-color);
+            margin-bottom: var(--mb1);
+        }
+
+        .services-title {
+            font-size: var(--h3-font-size);
+            margin-bottom: var(--mb1);
+            font-weight: var(--font-medium);
+        }
+
+        .services-button {
+            color: var(--skin-color);
+            font-size: var(--small-font-size);
+            display: flex;
+            align-items: center;
+            column-gap: .25rem;
+            cursor: pointer;
+        }
+
+        .services-button-icon {
+            font-size: 1rem;
+            transition: .4s;
+        }
+
+        .services-button:hover .services-button-icon {
+            transform: translateX(.25rem);
+        }
+
+
+
+
+
+
+
+
+
+
+        .services-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, .5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 1rem;
+            z-index: var(--z-modal);
+            opacity: 0;
+            visibility: hidden;
+            transition: .4s;
+        }
+
+        .active-modal {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .services-modal-content {
+            width: 500px;
+            position: relative;
+            background-color: var(--box-color);
+            padding: 4.5rem 2.5rem 2.5rem;
+            border-radius: .5rem;
+        }
+
+        .services-modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 1.5rem;
+            color: var(--skin-color);
+            cursor: pointer;
+        }
+
+        .services-modal-title,
+        .services-modal-description {
+            text-align: center;
+        }
+
+        .services-modal-title {
+            font-size: var(--h3-font-size);
+            font-weight: var(--font-medium);
+            margin-bottom: var(--mb1);
+        }
+
+        .services-modal-description {
+            font-size: var(--small-font-size);
+            padding: 0 3.5rem;
+            margin-bottom: var(--mb2);
+        }
+
+        .services-modal-services {
+            row-gap: var(--mb075);
+        }
+
+        .services-modal-service {
+            display: flex;
+            align-items: center;
+            column-gap: .5rem;
+        }
+
+        .services-modal-icon {
+            color: var(--skin-color);
+            font-size: 1.1rem;
+        }
+
+        .services-modal-info {
+            font-size: var(--small-font-size);
+        }
+
+        /* Main - Testimonials */
+        .testimonials-container.swiper {
+            padding-bottom: 3rem;
+        }
+        
+        @media screen and (min-width: 992px) {
+            .testimonials-container {
+                width: 750px;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+        }
+
+        .testimonial-card {
+            background-color: var(--box-color);
+            padding: 1.8rem 2rem;
+            border-radius: .5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .testimonial-quote {
+            display: inline-flex;
+            font-size: 1.5rem;
+            color: var(--skin-color);
+            margin-bottom: var(--mb1);
+        }
+
+        .testimonial-description {
+            margin-bottom: var(--mb1);
+            font-size: var(--small-font-size);
+            text-align: justify;
+        }
+
+        .testimonial-date {
+            font-size: var(--normal-font-size);
+            margin-bottom: var(--mb2);
+        }
+
+        .testimonial-profile {
+            display: flex;
+            align-items: center;
+            column-gap: 1rem;
+        }
+
+        .testimonial-profile-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 3rem;
+        }
+
+        .testimonial-profile-name {
+            font-size: var(--h3-font-size);
+            font-weight: var(--font-medium);
+            color: var(--title-color);
+        }
+
+        .testimonial-profile-detail {
+            font-size: var(--small-font-size);
+            display: block;
+        }
+
+        .testimonial-profile-data {
+            display: flex;
+            flex-direction: column;
+            row-gap: .4rem;
+        }
+
+
+/* Simple mobile background override */
+@media screen and (max-width: 576px) {
+    .home {
+        background: var(--box-color) !important;
+    }
+}
+
+
+
+
+ /* FAQ Section */
+#faq .container {
+    max-width: 768px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+    padding: 0 20px;
+}
+
+.faq-container {
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    gap: 1.5rem; /* This creates the gap */
+    width: 100%
+}
+
+/* Add this to ensure grid layout works properly */
+.faq-container {
+    grid-template-columns: 1fr;
+}
+
+.faq-item {
+    background-color: var(--box-color);
+    border-radius: .5rem;
+    padding: 1.25rem;
+    box-shadow: 0 2px 8px hsla(var(--hue-color), 14%, 5%, .5);
+    width: 100%;
+margin-bottom: 10px;
+}
+
+/* Rest of your FAQ styles remain the same */
+.faq-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    gap: .5rem;
+}
+button.faq-header {
+    width: 100%;
+    background: transparent;
+    padding: 0;
+}
+.faq-question {
+    font-size: var(--h3-font-size);
+    color: var(--title-color);
+    text-align: left;
+    width: 100%;
+}
+.faq-icon {
+    font-size: 1.5rem;
+    color: var(--skin-color);
+    transition: transform .3s;
+    flex-shrink: 0;
+}
+.faq-content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .3s ease-out;
+}
+.faq-answer {
+    font-size: var(--small-font-size);
+    padding-top: 1rem;
+    border-top: 1px solid var(--scroll-thumb-color);
+    margin-top: 1rem;
+    text-align: left;
+}
+
+/* Active state for FAQ item */
+.faq-open .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-open .faq-content {
+    max-height: 250px;
+}
+
+/* Media queries */
+@media screen and (max-width: 768px) {
+    #faq .container {
+        padding: 0 15px;
+    }
+    .faq-container {
+        max-width: 100%;
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #faq .container {
+        padding: 0 10px;
+    }
+    .faq-container {
+        gap: 0.75rem;
+    }
+}
+
+
+
+
+
+
+
+
+/* Services Modal Improvements */
+.services-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    z-index: var(--z-modal);
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s;
+}
+
+.services-modal.active-modal {
+    opacity: 1;
+    visibility: visible;
+}
+
+.services-modal-content {
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    background-color: var(--box-color);
+    padding: 4.5rem 2.5rem 2.5rem;
+    border-radius: .5rem;
+    transform: translateY(-50px);
+    transition: transform .4s;
+}
+
+.services-modal.active-modal .services-modal-content {
+    transform: translateY(0);
+}
+
+.services-modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--skin-color);
+    cursor: pointer;
+    transition: color .3s;
+}
+
+.services-modal-close:hover {
+    color: var(--title-color);
+}
+
+.services-modal-title,
+.services-modal-description {
+    text-align: center;
+}
+
+.services-modal-title {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb1);
+}
+
+.services-modal-description {
+    font-size: var(--small-font-size);
+    padding: 0 1rem;
+    margin-bottom: var(--mb2);
+}
+
+.services-modal-services {
+    row-gap: var(--mb075);
+}
+
+.services-modal-service {
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+}
+
+.services-modal-icon {
+    color: var(--skin-color);
+    font-size: 1.1rem;
+}
+
+.services-modal-info {
+    font-size: var(--small-font-size);
+}
+
+
+
+
+
+
+
+
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+
+
+
+
+
+
+
+
+        /* Swiper */
+        .swiper-pagination-bullet {
+            background-color: var(--box-color);
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: var(--skin-color);
+        }
+
+        .swiper-scrollbar {
+            background: var(--scroll-box-color);
+        }
+
+        .swiper-scrollbar-drag {
+            background: var(--skin-color);
+        }
+
+        /* Main - Contact */
+        .contact-container {
+            grid-template-columns: 300px 340px;
+            column-gap: 3rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contact-info {
+            display: grid;
+            row-gap: 1rem;
+        }
+
+        .contact-card {
+            background-color: var(--box-color);
+            padding: 1rem;
+            border-radius: .5rem;
+            text-align: center;
+        }
+
+        .contact-card-icon {
+            font-size: 1.8rem;
+            color: var(--title-color);
+            margin-bottom: var(--mb025);
+        }
+
+        .contact-card-title,
+        .contact-card-data {
+            font-size: var(--small-font-size);
+        }
+
+        .contact-card-title {
+            font-weight: var(--font-medium);
+        }
+
+        .contact-card-data {
+            display: block;
+            margin-bottom: var(--mb075);
+        }
+
+        .contact-button {
+            color: var(--skin-color);
+            font-size: var(--small-font-size);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: .25rem;
+            cursor: pointer;
+        }
+
+        .contact-button-icon {
+            font-size: 1rem;
+            transition: .4s;
+        }
+
+        .contact-button:hover .contact-button-icon {
+            transform: translateX(.25rem);
+        }
+
+        .input-container {
+            position: relative;
+            margin-top: 1rem;
+            margin-bottom: 1.9rem;
+        }
+
+        .input {
+            width: 100%;
+            border: 2px solid var(--text-color);
+            background-color: transparent;
+            padding: 0.6rem 1.2rem;
+            color: var(--title-color);
+            font-weight: var(--font-medium);
+            font-size: var(--normal-font-size);
+            letter-spacing: .5px;
+            border-radius: .5rem;
+            outline: none;
+            transition: .4s;
+        }
+
+        textarea.input {
+            padding: 0.8rem 1.2rem;
+            min-height: 140px;
+            border-radius: .5rem;
+            resize: none;
+            font-family: var(--body-font);
+        }
+
+        .input-container label {
+            position: absolute;
+            top: 50%;
+            left: 1rem;
+            transform: translateY(-50%);
+            padding: 0 .4rem;
+            color: var(--text-color);
+            font-size: 1rem;
+            font-weight: var(--font-medium);
+            pointer-events: none;
+            z-index: 15;
+            transition: .5s;
+        }
+
+        .input-container.textarea label {
+            top: 1rem;
+            transform: translateY(0);
+        }
+
+        .input-container span {
+            position: absolute;
+            top: 0;
+            left: 25px;
+            transform: translateY(-50%);
+            font-size: var(--small-font-size);
+            padding: 0 .4rem;
+            pointer-events: none;
+            z-index: var(--z-fixed);
+            color: transparent;
+        }
+
+        .input-container span::before,
+        .input-container span::after {
+            content: '';
+            position: absolute;
+            width: 10%;
+            opacity: 0;
+            height: 5px;
+            background-color: var(--body-color);
+            top: 50%;
+            transform: translateY(-50%);
+            transition: .4s;
+        }
+
+        .input-container span::before {
+            left: 50%;
+        }
+
+        .input-container span::after {
+            right: 50%;
+        }
+
+        .input-container.focus label {
+            top: 0;
+            transform: translateY(-50%);
+            left: 25px;
+            font-size: var(--smaller-font-size);
+        }
+
+        .input-container.focus span::before,
+        .input-container.focus span::after {
+            width: 50%;
+            opacity: 1;
+        }
+
+        /* Footer */
+        .footer {
+            padding-top: 2rem;
+        }
+
+        .footer-container {
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 1.6rem;
+        }
+
+        .footer-bg {
+            background-color: var(--box-color);
+            padding: 3rem 0 3.5rem;
+        }
+
+        .footer-title {
+            font-size: var(--h3-font-size);
+            margin-bottom: var(--mb025);
+        }
+
+        .footer-subtitle {
+            font-size: var(--small-font-size);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-self: center;
+            column-gap: 2rem;
+        }
+
+        .footer-links:hover {
+            color: var(--skin-color);
+        }
+
+        .footer-socials {
+            justify-self: flex-end;
+        }
+
+        .footer-social {
+            font-size: 1.25rem;
+            margin-right: var(--mb15);
+        }
+
+        .footer-social:hover {
+            color: var(--skin-color);
+        }
+
+        .footer-copy {
+            font-size: var(--smaller-font-size);
+            text-align: center;
+            margin-top: 4.5rem;
+        }
+
+        .footer-copy a {
+            font-family: var(--signature-font);
+        }
+
+        .footer-copy a:hover {
+            color: var(--skin-color);
+        }
+
+        .footer-title,
+        .footer-subtitle,
+        .footer-links,
+        .footer-social,
+        .footer-copy a {
+            color: var(--title-color);
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 1408px) {
+            .container {
+                margin-left: var(--mb25);
+                margin-right: var(--mb25);
+            }
+        }
+
+        @media screen and (max-width: 1216px) {
+            .about-container {
+                column-gap: 2.5rem;
+            }
+
+            .about-description {
+                padding-right: 0;
+            }
+
+            .work-container {
+                grid-template-columns: repeat(2, 330px);
+                gap: 3rem;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            .container {
+                margin-left: var(--mb15);
+                margin-right: var(--mb15);
+            }
+
+            .sidebar {
+                width: 100%;
+                z-index: 999;
+                transform: translateX(-100%);
+            }
+
+            .show-sidebar {
+                transform: translateX(0);
+            }
+
+            .nav-logo,
+            .btn-share {
+                display: none;
+            }
+
+            .nav-menu {
+                height: 100%;
+                width: 100%;
+                transform: rotate(0deg) translateX(0);
+                display: flex;
+                justify-content: center;
+            }
+
+            .nav-list {
+                flex-direction: column;
+                height: 100%;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .nav-link {
+                padding: 1rem 0;
+                line-height: 1.5;
+            }
+
+            .nav-link.active-link::after,
+            .nav-link:hover::after {
+                bottom: 0;
+            }
+
+            .nav-close {
+                display: block;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .main {
+                margin-left: 0;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                row-gap: 2.5rem;
+            }
+
+            .about-img {
+                width: 350px;
+            }
+
+            .about-data {
+                text-align: center;
+            }
+
+            .about-info {
+                justify-content: center;
+            }
+
+            .about-box {
+                padding: 0.75rem .5rem;
+            }
+
+            .about-description {
+                padding: 0 4rem;
+                text-align: center;
+            }
+
+            .qualification-container {
+                grid-template-columns: repeat(2, 290px);
+            }
+
+            .skills-container {
+                grid-template-columns: 340px 300px;
+            }
+
+            .skills-list {
+                row-gap: 1.7rem;
+            }
+
+            .work-card {
+                padding: 1rem;
+            }
+
+            .work-img {
+                margin-bottom: var(--mb075);
+            }
+
+            .work-title {
+                margin-bottom: var(--mb025);
+            }
+
+            .testimonial-card {
+                padding: 1.25rem 1.5rem;
+            }
+
+            .portfolio-item-details {
+                margin-bottom: var(--mb15);
+            }
+
+            .details-info li {
+                margin-bottom: var(--mb05);
+            }
+
+            .details-title {
+                margin-bottom: var(--mb075);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .about-img {
+                width: 250px;
+            }
+
+            .qualification-container {
+                grid-template-columns: 290px;
+                row-gap: 3rem;
+            }
+
+            .skills-container {
+                grid-template-columns: 300px;
+                row-gap: 3rem;
+            }
+
+            .work-container {
+                grid-template-columns: 330px;
+            }
+            .services-content {
+                padding: 3.5rem .5rem 1.25rem 1.5rem;
+            }
+
+            .services-icon {
+                font-size: 1.5rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 360px;
+                row-gap: 3rem;
+            }
+
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+                row-gap: 3rem;
+            }
+
+            .footer-socials {
+                justify-self: start;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                row-gap: 1.5rem;
+            }
+
+            .footer-bg {
+                padding: 2rem 0 3rem;
+            }
+
+            .footer-copy {
+                margin-top: var(--mb3);
+            }
+
+            .portfolio-popup-inner {
+                width: 420px;
+                padding: 2.8rem 1.5rem 2.5rem;
+            }
+
+            .portfolio-popup-content {
+                grid-template-columns: 1fr;
+                row-gap: 1.6rem;
+            }
+
+            .details-title {
+                font-size: var(--normal-font-size);
+            }
+
+            .portfolio-popup-close {
+                top: .5rem;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .nav-toggle {
+                right: initial;
+                left: 1.5rem;
+            }
+
+            .home {
+                background-image: none;
+                height: initial;
+                align-items: initial;
+                padding: 7rem 0 2rem;
+            }
+
+            .home-container {
+                row-gap: 2rem;
+            }
+
+            .home-img {
+                display: block;
+                width: 250px;
+                justify-self: center;
+            }
+
+            .my-info {
+                display: none;
+            }
+
+            .home-social {
+                left: initial;
+                right: -1rem;
+                flex-direction: column;
+                row-gap: 3.5rem;
+            }
+
+            .home-social-follow {
+                font-size: var(--smaller-font-size);
+                transform: rotate(90deg);
+            }
+
+            .home-social-links {
+                flex-direction: column;
+                row-gap: .25rem;
+            }
+
+            .home-social-link {
+                font-size: var(--normal-font-size);
+            }
+
+            .about-info {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .about-description {
+                padding: 0;
+            }
+
+            .services-modal-content {
+                padding: 4.5rem 1.5rem 2.5rem;
+            }
+
+            .services-modal-description {
+                padding: 0;
+            }
+
+            .work-container,
+            .contact-container {
+                grid-template-columns: 300px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                justify-self: flex-start;
+            }
+
+        }
+
+        @media screen and (max-width: 350px) {
+            .container {
+                margin-left: var(--mb1);
+                margin-left: var(--mb1);
+            }
+
+            .home-img {
+                width: 200px;
+            }
+
+            .home-title {
+                font-size: var(--h1-font-size);
+            }
+
+            .home-subtitle {
+                font-size: var(--normal-font-size);
+            }
+
+            .about-info {
+                grid-template-columns: repeat(2, 1fr);
+                row-gap: .5rem;
+            }
+
+            .work-container,
+            .skills-container,
+            .qualification-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-title {
+                font-size: var(--normal-font-size);
+            }
+
+            .work-item {
+                font-size: 14px;
+            }
+
+            .work-filters {
+                column-gap: .15rem;
+            }
+
+            .services-content {
+                padding-right: 3.5rem;
+            }
+        }
+
+
+  /* Page loader container with black background */
+  .page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Added text header */
+  .loader-header {
+    color: white;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  /* Your progress bar - unchanged */
+  .progress {
+    width: 272.8px;
+    height: 41.7px;
+    border-radius: 28.8px;
+    color: #ff5011;
+    background-color: #000;
+    border: 2.9px solid;
+    position: relative;
+  }
+
+  .progress::before {
+    content: "";
+    position: absolute;
+    margin: 2.9px;
+    inset: 0 100% 0 0;
+    border-radius: inherit;
+    background: currentColor;
+    animation: progress-pf82op 1.5s forwards;
+  }
+
+  @keyframes progress-pf82op {
+    100% {
+      inset: 0;
+    }
+  }
+
+  /* Hide transition */
+  .page-loader.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+
+
+/* Footer Logo Styles */
+.footer-logo {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* If you want the logo to be larger */
+.footer-logo.large {
+    width: 80px;
+}
+
+/* If you want the logo to be smaller */
+.footer-logo.small {
+    width: 40px;
+}
+
+/* Optional: Add hover effect */
+.footer-logo:hover {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+/* Ensure proper spacing with the existing footer content */
+.footer-container > div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Fix for the duplicate class names in links */
+.footer-links li a {
+    /* Your existing footer link styles */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .footer-logo {
+        width: 40px; /* Smaller on mobile */
+        margin-bottom: 0.75rem;
+    }
+    
+    .footer-container > div:first-child {
+        align-items: center;
+        text-align: center;
+    }
+}
+
+
+
+
+
+/* Community Button Styles */
+.community-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.community-button {
+    font-size: var(--h3-font-size);
+    padding: 1rem 2rem;
+    border-radius: .5rem;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(255, 80, 17, 0.3);
+}
+
+.community-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 80, 17, 0.4);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .community-button {
+        font-size: var(--normal-font-size);
+        padding: 0.875rem 1.75rem;
+    }
+}
+
+
+
+
+		
+        
+    </style>
+
+<script>
+  // Create and show loader
+  function showLoader() {
+    const loader = document.createElement('div');
+    loader.className = 'page-loader';
+    loader.innerHTML = `
+      <div class="loader-header">Wait for it...</div>
+      <div class="progress"></div>
+    `;
+    document.body.appendChild(loader);
+    return loader;
+  }
+
+  // Hide loader after 2 seconds
+  function initLoader() {
+    const loader = showLoader();
+    
+    setTimeout(() => {
+      loader.classList.add('hidden');
+      setTimeout(() => loader.remove(), 300); // Remove after fade out
+    }, 2000); // 2 second duration
+  }
+
+  // Initialize when DOM is ready
+  document.addEventListener('DOMContentLoaded', initLoader);
+</script>
+<!-- CSS LOADER  - PROGRESS BAR WITH TEXT -->
+
+
+    
+</head>
+
+<body>
+
+    <div class="nav-toggle" id="nav-toggle">
+        <i class="uil uil-bars"></i>
+    </div>
+
+    <aside class="sidebar" id="sidebar">
+        <nav class="nav">
+            <div class="nav-logo">
+                <a href="#">
+                    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/494966047320c2c5be07bd50754a7183ffcda611.png" alt="Your Company Logo" class="nav-logo-image">
+                </a>
+            </div>
+
+            <div class="nav-menu">
+                <div class="menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#home" class="nav-link active-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#about" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#skills" class="nav-link">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#work" class="nav-link">Work</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#services" class="nav-link">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#contact" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="btn-share">
+                <i class="uil uil-share-alt social-share"></i>
+            </div>
+
+            <div class="nav-close" id="nav-close">
+                <i class="uil uil-times"></i>
+            </div>
+        </nav>
+    </aside>
+
+    <main class="main">
+        <section class="home" id="home">
+            <div class="home-container container grid">
+                <div class="home-social">
+                    <span class="home-social-follow">Follow Me</span>
+
+
+
+
+                    <div class="home-social-links">
+
+
+<a href="https://www.linkedin.com" target="_blank" class="home-social-link">
+                            
+<i class="uil uil-linkedin"></i>
+                        
+</a>
+
+
+                       <a href="https://www.facebook.com" target="_blank" class="home-social-link">
+                            <i class="uil uil-facebook-f"></i>
+                        </a>
+
+
+
+                        <a href="https://www.instagram.com" target="_blank" class="home-social-link">
+                            <i class="uil uil-instagram"></i>
+                        </a>
+                    
+
+
+
+
+
+
+   <a href="https://www.youtube.com/@bebelldigitalsolutions?sub_confirmation=1" target="_blank" class="home-social-link">
+                            <i class="uil uil-youtube"></i>
+                        </a>
+
+
+
+
+
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+                <img src="https://ik.imagekit.io/bebell/Project%20Freedom/Jean%20Daniel%20Stines/JD%20Stines.png?updatedAt=1761724187196" alt="" class="home-img">
+
+                <div class="home-data">
+                    <h1 class="home-title">Hi, I'm Jn-Daniel! <span class="wave-emoji">👋</span></h1>
+                    <h3 class="home-subtitle">Project Developer & Manager • Wellness Expert</h3>
+                    <p class="home-description">Founder & CEO at <strong>Kalenda</strong>. We don't just build websites; we build online businesses. From your first landing page to a complex sales platform, we develop the digital foundation your business needs to grow and profit.</p>
+                    <a href="#about" class="button">
+                        <i class="uil uil-user button-icon"></i>
+                        More About me!
+                    </a>
+                </div>
+
+
+
+
+
+
+
+
+                <div class="my-info">
+                    <div class="info-item">
+                           <i class="uil uil-desktop info-icon"></i>
+
+
+                        <div>
+                            <h3 class="info-title">Website</h3>
+                            <span class="info-subtitle">www.mywebsite.com</span>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="info-item">
+                        <i class="uil uil-whatsapp info-icon"></i>
+                        <div>
+                            <h3 class="info-title">Whatsapp</h3>
+                            <span class="info-subtitle">+1786-412-4636</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="uil uil-envelope-edit info-icon"></i>
+                        <div>
+                            <h3 class="info-title">Email</h3>
+                            <span class="info-subtitle">jean-daniel@project-freedom.club</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section class="about section" id="about">
+            <h2 class="section-title" data-heading="About Me">Get to know me</h2>
+            <div class="about-container container grid">
+                <img src="https://ik.imagekit.io/bebell/Project%20Freedom/Jean%20Daniel%20Stines/Yellow%20Branding%20Characters%20(People)%20(3).png" alt="" class="about-img">
+                <div class="about-data">
+                    <h3 class="about-heading">Hi, I'm Jean-Daniel, "<span style="color: var(--skin-color)">JD</span>"</h3>
+                    <p class="about-description">I am a Digital Architect and AI Expert, Founder/CEO of <strong>Kalenda</strong>. My team and I provide <strong>...........</strong>. We replace the chaos of scaling your business with intelligent, automated ecosystems by unifying strategy and technology to fuel your sustainable growth. 15+ Years | 100+ Brands Transformed. <br>
+                        
+                      
+                      
+                      
+                      
+                      
+                      <strong>
+                            <span style="color: var(--skin-color); font-size: 20px;">
+                                Join our Community and start your new venture with us Today!</span>
+                        </strong>
+                    </p>
+                    <div class="about-info">
+                        <div class="about-box">
+                            <i class="uil uil-bolt-alt about-icon"></i>
+                            <h3 class="about-title">Experience</h3>
+                            <span class="about-subtitle">15 + Years</span>
+                        </div>
+                        <div class="about-box">
+                            <i class="uil uil-desktop about-icon"></i>
+                            <h3 class="about-title">Launched</h3>
+                            <span class="about-subtitle">160 + Projects</span>
+                        </div>
+                        <div class="about-box">
+                            <i class="uil uil-star about-icon"></i>
+                            <h3 class="about-title">Client Rating</h3>
+                            <span class="about-subtitle">5/5 Stars</span>
+                        </div>
+                    </div>
+                    <a href="/p/project-freedom" class="button"><i class="uil uil-navigator button-icon"></i>Join the Community</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills section" id="skills">
+            <h2 class="section-title" data-heading="My Abilities">My Experience</h2>
+            <div class="skills-container container grid">
+                <div class="skills-tabs">
+                    <div class="skills-header skills-active" data-target="#strategy">
+                        <i class="uil uil-lightbulb-alt skills-icon"></i>
+                        <div>
+                            <h1 class="skills-title">Digital Strategy & Business Architecture</h1>
+                            <span class="skills-subtitle">More than 15 years</span>
+                        </div>
+                        <i class="uil uil-angle-down skills-arrow"></i>
+                    </div>
+                    <div class="skills-header" data-target="#branding">
+                        <i class="uil uil-palette skills-icon"></i>
+                        <div>
+                            <h1 class="skills-title">Brand Strategy & Creative Direction</h1>
+                            <span class="skills-subtitle">More than 12 years</span>
+                        </div>
+                        <i class="uil uil-angle-down skills-arrow"></i>
+                    </div>
+                    <div class="skills-header" data-target="#systems">
+                        <i class="uil uil-server-network skills-icon"></i>
+                        <div>
+                            <h1 class="skills-title">Systems Design & Automation</h1>
+                            <span class="skills-subtitle">More than 10 years</span>
+                        </div>
+                        <i class="uil uil-angle-down skills-arrow"></i>
+                    </div>
+                </div>
+                <div class="skills-content">
+                    <div class="skills-group skills-active" data-content id="strategy">
+                        <div class="skills-list grid">
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">Entrepreneurial Strategy</h3>
+                                    <span class="skills-number">95%</span>
+                                </div>
+                                <div class="skills-bar">
+                                    <span class="skills-percentage" style="width: 95%;"></span>
+                                </div>
+                            </div>
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">Business Architecture</h3>
+                                    <span class="skills-number">94%</span>
+                                </div>
+                                <div class="skills-bar">
+                                    <span class="skills-percentage" style="width: 94%;"></span>
+                                </div>
+                            </div>
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">Strategic Planning & Innovation</h3>
+                                    <span class="skills-number">92%</span>
+                                </div>
+                                <div class="skills-bar">
+                                    <span class="skills-percentage" style="width: 92%;"></span>
+                                </div>
+                            </div>
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">Leadership & Team Direction</h3>
+                                    <span class="skills-number">91%</span>
+                                </div>
+                                <div class="skills-bar">
+                                    <span class="skills-percentage" style="width: 91%;"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills-group" data-content id="branding">
+                        <div class="skills-list grid">
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">Brand Architecture & Positioning</h3>
+                                    <span class="skills-number">96%</span>
+                                </div>
+                                <div class="skills-bar">
+                                    <span class="skills-percentage" style="width: 96%;"></span>
+                                </div>
+                            </div>
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">Storytelling & Copywriting</h3>
+                                    <span class="skills-number">95%</span>
+                                </div>
+                                <div class="skills-bar">
+                                    <span class="skills-percentage" style="width: 95%;"></span>
+                                </div>
+                            </div>
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">Marketing & Sales Funnel Strategy</h3>
+                                    <span class="skills-number">93%</span>
+                                </div>
+                                <div class="skills-bar">
+                                    <span class="skills-percentage" style="width: 93%;"></span>
+                                </div>
+                            </div>
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">Visual Communication & Design Direction</h3>
+                                    <span class="skills-number">90%</span>
+                                </div>
+                                <div class="skills-bar">
+                                    <span class="skills-percentage" style="width: 90%;"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills-group" data-content id="systems">
+                        <div class="skills-list grid">
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">Automation & Workflow Integration (Albato)</h3>
+                                    <span class="skills-number">87%</span>
+                                </div>
+                                <div class="skills-bar">
+                                    <span class="skills-percentage" style="width: 87%;"></span>
+                                </div>
+                            </div>
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">Web Architecture & UX/UI Systems</h3>
+                                    <span class="skills-number">89%</span>
+                                </div>
+                                <div class="skills-bar">
+                                    <span class="skills-percentage" style="width: 89%;"></span>
+                                </div>
+                            </div>
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">Software Ecosystem Design</h3>
+                                    <span class="skills-number">91%</span>
+                                </div>
+                                <div class="skills-bar">
+                                    <span class="skills-percentage" style="width: 91%;"></span>
+                                </div>
+                            </div>
+                            <div class="skills-data">
+                                <div class="skills-titles">
+                                    <h3 class="skills-name">Operational Systems & Processes</h3>
+                                    <span class="skills-number">86%</span>
+                                </div>
+                                <div class="skills-bar">
+                                    <span class="skills-percentage" style="width: 86%;"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Philosophy Section -->
+        <section class="philosophy-section">
+            <div class="philosophy-container">
+                <h2 class="section-title" data-heading="My Philosophy">A guiding principle for my work</h2>
+                <p class="philosophy-subtitle">This belief shapes my approach to every project and collaboration</p>
+                <div class="philosophy-quote">
+                    <span class="quote-decoration quote-left">"</span>
+                    "We are what we repeatedly do. Excellence, then, is not an act, but a habit."
+                    <span class="quote-decoration quote-right">"</span>
+					
+                </div>
+				- Will Durant (interpreting Aristotle)
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+ <section class="work section" id="work">
+
+            <h2 class="section-title" data-heading="Our Valued Clients">Brands we are proud to work with</h2>
+
+
+
+            <div class="work-filters">
+
+                <span class="work-item active-work" data-filter="all">All Projects</span>
+
+                <span class="work-item" data-filter=".digital-office"></span>
+
+                <span class="work-item" data-filter=".digital-clinic"></span>
+
+                <span class="work-item" data-filter=".digital-store"></span>
+
+                <span class="work-item" data-filter=".digital-menu"></span>
+
+            </div>
+
+
+
+            <div class="work-container container grid">
+
+
+
+
+                <!-- Digital Offices -->
+
+
+
+                <div class="work-card mix digital-office">
+
+                    <img src="https://ik.imagekit.io/bebell/Project%20Freedom/Jean%20Daniel%20Stines/Archive%20-%20JD/IMG_9342.jpg?updatedAt=1761733094602" alt="" class="work-img">
+
+                    <h3 class="work-title">Grupo Lisman SRL</h3>
+
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
+                    <div class="portfolio-item-details">
+
+                        <h3 class="details-title">Digital Office Transformation</h3>
+
+                        <p class="details-description">Complete digital office solution with lead workflow automation</p>
+
+                        <ul class="details-info">
+
+                            <li>Created - <span>26 Apr 2020</span></li>
+
+                            <li>Technologies - <span>React, Node.js, MongoDB</span></li>
+
+                            <li>Role - <span>Digital Transformation</span></li>
+
+                           <li>More Info - <span><a href="#">www.portfolio.bebelldigitalsolutions.com</a></span></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+                <div class="work-card mix digital-office">
+
+                    <img src="https://ik.imagekit.io/bebell/Project%20Freedom/Jean%20Daniel%20Stines/Archive%20-%20JD/IMG_9341.jpg?updatedAt=1761733094136" alt="" class="work-img">
+
+                    
+
+<h3 class="work-title">Fundación Rescued by Love</h3>
+
+                    
+
+<span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
+                    
+
+<div class="portfolio-item-details">
+
+                        
+
+<h3 class="details-title">Digital Office Development</h3>
+
+                        
+
+<p class="details-description">Custom digital office & online payment automation implementation</p>
+
+                        
+
+<ul class="details-info">
+
+                            <li>Created - <span>26 Apr 2020</span></li>
+
+                            <li>Technologies - <span>Html, CSS, Javascript, Paypal Integration</span></li>
+
+                            <li>Role - <span>Wev Development</span></li>
+
+                           <li>More Info - <span><a href="#">www.portfolio.bebelldigitalsolutions.com</a></span></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+  <div class="work-card mix digital-office">
+
+                    <img src="https://ik.imagekit.io/bebell/Project%20Freedom/Jean%20Daniel%20Stines/Archive%20-%20JD/View%20recent%20photos%202.jpeg?updatedAt=1761733094783" alt="" class="work-img">
+
+                    <h3 class="work-title">Bebell Design Studio</h3>
+
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+
+
+                    <div class="portfolio-item-details">
+
+                        <h3 class="details-title">Digital Office Transformation</h3>
+
+                        <p class="details-description">Complete digital office solution with workflow automation and collaboration tools</p>
+
+                        <ul class="details-info">
+
+                            <li>Created - <span>22 Apr 2025</span></li>
+
+                            <li>Technologies - <span>React, Node.js, MongoDB</span></li>
+
+                            <li>Role - <span>Digital Transformation</span></li>
+
+                          <li>More Info - <span><a href="#">www.portfolio.bebelldigitalsolutions.com</a></span></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+
+
+</div>
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="portfolio-popup">
+
+            <div class="portfolio-popup-inner">
+
+                <div class="portfolio-popup-content grid">
+
+                    <span class="portfolio-popup-close"><i class="uil uil-times"></i></span>
+
+                    <div class="pp-thumbnail">
+
+                        <img src="https://i.postimg.cc/sXLjnC5p/work-2.png" alt="" class="portfolio-popup-img">
+
+                    </div>
+
+
+
+                    <div class="portfolio-popup-info">
+
+                        <div class="portfolio-popup-subtitle">Featured - <span>Design</span></div>
+
+                        <div class="portfolio-popup-body">
+
+                            <h3 class="details-title">App for Technology & Services</h3>
+
+                            <p class="details-description">A stylish burger restaurant mobile app interface displayed on two smartphones</p>
+
+
+
+                            <ul class="details-info">
+
+                                <li>Created - <span>15 Apr 2025</span></li>
+
+                                <li>Technologies - <span>html css</span></li>
+
+                                <li>Role - <span>frontend</span></li>
+
+                                <li>View - <span><a href="#">www.domain.com</a></span></li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+</section>
+
+<!-- Services Modals - Placed at the bottom of body -->
+<!-- Modal 1 -->
+<div class="services-modal" id="modal-1">
+    <div class="services-modal-content">
+        <i class="uil uil-times services-modal-close"></i>
+        <h3 class="services-modal-title">Digital Architecture</h3>
+        <p class="services-modal-description">We provide comprehensive digital infrastructure design with over 15 years of experience, creating scalable systems that unify technology and business strategy.</p>
+        <ul class="services-modal-services grid">
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Digital Ecosystem Design</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Business Process Architecture</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Scalable System Design</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Technology Integration</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Modal 2 -->
+<div class="services-modal" id="modal-2">
+    <div class="services-modal-content">
+        <i class="uil uil-times services-modal-close"></i>
+        <h3 class="services-modal-title">Online Business Development</h3>
+        <p class="services-modal-description">We help entrepreneurs and businesses build their digital ecosystem — from idea validation to market launch — integrating technology, strategy, and automation to scale efficiently online.</p>
+        <ul class="services-modal-services grid">
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Business Strategy & Consulting</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Digital Transformation Planning</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Automation & Workflow Setup</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Online Product & Service Launch</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Modal 3 -->
+<div class="services-modal" id="modal-3">
+    <div class="services-modal-content">
+        <i class="uil uil-times services-modal-close"></i>
+        <h3 class="services-modal-title">Digital Marketing</h3>
+        <p class="services-modal-description">Data-driven marketing strategies to increase your online visibility, engagement, and conversions.</p>
+        <ul class="services-modal-services grid">
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">SEO & Content Strategy</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Paid Advertising (PPC)</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Social Media Management</p>
+            </li>
+            <li class="services-modal-service">
+                <i class="uil uil-check-circle services-modal-icon"></i>
+                <p class="services-modal-info">Email Marketing Automation</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+        
+		<section class="contact section" id="contact">
+    <h2 class="section-title" data-heading="Get in Touch">Book a Free Consultation</h2>
+    <div class="contact-container container grid">
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-card">
+                    <i class="uil uil-envelope-edit contact-card-icon"></i>
+                    <h3 class="contact-card-title">Email</h3>
+                    <span class="contact-card-data">info@project-freedom.club</span>
+                    <span class="contact-button">Write us <i class="uil uil-arrow-right contact-button-icon"></i></span>
+                </div>
+                <div class="contact-card">
+                    <i class="uil uil-whatsapp contact-card-icon"></i>
+                    <h3 class="contact-card-title">Whatsapp</h3>
+                    <span class="contact-card-data">+1305-990-0196</span>
+                    <span class="contact-button">Write us <i class="uil uil-arrow-right contact-button-icon"></i></span>
+                </div>
+                <div class="contact-card">
+                    <i class="uil uil-youtube contact-card-icon"></i>
+                    <h3 class="contact-card-title">YouTube</h3>
+                    <span class="contact-card-data">@bebelldigitalsolutions</span>
+                    <span class="contact-button">Subscribe to our channel <i class="uil uil-arrow-right contact-button-icon"></i></span>
+                </div>
+ <div class="community-button-container">
+                <a href="/p/project-freedom" class="button community-button">
+                    <i class="uil uil-calendar-alt button-icon"></i>Book a Consultation
+                </a></div>
+
+            </div>
+
+        </div>
+        <div class="contact-content">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.6123061284534!2d-69.99182832354592!3d18.50121228258862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf8bf4ad7e79f5%3A0xa740152ca507d853!2sBebell%20Digital%20Solutions!5e0!3m2!1sen!2sdo!4v1761304863720!5m2!1sen!2sdo" width="100%" height="480px" style="border:2;border-radius:10px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- Added Join the Community button -->
+            <div class="community-button-container">
+                <a href="/p/project-freedom" class="button community-button">
+                    <i class="uil uil-navigator button-icon"></i>Join the Community
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+		
+		
+		
+		
+		<footer class="footer">
+            <div class="footer-bg">
+                <div class="footer-container container grid">
+                    <div class="footer-brand">
+    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/494966047320c2c5be07bd50754a7183ffcda611.png" alt="Project Freedom Logo" class="footer-logo">
+    <div class="footer-brand-text">
+        <h3 class="footer-title">Project Freedom</h3>
+        <span class="footer-subtitle">Designing Freedom From Within.</span>
+    </div>
+</div>
+					
+                    <ul class="footer-links">
+                        <li>
+                            <a href="#home" class="footer-links">Home</a>
+                        </li>
+
+
+
+ <li>
+                            <a href="#about" class="footer-links">About</a>
+                        </li>
+
+ <li>
+                            <a href="#services" class="footer-links">Services</a>
+                        </li>
+                        <li>
+                            <a href="#work" class="footer-links">Work</a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="footer-links">Contact</a>
+                        </li>
+
+</ul>
+
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com" target="_blank" class="footer-social">
+                            <i class="uil uil-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" class="footer-social">
+                            <i class="uil uil-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank" class="footer-social">
+                            <i class="uil uil-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                <p class="footer-copy">Copyright &#169; 2024 • All rights reserved.<br>Developed with 🧡 by <a href="https://bebelldigitalsolutions.com">Bebell Digital Solutions</a></p>
+            </div>
+        </footer>
+    </main>
+
+
+
+
+
+
+
+<!-- Video Modal -->
+<div class="video-modal" id="video-modal">
+    <div class="video-modal-content">
+        <i class="uil uil-times video-modal-close" id="video-modal-close"></i>
+        <iframe id="youtube-video" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- Back to Top Button -->
+ 
+
+
+<!-- Widget Volver arriba -->
+<div id="back-to-top" onclick="scrollToTop()">
+    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/972c5065cffe83955d5322557dcdce28eca170e5.png" alt="Volver arriba" style="width: 40px; height: 40px;">
+</div>
+
+
+
+
+
+<script>
+    window.onscroll = function() {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        var backToTopButton = document.getElementById("back-to-top");
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    }
+
+    function scrollToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggling Skill Tabs
+            const tabs = document.querySelectorAll('[data-target]');
+            const tabContent = document.querySelectorAll('[data-content]');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const target = document.querySelector(tab.dataset.target);
+                    tabContent.forEach(tabContents => {
+                        tabContents.classList.remove('skills-active');
+                    })
+                    target.classList.add('skills-active');
+                    tabs.forEach(tab => {
+                        tab.classList.remove('skills-active');
+                    })
+                    tab.classList.add('skills-active');
+                })
+            })
+
+            //Mix it up Sorting
+            let mixerPortfolio = mixitup('.work-container', {
+                selectors: {
+                    target: '.work-card'
+                },
+                animation: {
+                    duration: 300
+                }
+            });
+
+            // Active link changing
+            const linkWork = document.querySelectorAll('.work-item');
+            function activeWork() {
+                linkWork.forEach(l => l.classList.remove('active-work'))
+                this.classList.add('active-work')
+            }
+            linkWork.forEach(l => l.addEventListener('click', activeWork));
+
+            //Portfolio Popup
+            document.addEventListener('click', (e) => {
+                const workButton = e.target.closest('.work-button');
+                const popupClose = e.target.closest('.portfolio-popup-close');
+                if (workButton) {
+                    e.preventDefault();
+                    togglePortfolioPopup();
+                    portfolioItemDetails(workButton.parentElement);
+                }
+                if (popupClose) {
+                    e.preventDefault();
+                    togglePortfolioPopup();
+                }
+            })
+
+            function togglePortfolioPopup() {
+                document.querySelector('.portfolio-popup').classList.toggle('open');
+            }
+
+            function portfolioItemDetails(portfolioItem) {
+                document.querySelector('.pp-thumbnail img').src = portfolioItem.querySelector('.work-img').src;
+                document.querySelector('.portfolio-popup-subtitle span').innerHTML = portfolioItem.querySelector('.work-title').innerHTML;
+                document.querySelector('.portfolio-popup-body').innerHTML = portfolioItem.querySelector('.portfolio-item-details').innerHTML;
+            }
+
+           
+
+
+ // Services Popup - Fixed Version
+const serviceButtons = document.querySelectorAll('.services-button');
+const serviceModals = document.querySelectorAll('.services-modal');
+const serviceCloseButtons = document.querySelectorAll('.services-modal-close');
+
+serviceButtons.forEach((button, index) => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        // Close any open modals first
+        serviceModals.forEach(modal => {
+            modal.classList.remove('active-modal');
+        });
+        // Open the corresponding modal
+        serviceModals[index].classList.add('active-modal');
+    });
+});
+
+serviceCloseButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        button.closest('.services-modal').classList.remove('active-modal');
+    });
+});
+
+// Close modal when clicking outside the content
+serviceModals.forEach(modal => {
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active-modal');
+        }
+    });
+});
+
+
+
+
+
+
+// Video Modal
+
+            const playButton = document.getElementById('play-video-btn');
+            const videoModal = document.getElementById('video-modal');
+            const closeModalButton = document.getElementById('video-modal-close');
+            const youtubeIframe = document.getElementById('youtube-video');
+            const videoSrc = "https://www.youtube.com/embed/w2fBzH71BWw?si=Tw9Qk1XM9v6ydwCa";
+
+            if (playButton) {
+                playButton.addEventListener('click', () => {
+                    youtubeIframe.src = videoSrc + "?autoplay=1";
+                    videoModal.style.display = 'flex';
+                });
+            }
+
+            function closeVideoModal() {
+                if(videoModal) videoModal.style.display = 'none';
+                if(youtubeIframe) youtubeIframe.src = "";
+            }
+
+            if (closeModalButton) {
+                closeModalButton.addEventListener('click', closeVideoModal);
+            }
+            if (videoModal) {
+                videoModal.addEventListener('click', (e) => {
+                    if (e.target === videoModal) {
+                        closeVideoModal();
+                    }
+                });
+            }
+
+
+
+
+
+
+
+            // Swiper Services
+            let servicesSwiper = new Swiper(".services-container.swiper", {
+                spaceBetween: 24,
+                loop: false,
+                grabCursor: true,
+                scrollbar: {
+                    el: ".services-section-scrollbar",
+                    draggable: true,
+                },
+                breakpoints: {
+                    576: { slidesPerView: 2, },
+                    768: { slidesPerView: 2, spaceBetween: 48, },
+                    992: { slidesPerView: 3, spaceBetween: 24, }
+                },
+            });
+
+            //Swiper Testimonial
+            let testimonialsSwiper = new Swiper(".testimonials-container", {
+                spaceBetween: 24,
+                loop: true,
+                grabCursor: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                    draggable: true,
+                },
+                breakpoints: {
+                    576: {
+                        slidesPerView: 2,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 48,
+                    },
+                },
+            });
+
+            // Input Animation
+            const inputs = document.querySelectorAll('.input');
+            function focusFunc() {
+                let parent = this.parentNode;
+                parent.classList.add('focus');
+            }
+            function blurFunc() {
+                let parent = this.parentNode;
+                if (this.value == "") {
+                    parent.classList.remove('focus');
+                }
+            }
+            inputs.forEach((input) => {
+                input.addEventListener('focus', focusFunc);
+                input.addEventListener('blur', blurFunc);
+            })
+
+            // Scroll Section Active Link
+            const sections = document.querySelectorAll('section[id]');
+            window.addEventListener('scroll', navHighlighter);
+            function navHighlighter() {
+                let scrollY = window.pageYOffset;
+                sections.forEach(current => {
+                    const sectionHeight = current.offsetHeight;
+                    const sectionTop = current.offsetTop - 50;
+                    const sectionId = current.getAttribute('id');
+                    const navLink = document.querySelector('.nav-menu a[href*=' + sectionId + ']');
+                    if (navLink) {
+                        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                            navLink.classList.add('active-link');
+                        } else {
+                            navLink.classList.remove('active-link');
+                        }
+                    }
+                })
+            }
+
+
+
+
+
+
+
+
+// FAQ Accordion
+            const faqHeaders = document.querySelectorAll('.faq-header');
+            faqHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const openItem = document.querySelector('.faq-item.faq-open');
+                    const clickedItem = header.parentElement;
+
+                    if (openItem && openItem !== clickedItem) {
+                        openItem.classList.remove('faq-open');
+                    }
+                    
+                    clickedItem.classList.toggle('faq-open');
+                });
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // Activating Sidebar
+            const navMenu = document.getElementById('sidebar');
+            const navToggle = document.getElementById('nav-toggle');
+            const navClose = document.getElementById('nav-close');
+            if (navToggle) {
+                navToggle.addEventListener('click', () => {
+                    navMenu.classList.add('show-sidebar');
+                })
+            }
+            if (navClose) {
+                navClose.addEventListener('click', () => {
+                    navMenu.classList.remove('show-sidebar');
+                })
+            }
+
+             // Show More/Less for Portfolio
+            const showMoreBtn = document.getElementById('showMoreBtn');
+            if (showMoreBtn) {
+                const workContainer = document.querySelector('.work-container');
+                const itemsToShow = 9;
+                let isExpanded = false;
+
+                function updateVisibleCards() {
+                    const allCards = workContainer.querySelectorAll('.work-card');
+                    const visibleFilteredCards = Array.from(allCards).filter(card => {
+                        const style = window.getComputedStyle(card);
+                        return style.display !== 'none';
+                    });
+                    
+                    if (isExpanded) {
+                        visibleFilteredCards.forEach(card => card.classList.remove('hidden'));
+                        showMoreBtn.innerHTML = 'Show Less <i class="uil uil-arrow-up"></i>';
+                    } else {
+                        visibleFilteredCards.forEach((card, index) => {
+                            if (index >= itemsToShow) {
+                                card.classList.add('hidden');
+                            } else {
+                                card.classList.remove('hidden');
+                            }
+                        });
+                        showMoreBtn.innerHTML = 'Show More <i class="uil uil-arrow-down"></i>';
+                    }
+                    
+                    if (visibleFilteredCards.length <= itemsToShow) {
+                        showMoreBtn.style.display = 'none';
+                    } else {
+                        showMoreBtn.style.display = 'inline-flex';
+                    }
+                }
+
+                showMoreBtn.addEventListener('click', () => {
+                    isExpanded = !isExpanded;
+                    updateVisibleCards();
+                });
+                
+                const filterItems = document.querySelectorAll('.work-item');
+                filterItems.forEach(item => {
+                    item.addEventListener('click', () => {
+                        isExpanded = false; 
+                        setTimeout(updateVisibleCards, 350);
+                    });
+                });
+                
+                // Initial setup
+                updateVisibleCards();
+            }
+        });
+    </script>
+</body>
+</html>
