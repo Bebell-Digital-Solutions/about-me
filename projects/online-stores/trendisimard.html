@@ -154,16 +154,11 @@
         
         
         
-        
-        
-        
-        
-
-        /* --- NEW: Top Menu Bar --- */
-/* --- NEW: Top Menu Bar --- */
+      
+/* --- Top Menu Bar --- */
 .top-menu-bar {
     position: sticky;
-    top: 1.5rem; /* Closer to top */
+    top: 1.5rem;
     z-index: 50;
     max-width: 1100px;
     margin: 0 auto;
@@ -171,83 +166,99 @@
     background-color: hsla(var(--hue-color), 14%, 10%, 0.7);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid var(--scroll-thumb-color);
+    border: 1px solid hsl(var(--hue-color), 12%, 26%);
     border-radius: 0.75rem;
-    padding: 0.5rem 1.5rem; /* Reduced padding */
+    padding: 0.5rem 1.5rem;
     box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 
+.top-menu-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-container .logo-image {
+    height: 32px;
+    width: 32px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.logo-container .logo-text {
+    font-size: 1.1rem;
+    font-weight: var(--font-bold); 
+    color: var(--title-color); 
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    font-weight: var(--font-medium);
+    transition: color 0.3s ease;
+    font-size: var(--small-font-size);
+}
+
+.nav-links a:hover {
+    color: var(--skin-color);
+}
+
+.nav-cta-btn {
+    background: linear-gradient(to right, var(--skin-color), #d43a00);
+    color: var(--title-color);
+    padding: 0.75rem 1.75rem;
+    border-radius: 0.5rem;
+    font-weight: var(--font-medium);
+    font-size: var(--small-font-size);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 80, 17, 0.2);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.nav-cta-btn::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--mirage-color);
+    z-index: -1;
+    transform: scale(0);
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.nav-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 80, 17, 0.3);
+    color: #fff;
+}
+
+.nav-cta-btn:hover::after {
+    transform: scale(1);
+}
+/* --- End Top Menu Bar --- */
 
 
 
 
 
-
-
-
-
-
-        .top-menu-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .logo-container .logo-image {
-            height: 32px; /* Control image height */
-            width: 32px;
-            object-fit: contain;
-            border-radius: 4px; /* Slightly rounded corners for the logo */
-        }
-        
-        .logo-container .logo-text { /* Renamed from span for clarity */
-            font-size: 1.1rem; /* Slightly smaller to fit */
-            font-weight: var(--font-bold); 
-            color: var(--title-color); 
-            white-space: nowrap; /* Prevent wrapping */
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .nav-links a {
-            color: var(--text-color);
-            font-weight: var(--font-medium);
-            transition: color 0.3s ease;
-            font-size: var(--small-font-size);
-        }
-
-        .nav-links a:hover {
-            color: var(--skin-color);
-        }
-
-        .nav-cta-btn {
-            background: linear-gradient(to right, var(--skin-color), #d43a00);
-            color: var(--title-color);
-            /* MODIFIED: Standardized padding */
-            padding: 0.75rem 1.75rem;
-            border-radius: 0.5rem;
-            font-weight: var(--font-medium);
-            font-size: var(--small-font-size);
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(255, 80, 17, 0.2);
-        }
-
-        .nav-cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(255, 80, 17, 0.3);
-            color: #fff; /* Ensure text remains readable */
-        }
-        /* --- End Top Menu Bar --- */
+            
 
 
         /* HERO SECTION */
