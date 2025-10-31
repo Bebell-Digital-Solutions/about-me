@@ -1,4 +1,5 @@
-  <!-- ANIMATIONS -->
+
+<!-- ANIMATIONS -->
 
         // Scroll fade-in animation
         const sections = document.querySelectorAll('.fade-section');
