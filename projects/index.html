@@ -654,6 +654,116 @@
                 font-size: 1.2em;
             }
         }
+
+
+
+  /* Back to Top Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        /* Footer */
+        .footer {
+            padding-top: 2rem;
+            margin-top: auto;
+        }
+
+        .footer-container {
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 1.6rem;
+            display: grid;
+        }
+
+        .footer-bg {
+            background-color: var(--box-color);
+            padding: 3rem 0 3.5rem;
+        }
+
+        .footer-title {
+            font-size: var(--h3-font-size);
+            margin-bottom: var(--mb025);
+        }
+
+        .footer-subtitle {
+            font-size: var(--small-font-size);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-self: center;
+            column-gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links li a {
+            color: var(--title-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links li a:hover {
+            color: var(--skin-color);
+        }
+
+        .footer-socials {
+            justify-self: flex-end;
+        }
+
+        .footer-social {
+            font-size: 1.25rem;
+            margin-right: var(--mb15);
+            color: var(--title-color);
+            text-decoration: none;
+        }
+
+        .footer-social:hover {
+            color: var(--skin-color);
+        }
+
+        .footer-copy {
+            font-size: var(--smaller-font-size);
+            text-align: center;
+            margin-top: 4.5rem;
+            color: var(--title-color);
+        }
+
+        .footer-copy a {
+            font-family: var(--signature-font);
+            color: var(--title-color);
+            text-decoration: none;
+        }
+
+        .footer-copy a:hover {
+            color: var(--skin-color);
+        }
+
+        .footer-title,
+        .footer-subtitle {
+            color: var(--title-color);
+        }
+
+        /* Footer Logo Styles */
+        .footer-logo {
+            width: 50px;
+            height: auto;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+
+
+        
     </style>
 </head>
 <body>
