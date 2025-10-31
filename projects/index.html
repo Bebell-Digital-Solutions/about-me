@@ -1,1 +1,846 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Business Development</title>
+    <link href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Turret+Road:wght@200;300;400;500;700;800&display=swap' rel='stylesheet'>
+    <style>
+        :root {
+            --hue-color: 242;
+            --skin-color: #ff5011;
+            --mirage-color: hsl(210, 10%, 23%);
+            --title-color: hsl(var(--hue-color), 8%, 95%);
+            --text-color: hsl(var(--hue-color), 8%, 85%);
+            --body-color: hsl(var(--hue-color), 19%, 5%);
+            --box-color: hsl(var(--hue-color), 14%, 10%);
+            --scroll-box-color: hsl(var(--hue-color), 12%, 38%);
+            --scroll-thumb-color: hsl(var(--hue-color), 12%, 26%);
+            
+            --body-font: 'Poppins', sans-serif;
+            --signature-font: 'Turret Road', sans-serif;
+            
+            --biggest-font-size: 3rem;
+            --h1-font-size: 3rem;
+            --h2-font-size: 3rem;
+            --h3-font-size: 1.25rem;
+            --normal-font-size: 1rem;
+            --small-font-size: .875rem;
+            --smaller-font-size: .813rem;
+            
+            --font-medium: 500;
+            --font-bold: 600;
+            
+            --mb025: .25rem;
+            --mb05: .5rem;
+            --mb075: .75rem;
+            --mb1: 1rem;
+            --mb15: 1.5rem;
+            --mb2: 2rem;
+            --mb25: 2.5rem;
+            --mb3: 3rem;
+            
+            --z-fixed: 10;
+            --z-modal: 1000;
+        }
+
+        @media screen and (max-width: 1024px) {
+            :root {
+                --biggest-font-size: 2rem;
+                --h1-font-size: 2.5rem;
+                --h2-font-size: 1.25rem;
+                --h3-font-size: 1.125rem;
+                --normal-font-size: .938rem;
+                --small-font-size: .813rem;
+                --smaller-font-size: .75rem;
+            }
+
+            /* === FIX: Hide nav text and links on tablets === */
+            .logo-text {
+                display: none;
+            }
+            
+            .nav-links a:not(.nav-cta-btn) {
+                display: none;
+            }
+            /* === END FIX === */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--body-font);
+            font-size: var(--normal-font-size);
+            background-color: var(--body-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-top: 80px; /* Space for fixed nav */
+        }
+
+        h1, h2, h3 {
+            color: var(--title-color);
+            font-weight: var(--font-bold);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* === FLOATING NAV BAR === */
+        .top-menu-bar {
+            position: fixed;
+            top: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: var(--z-modal);
+            width: calc(100% - 2rem);
+            max-width: 1200px;
+            background-color: hsla(var(--hue-color), 14%, 10%, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--scroll-thumb-color);
+            border-radius: 0.75rem;
+            padding: 0.75rem 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .top-menu-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-image {
+            height: 32px;
+            width: 32px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .logo-text {
+            font-size: 1.1rem;
+            font-weight: var(--font-bold);
+            color: var(--title-color);
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            font-weight: var(--font-medium);
+            transition: color 0.3s ease;
+            font-size: var(--small-font-size);
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            color: var(--skin-color);
+        }
+
+        .nav-cta-btn {
+            background: linear-gradient(to right, var(--skin-color), #d43a00);
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: var(--font-medium);
+            font-size: var(--small-font-size);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(255, 80, 17, 0.2);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            white-space: nowrap; /* Added to ensure button text doesn't wrap */
+        }
+
+        .nav-cta-btn::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--mirage-color);
+            color: #fff;
+            z-index: -1;
+            transform: scale(0);
+            border-radius: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 80, 17, 0.3);
+            color: #fff;
+        }
+
+        .nav-cta-btn:hover::after {
+            transform: scale(1);
+        }
+        /* === END: FLOATING NAV BAR === */
+
+        /* Osmo UI Styles with Dark Theme */
+        .cloneable {
+            padding: 2rem 1rem;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 80px);
+            display: flex;
+            position: relative;
+        }
+
+        .tab-container {
+            grid-column-gap: 2em;
+            grid-row-gap: 2em;
+            flex-flow: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            min-height: 100%;
+            padding-top: 0;
+            padding-bottom: 0;
+            display: flex;
+        }
+
+        /* === FIX: Removed max-width from this class === */
+        .tab-layout-container {
+            width: 100%;
+            /* max-width: 36em; */ /* <-- REMOVED */
+            height: 100%;
+            margin-left: auto;
+            margin-right: 0;
+            padding-top: 1em;
+            padding-bottom: 2em;
+        }
+
+        .tab-container-bottom {
+            grid-column-gap: 1.5em;
+            grid-row-gap: 1.5em;
+            flex-flow: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            display: flex;
+            width: 100%; /* <-- ADDED THIS LINE */
+        }
+
+        .tab-container-top {
+            grid-column-gap: 1.5em;
+            grid-row-gap: 1.5em;
+            flex-flow: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            display: flex;
+            width: 100%; /* <-- ADDED THIS LINE */
+        }
+
+        /* === FIX: Split layout into 55/45 === */
+        .tab-layout-col--text {
+            width: 55%;
+        }
+        .tab-layout-col--visual {
+            width: 45%;
+        }
+        /* === END FIX === */
+
+        .tab-content-wrap {
+            width: 100%;
+            position: relative;
+            /* === FIX: Increased min-height === */
+            min-height: 20em;
+        }
+
+        .content-button__bg {
+            z-index: -1;
+            background: linear-gradient(to right, var(--skin-color), #d43a00);
+            border-radius: .25em;
+            position: absolute;
+            inset: 0%;
+            transition: all 0.3s ease;
+        }
+
+        .content-p {
+            margin: 0;
+            font-size: 1.1em;
+            line-height: 1.4;
+        }
+
+        /* REMOVED .tab-button__bg styles */
+
+        .tab-content-item {
+            z-index: 1;
+            grid-row-gap: 1.5em; /* FIX: Increased from 1em for more space */
+            flex-flow: column;
+            display: flex;
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .tab-content-item.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .tab-layout {
+            z-index: 1;
+            grid-row-gap: 2em;
+            flex-flow: wrap;
+            width: 100%;
+            /* === FIX: Added max-width and margin to center and constrain === */
+            max-width: 1200px;
+            margin: 0 auto;
+            /* === END FIX === */
+            min-height: auto;
+            display: flex;
+            position: relative;
+        }
+
+        .filter-bar {
+            background-color: var(--box-color);
+            border: 1px solid var(--scroll-thumb-color);
+            border-radius: .5em;
+            padding: .5em;
+            display: flex;
+            flex-wrap: nowrap; /* <-- CHANGED */
+            gap: 0.5em;
+            overflow-x: auto; /* <-- ADDED */
+        }
+
+        /* === STYLES UPDATED === */
+        .filter-button {
+            background-color: var(--box-color);
+            border: 1px solid var(--scroll-thumb-color);
+            border-radius: .25em;
+            padding: 1em 1.25em;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: inherit;
+            color: var(--text-color);
+            cursor: pointer;
+            flex: 0 0 auto; /* <-- CHANGED */
+            min-width: 120px;
+        }
+
+        .filter-button:hover {
+            border-color: var(--skin-color);
+        }
+        
+        .filter-button.active {
+            background: linear-gradient(to right, var(--skin-color), #d43a00);
+            border-color: transparent;
+            box-shadow: 0 4px 10px rgba(255, 80, 17, 0.2);
+        }
+        
+        .filter-button.active:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 80, 17, 0.3);
+        }
+
+        .filter-button__p {
+            z-index: 1;
+            font-size: 1em;
+            position: relative;
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+
+        .filter-button:hover .filter-button__p {
+            color: var(--title-color);
+        }
+
+        .filter-button.active .filter-button__p {
+            color: #fff;
+        }
+        /* === END STYLES UPDATED === */
+
+
+        .tab-visual-wrap {
+            border-radius: .5em;
+            width: 100%;
+            aspect-ratio: 800 / 600; /* <-- CHANGED (was 1 / 1) */
+            /* height: 35em; */ /* <-- REMOVED */
+            /* max-height: 60vh; */ /* <-- REMOVED */
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--scroll-thumb-color);
+        }
+
+        .tab-visual-item {
+            visibility: hidden;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .tab-visual-item.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .tab-image {
+            object-fit: cover;
+            border-radius: .5em;
+            width: 100%;
+            max-width: none;
+            height: 100%;
+        }
+
+        .tab-content__heading {
+            letter-spacing: -.02em;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 1.5em;
+            font-weight: 500;
+            line-height: 1.2;
+            color: var(--title-color);
+        }
+
+        .tab-layout-heading {
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 2.5em;
+            font-weight: 500;
+            line-height: 1.1;
+            color: var(--title-color);
+        }
+
+        .tab-content__button {
+            color: var(--title-color);
+            justify-content: center;
+            align-items: center;
+            height: 3.5em;
+            padding: 0 1.5em;
+            text-decoration: none;
+            display: flex;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border-radius: .25em;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 280px;
+        }
+
+        .tab-content__button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 80, 17, 0.3);
+        }
+
+        .tab-content__button::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--mirage-color);
+            z-index: -1;
+            transform: scale(0);
+            border-radius: .25em;
+            transition: transform 0.3s ease;
+        }
+
+        .tab-content__button:hover::after {
+            transform: scale(1);
+        }
+
+        .osmo-credits {
+            z-index: 999;
+            pointer-events: none;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 4em;
+            padding: 1em;
+            display: flex;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+
+        .osmo-credits__p {
+            pointer-events: auto;
+            color: var(--text-color);
+            text-align: center;
+            margin: 0;
+            font-family: var(--body-font);
+            font-size: 1em;
+            font-weight: 500;
+            line-height: 1.3;
+        }
+
+        .osmo-credits__p-a {
+            color: var(--skin-color);
+        }
+
+        /* Custom styles for our portfolio */
+        .opacity--80 {
+            opacity: 0.8;
+        }
+
+        /* === RESPONSIVE DESIGN === */
+        @media screen and (max-width: 1024px) {
+
+            /* === FIX: Align stacked content to top === */
+            .cloneable {
+                align-items: flex-start;
+            }
+            /* === END FIX === */
+
+            .tab-layout {
+                flex-direction: column;
+            }
+            
+            /* === FIX: Updated responsive column rule === */
+            .tab-layout-col--text,
+            .tab-layout-col--visual {
+                width: 100%;
+            }
+            
+            .tab-container {
+                padding-right: 0;
+                margin-bottom: 2rem;
+            }
+            
+            .tab-visual-wrap {
+                /* height: 30em; */ /* <-- Let aspect-ratio control this */
+            }
+            
+            .tab-layout-heading {
+                font-size: 2.2em;
+            }
+            
+            .tab-content-wrap {
+                min-height: 16em;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+
+            /* === FIX: Adjust content min-height to match new nav height === */
+            .cloneable {
+                min-height: calc(100vh - 70px);
+            }
+            /* === END FIX === */
+            
+            .top-menu-bar {
+                padding: 0.6rem 1rem;
+                top: 1rem;
+            }
+            
+            /* * Rules for .logo-text and .nav-links a:not(.nav-cta-btn) 
+             * were moved to the 1024px breakpoint to fix tablet layout.
+             */
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .nav-cta-btn {
+                padding: 0.6rem 1rem;
+                font-size: var(--smaller-font-size);
+            }
+            
+            .cloneable {
+                padding: 1.5rem 1rem;
+            }
+            
+            .tab-layout-heading {
+                font-size: 1.8em;
+            }
+            
+            .filter-bar {
+                /* flex-direction: column; */ /* <-- REMOVED */
+            }
+            
+            .filter-button {
+                min-width: auto;
+                text-align: center;
+            }
+            
+            .tab-content__button {
+                height: 3em;
+                max-width: 100%;
+            }
+            
+            .tab-visual-wrap {
+                /* height: 25em; */ /* <-- Let aspect-ratio control this */
+            }
+            
+            .tab-content__heading {
+                font-size: 1.3em;
+            }
+            
+            .content-p {
+                font-size: 1em;
+            }
+            
+            .tab-content-wrap {
+                min-height: 14em;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .top-menu-bar {
+                width: calc(100% - 1rem);
+            }
+            
+            .tab-layout-heading {
+                font-size: 1.6em;
+            }
+            
+            .tab-visual-wrap {
+                /* height: 20em; */ /* <-- Let aspect-ratio control this */
+            }
+            
+            .tab-content__button {
+                height: 2.8em;
+                padding: 0 1.25em;
+            }
+            
+            .filter-button {
+                padding: 0.875em 1em;
+            }
+            
+            .filter-button__p {
+                font-size: 0.9em;
+            }
+            
+            .tab-content-wrap {
+                min-height: 12em;
+            }
+        }
+
+        @media screen and (max-width: 360px) {
+            .nav-cta-btn {
+                padding: 0.5rem 0.8rem;
+                font-size: 0.75rem;
+            }
+            
+            .tab-layout-heading {
+                font-size: 1.4em;
+            }
+            
+            .tab-content__heading {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- === FLOATING NAV BAR === --><header class="top-menu-bar">
+        <div class="top-menu-content">
+            <a href="#" class="logo-container">
+                <img src="https://bucket.mlcdn.com/a/3336/3336910/images/494966047320c2c5be07bd50754a7183ffcda611.png" alt="Bebell Digital Solutions Logo" class="logo-image">
+                <span class="logo-text">Behind the Box</span>
+            </a>
+            <nav class="nav-links">
+                <a href="https://project-freedom.club">Home</a>
+                <a href="/p/meet-the-team">About</a>
+                <a href="/p/projects">Portfolio</a>
+                 <a href="/p/contact-us">Contact</a>
+                
+                <a href="/booking-page" class="nav-cta-btn">Book a Meeting</a>
+            </nav>
+        </div>
+    </header>
+    <!-- === END: FLOATING NAV BAR === --><section class="cloneable">
+        <div data-tabs="wrapper" class="tab-layout">
+            <!-- === HTML FIX: Added modifier class === --><div class="tab-layout-col tab-layout-col--text">
+                <div class="tab-layout-container">
+                    <div class="tab-container">
+                        <div class="tab-container-top">
+                            <!-- FIX: Updated heading text --><h1 class="tab-layout-heading">Explore Our Custom Development Services</h1>
+                            <!-- HTML MODIFIED: Removed data-flip-button attributes --><div data-tabs="nav" class="filter-bar">
+                                <button data-tabs="button" class="filter-button active">
+                                    <!-- FIX: Updated tab name --><div class="filter-button__p">Offices</div>
+                                    <!-- HTML MODIFIED: Removed flip-button:bg div --></button>
+                                <button data-tabs="button" class="filter-button">
+                                    <!-- FIX: Updated tab name --><div class="filter-button__p">Clinics</div>
+                                </button>
+                                <button data-tabs="button" class="filter-button">
+                                    <!-- FIX: Updated tab name --><div class="filter-button__p">Stores</div>
+                                </button>
+                                <button data-tabs="button" class="filter-button">
+                                    <!-- FIX: Updated tab name --><div classa="filter-button__p">Menus</div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="tab-container-bottom">
+                            <div data-tabs="content-wrap" class="tab-content-wrap">
+                                <!-- Online Offices Tab --><div data-tabs="content-item" class="tab-content-item active">
+                                    <h2 data-tabs-fade="" class="tab-content__heading">Virtual Workspaces</h2>
+                                    <p data-tabs-fade="" class="content-p opacity--80">Professional digital environments that enable seamless remote collaboration and productivity.</p>
+                                    <!-- HTML MODIFIED: Added data-tabs-fade to button --><a href="/projects/online-offices" class="tab-content__button" data-tabs-fade="">
+                                        <p class="content-p"><strong>View Office Solutions</strong></p>
+                                        <div class="content-button__bg"></div>
+                                    </a>
+                                </div>
+                                
+                                <!-- Online Clinics Tab --><div data-tabs="content-item" class="tab-content-item">
+                                    <h2 data-tabs-fade="" class="tab-content__heading">Digital Healthcare</h2>
+                                    <p data-tabs-fade="" class="content-p opacity--80">Comprehensive online clinic solutions for patient management, telemedicine, and healthcare services.</p>
+                                    <!-- HTML MODIFIED: Added data-tabs-fade to button --><a href="/projects/online-clinics" class="tab-content__button" data-tabs-fade="">
+                                        <p class="content-p"><strong>Explore Clinic Solutions</strong></p>
+                                        <div class="content-button__bg"></div>
+                                    </a>
+                                </div>
+                                
+                                <!-- Online Stores Tab --><div data-tabs="content-item" class="tab-content-item">
+                                    <h2 data-tabs-fade="" class="tab-content__heading">E-commerce Excellence</h2>
+                                    <p data-tabs-fade="" class="content-p opacity--80">Custom online stores designed to maximize conversions and deliver exceptional shopping experiences.</p>
+                                    <!-- HTML MODIFIED: Added data-tabs-fade to button --><a href="/projects/online-stores" class="tab-content__button" data-tabs-fade="">
+                                        <p class="content-p"><strong>View Store Solutions</strong></p>
+                                        <div class="content-button__bg"></div>
+                                    </a>
+                                </div>
+                                
+                                <!-- Online Menus Tab --><div data-tabs="content-item" class="tab-content-item">
+                                    <h2 data-tabs-fade="" class="tab-content__heading">Digital Dining</h2>
+                                    <p data-tabs-fade="" class="content-p opacity--80">Interactive online menus that enhance customer engagement and streamline restaurant operations.</p>
+                                    <!-- HTML MODIFIED: Added data-tabs-fade to button --><a href="/projects/online-menus" class="tab-content__button" data-tabs-fade="">
+                                        <p class="content-p"><strong>Explore Menu Solutions</strong></p>
+                                        <div class="content-button__bg"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- === HTML FIX: Added modifier class === --><div class="tab-layout-col tab-layout-col--visual">
+                <div data-tabs="visual-wrap" class="tab-visual-wrap">
+                    <div data-tabs="visual-item" class="tab-visual-item active">
+                        <img src="https://ik.imagekit.io/bebell/Bebell%20Digital%20Solutions/Video%20Banner%20Asset/a075b493-25d1-4489-9fa6-6250e2b56188.jpg?updatedAt=1761927100813" loading="lazy" class="tab-image" alt="Online Office">
+                    </div>
+                    <div data-tabs="visual-item" class="tab-visual-item">
+                        <img src="https://ik.imagekit.io/bebell/Bebell%20Digital%20Solutions/Video%20Banner%20Asset/33aaa5b9-dcf9-4aae-ab81-168817be2244.jpg?updatedAt=1761927100643" loading="lazy" class="tab-image" alt="Online Clinic">
+                    </div>
+                    <div data-tabs="visual-item" class="tab-visual-item">
+                        <img src="https://ik.imagekit.io/bebell/Bebell%20Digital%20Solutions/Video%20Banner%20Asset/8f98a69e-dce9-4c0c-aeab-66b2b7079871%20(1).jpg?updatedAt=1761927100790" loading="lazy" class="tab-image" alt="Online Store">
+                    </div>
+                    <div data-tabs="visual-item" class="tab-visual-item">
+                        <img src="https://ik.imagekit.io/bebell/Bebell%20Digital%20Solutions/Video%20Banner%20Asset/1222d881-2a09-457f-841e-04c937ec9a42.jpg?updatedAt=1761927100597" loading="lazy" class="tab-image" alt="Online Menu">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="osmo-credits">
+        <p class="osmo-credits__p">Powered by <a target="_blank" href="https://www.project-freedom.club/" class="osmo-credits__p-a">Bebell Digital Solutions</a></p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
+
+    <script>
+        // Fixed tab system with working navigation
+        function initTabSystem(){
+            let wrappers = document.querySelectorAll('[data-tabs="wrapper"]');
+            
+            wrappers.forEach((wrapper) => {
+                let nav = wrapper.querySelector('[data-tabs="nav"]');
+                let buttons = nav.querySelectorAll('[data-tabs="button"]');
+                let contentWrap = wrapper.querySelector('[data-tabs="content-wrap"]');
+                let contentItems = contentWrap.querySelectorAll('[data-tabs="content-item"]');
+                let visualWrap = wrapper.querySelector('[data-tabs="visual-wrap"]');
+                let visualItems = visualWrap.querySelectorAll('[data-tabs="visual-item"]');
+
+                let activeButton = buttons[0];
+                let activeContent = contentItems[0];
+                let activeVisual = visualItems[0];
+                let isAnimating = false;
+
+                function switchTab(index, initial = false) {
+                    if (!initial && (isAnimating || buttons[index] === activeButton)) return;
+                    isAnimating = true;
+
+                    const outgoingContent = activeContent;
+                    const incomingContent = contentItems[index];
+                    const outgoingVisual = activeVisual;
+                    const incomingVisual = visualItems[index];
+
+                    let outgoingLines = outgoingContent.querySelectorAll("[data-tabs-fade]") || [];
+                    let incomingLines = incomingContent.querySelectorAll("[data-tabs-fade]");
+
+                    const timeline = gsap.timeline({
+                        defaults: {
+                            ease: "power3.inOut"
+                        },
+                        onComplete: () => {
+                            if(!initial){
+                                outgoingContent.classList.remove("active");
+                                outgoingVisual.classList.remove("active");          
+                            }
+                            activeContent = incomingContent;
+                            activeVisual = incomingVisual;
+                            isAnimating = false;
+                        },
+                    });
+
+                    incomingContent.classList.add("active");
+                    incomingVisual.classList.add("active");
+
+                    timeline
+                        .to(outgoingLines, { y: "-2em", autoAlpha:0 }, 0)
+                        .to(outgoingVisual, { autoAlpha: 0, xPercent: 3 }, 0)
+                        .fromTo(incomingLines, { y: "2em", autoAlpha:0 }, { y: "0em", autoAlpha:1, stagger: 0.075 }, 0.4)
+                        .fromTo(incomingVisual, { autoAlpha: 0, xPercent: 3 }, { autoAlpha: 1, xPercent: 0 }, "<");
+
+                    activeButton.classList.remove("active");
+                    buttons[index].classList.add("active");
+                    activeButton = buttons[index];
+                }
+
+                // Initialize first tab
+                switchTab(0, true);
+
+                // Add click event to all buttons
+                buttons.forEach((button, i) => {
+                    button.addEventListener("click", () => switchTab(i));  
+                });
+            });
+        }
+
+        // SCRIPT MODIFIED: Removed initFlipButtons function
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener("DOMContentLoaded", () => {
+            initTabSystem();
+            // SCRIPT MODIFIED: Removed initFlipButtons() call
+        });
+    </script>
+</body>
+</html>
+
+
