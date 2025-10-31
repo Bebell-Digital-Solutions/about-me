@@ -968,3 +968,32 @@
                 width: 40px;
             }
         }
+
+
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--box-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--skin-color);
+    border-radius: 10px;
+    border: 2px solid var(--box-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--skin-color);
+    opacity: 0.8;
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--skin-color) var(--box-color);
+}
