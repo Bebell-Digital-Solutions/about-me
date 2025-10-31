@@ -9,7 +9,7 @@
             --body-color: hsl(var(--hue-color), 19%, 5%);
             --box-color: hsl(var(--hue-color), 14%, 10%);
             --scroll-box-color: hsl(var(--hue-color), 12%, 38%);
-            --scroll-thumb-color: #ff5011;
+            --scroll-thumb-color: hsl(var(--hue-color), 12%, 26%);
             --body-font: 'Poppins', sans-serif;
             --signature-font: 'Turret', sans-serif;
             --biggest-font-size: 3rem;
