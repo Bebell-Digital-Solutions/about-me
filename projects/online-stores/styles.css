@@ -8,7 +8,7 @@
             --body-color: hsl(var(--hue-color), 19%, 5%);
             --box-color: hsl(var(--hue-color), 14%, 10%);
             --scroll-box-color: hsl(var(--hue-color), 12%, 38%);
-            --scroll-thumb-color: #ff5011;
+            --scroll-thumb-color: hsl(var(--hue-color), 12%, 26%);
             --body-font: 'Poppins', sans-serif;
             --signature-font: 'Turret', sans-serif;
             --biggest-font-size: 3rem;
@@ -313,7 +313,6 @@
 
 
 
-
 .hero-overline {
     color: var(--skin-color);
     font-size: 1rem;
@@ -323,6 +322,7 @@
     margin-bottom: 0.5rem;
     display: block;
 }
+
 
 
 
@@ -444,7 +444,7 @@
 
         .info .grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
             max-width: 1200px;
             margin: 0 auto;
@@ -994,6 +994,8 @@
         }
 
 
+
+
 /* --- Dark Background Section --- */
 .dark-bg-section {
     background-color: var(--box-color);
@@ -1020,3 +1022,38 @@
 
 
 
+
+
+
+
+
+
+
+
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--box-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--skin-color);
+    border-radius: 10px;
+    border: 2px solid var(--box-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--skin-color);
+    opacity: 0.8;
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--skin-color) var(--box-color);
+}
