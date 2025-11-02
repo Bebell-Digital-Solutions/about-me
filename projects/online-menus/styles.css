@@ -311,6 +311,30 @@
             transform: scale(1);
         }
 
+
+
+.hero-overline {
+    color: var(--skin-color);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
         /* Laptop Component - FIXED with 60px bottom margin */
         .macbook-wrapper {
             position: relative;
@@ -420,7 +444,7 @@
 
         .info .grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
             max-width: 1200px;
             margin: 0 auto;
@@ -971,6 +995,7 @@
 
 
 
+
 /* --- Dark Background Section --- */
 .dark-bg-section {
     background-color: var(--box-color);
@@ -993,6 +1018,10 @@
         text-align: center;
     }
 }
+
+
+
+
 
 
 
@@ -1028,8 +1057,6 @@
     scrollbar-width: thin;
     scrollbar-color: var(--skin-color) var(--box-color);
 }
-
-
 
 
 
@@ -1093,28 +1120,3 @@
     opacity: 0;
     pointer-events: none;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
