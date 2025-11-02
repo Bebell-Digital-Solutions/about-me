@@ -3716,7 +3716,13 @@ button.faq-header {
 
 </div> <!-- Closing .work-container -->
 
-        </section>
+<div class="work-show-more-container">
+    <button id="exploreProjectsBtn" class="button">
+        Explore Projects <i class="uil uil-arrow-right"></i>
+    </button>
+</div>
+
+</section> <!-- Closing .work section -->
 
 
 
@@ -5085,57 +5091,42 @@ serviceModals.forEach(modal => {
                 })
             }
 
-             // Show More/Less for Portfolio
-            const showMoreBtn = document.getElementById('showMoreBtn');
-            if (showMoreBtn) {
-                const workContainer = document.querySelector('.work-container');
-                const itemsToShow = 15;
-                let isExpanded = false;
+            // Modified: Keep the structure but remove card limiting
+const exploreProjectsBtn = document.getElementById('exploreProjectsBtn');
+if (exploreProjectsBtn) {
+    const workContainer = document.querySelector('.work-container');
 
-                function updateVisibleCards() {
-                    const allCards = workContainer.querySelectorAll('.work-card');
-                    const visibleFilteredCards = Array.from(allCards).filter(card => {
-                        const style = window.getComputedStyle(card);
-                        return style.display !== 'none';
-                    });
-                    
-                    if (isExpanded) {
-                        visibleFilteredCards.forEach(card => card.classList.remove('hidden'));
-                        showMoreBtn.innerHTML = 'Show Less <i class="uil uil-arrow-up"></i>';
-                    } else {
-                        visibleFilteredCards.forEach((card, index) => {
-                            if (index >= itemsToShow) {
-                                card.classList.add('hidden');
-                            } else {
-                                card.classList.remove('hidden');
-                            }
-                        });
-                        showMoreBtn.innerHTML = 'Show More <i class="uil uil-arrow-down"></i>';
-                    }
-                    
-                    if (visibleFilteredCards.length <= itemsToShow) {
-                        showMoreBtn.style.display = 'none';
-                    } else {
-                        showMoreBtn.style.display = 'inline-flex';
-                    }
-                }
+    function updateButtonVisibility() {
+        const allCards = workContainer.querySelectorAll('.work-card');
+        const visibleFilteredCards = Array.from(allCards).filter(card => {
+            const style = window.getComputedStyle(card);
+            return style.display !== 'none';
+        });
+        
+        // Always show the button, but you can add logic here if needed
+        // For example, hide button if no cards are visible
+        if (visibleFilteredCards.length === 0) {
+            exploreProjectsBtn.style.display = 'none';
+        } else {
+            exploreProjectsBtn.style.display = 'inline-flex';
+        }
+    }
 
-                showMoreBtn.addEventListener('click', () => {
-                    isExpanded = !isExpanded;
-                    updateVisibleCards();
-                });
-                
-                const filterItems = document.querySelectorAll('.work-item');
-                filterItems.forEach(item => {
-                    item.addEventListener('click', () => {
-                        isExpanded = false; 
-                        setTimeout(updateVisibleCards, 350);
-                    });
-                });
-                
-                // Initial setup
-                updateVisibleCards();
-            }
+    exploreProjectsBtn.addEventListener('click', () => {
+        window.open('/projects', '_blank');
+    });
+    
+    // Update button when filtering (keeps the filter integration)
+    const filterItems = document.querySelectorAll('.work-item');
+    filterItems.forEach(item => {
+        item.addEventListener('click', () => {
+            setTimeout(updateButtonVisibility, 350); // Wait for mixitup animation
+        });
+    });
+    
+    // Initial setup
+    updateButtonVisibility();
+}
         });
     </script>
 </body>
