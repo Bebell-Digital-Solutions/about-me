@@ -640,6 +640,14 @@
         }
         /* --- End Challenges Section Styling --- */
 
+        
+        
+        
+        
+        
+        
+        
+        
         .progress-title {
             font-weight: var(--font-medium);
             color: var(--title-color);
@@ -664,6 +672,16 @@
         @keyframes grow {
             from { width: 0%; }
         }
+
+
+
+
+
+
+
+
+
+        
 
         /* RESULTS SECTION */
         #results {
@@ -700,6 +718,13 @@
             font-size: var(--normal-font-size);
             color: var(--text-color);
         }
+
+
+
+
+
+
+        
 
         /* CTA SECTION */
         .cta-section {
@@ -750,6 +775,12 @@
         .cta-button:hover::after {
             transform: scale(1);
         }
+
+
+
+
+
+        
 
         /* ANIMATIONS */
         @keyframes fadeInUp {
@@ -1179,11 +1210,15 @@
             opacity: var(--avatar-opacity, 1);
             overflow: clip;
             transition: opacity 0.3s ease;
+              /* ADD THIS BORDER STYLE */
+    border: 3px solid var(--skin-color);
 
             /* lg-n-above */
             @media (width >=1024px) {
                 inline-size: 144px;
                 border-radius: 1e5px;
+                        /* You might want a slightly thinner border on desktop */
+        border: 2px solid var(--skin-color);
             }
         }
 
