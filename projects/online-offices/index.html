@@ -1,1 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Offices Gallery | Behind the Box</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Turret+Road:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Your existing CSS variables and base styles */
+        :root {
+            --hue-color: 242;
+            --skin-color: #ff5011;
+            --mirage-color: hsl(210, 10%, 23%);
+            --title-color: hsl(var(--hue-color), 8%, 95%);
+            --text-color: hsl(var(--hue-color), 8%, 85%);
+            --body-color: hsl(var(--hue-color), 19%, 5%);
+            --box-color: hsl(var(--hue-color), 14%, 10%);
+            --scroll-box-color: hsl(var(--hue-color), 12%, 38%);
+            --scroll-thumb-color: hsl(var(--hue-color), 12%, 26%);
+            --body-font: 'Poppins', sans-serif;
+            --signature-font: 'Turret', sans-serif;
+            --biggest-font-size: 3rem;
+            --h1-font-size: 3rem;
+            --h2-font-size: 2rem;
+            --h3-font-size: 1.25rem;
+            --normal-font-size: 1rem;
+            --small-font-size: .875rem;
+            --smaller-font-size: .813rem;
+            --font-medium: 500;
+            --font-bold: 600;
+            --mb025: .25rem;
+            --mb05: .5rem;
+            --mb075: .75rem;
+            --mb1: 1rem;
+            --mb15: 1.5rem;
+            --mb2: 2rem;
+            --mb25: 2.5rem;
+            --mb3: 3rem;
+            --z-fixed: 10;
+            --z-modal: 1000;
+        }
 
+        @media screen and (max-width: 1024px) {
+            :root {
+                --biggest-font-size: 2rem;
+                --h1-font-size: 3rem;
+                --h2-font-size: 1.25rem;
+                --h3-font-size: 1.125rem;
+                --normal-font-size: .938rem;
+                --small-font-size: .813rem;
+                --smaller-font-size: .75rem;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--body-font);
+            font-size: var(--normal-font-size);
+            background-color: var(--body-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            color: var(--title-color);
+            font-weight: var(--font-bold);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Case Study Specific Styles */
+        .case-study {
+            font-family: var(--body-font);
+            background-color: var(--body-color);
+            color: var(--text-color);
+        }
+        
+        .home-social {
+            position: absolute;
+            top: 1.8rem;
+            left: 0;
+            display: flex;
+            align-items: center;
+            column-gap: 3.5rem;
+        }
+
+        .home-social-follow {
+            font-weight: var(--font-medium);
+            position: relative;
+        }
+
+        .home-social-follow::after {
+            content: '';
+            position: absolute;
+            width: 1rem;
+            height: 2px;
+            background-color: var(--skin-color);
+            right: -45%;
+            top: 50%;
+        }
+
+        .home-social-links {
+            display: inline-flex;
+            column-gap: 1rem;
+        }
+
+        .home-social-link {
+            font-size: 1.08rem;
+            color: var(--text-color);
+            transition: .4s;
+        }
+
+        .home-social-link:hover {
+            transform: translateY(.25rem);
+        }
+        
+        /* --- Top Menu Bar --- */
+        .top-menu-bar {
+            position: sticky;
+            top: 1.5rem;
+            z-index: 50;
+            max-width: 1100px;
+            margin: 0 auto;
+            width: calc(100% - 2rem);
+            background-color: hsla(var(--hue-color), 14%, 10%, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid hsl(var(--hue-color), 12%, 26%);
+            border-radius: 0.75rem;
+            padding: 0.5rem 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .top-menu-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--title-color);
+        }
+
+        .logo-container .logo-image {
+            height: 32px;
+            width: 32px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .logo-container .logo-text {
+            font-size: 1.1rem;
+            font-weight: var(--font-bold); 
+            color: var(--title-color); 
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            font-weight: var(--font-medium);
+            transition: color 0.3s ease;
+            font-size: var(--small-font-size);
+        }
+
+        .nav-links a:hover {
+            color: var(--skin-color);
+        }
+
+        .nav-cta-btn {
+            background: linear-gradient(to right, var(--skin-color), #d43a00);
+            color: #fff;
+            padding: 0.75rem 1.75rem;
+            border-radius: 0.5rem;
+            font-weight: var(--font-medium);
+            font-size: var(--small-font-size);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(255, 80, 17, 0.2);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .nav-cta-btn::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--mirage-color);
+            color: #fff;
+            z-index: -1;
+            transform: scale(0);
+            border-radius: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 80, 17, 0.3);
+            color: #fff !important; /* Force white text on hover */
+        }
+
+        .nav-cta-btn:hover::after {
+            transform: scale(1);
+        }
+        /* --- End Top Menu Bar --- */
+
+        /* HERO SECTION - ADAPTIVE HEIGHT */
+        .hero {
+            position: relative;
+            min-height: 30vh;
+            display: flex;
+            align-items: center; 
+            justify-content: center;
+            text-align: center;
+            color: var(--title-color);
+            background-color: var(--body-color);
+            overflow: hidden;
+            padding: 80px 0 40px;
+        }
+
+        .hero .relative {
+            position: relative;
+            z-index: 10;
+            padding: 0 1.5rem;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: var(--h1-font-size);
+            font-weight: var(--font-bold);
+            margin-bottom: var(--mb1);
+            animation: fadeInUp 1s ease-out;
+            margin-top: 0;
+            max-width: 960px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: var(--mb1);
+            max-width: 960px;
+        }
+
+        .hero-overline {
+            color: var(--skin-color);
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        /* WORK SECTION STYLES */
+        .work-section {
+            padding: 3rem 1.2rem;
+            background-color: var(--body-color);
+            
+        }
+
+        .work-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 0rem;
+            margin-bottom: 6rem;
+        }
+
+.work-card {
+    background-color: var(--box-color);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Remove aspect-ratio to allow natural height */
+    display: flex;
+    flex-direction: column;
+    height: auto; /* Let content determine height */
+}
+
+        .work-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .work-img-container {
+            padding: 1.25rem;
+            flex: 0 0 auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        }
+
+        .work-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 0.5rem;
+            transition: transform 0.5s ease;
+        }
+
+
+        .work-content {
+            padding: 0 1.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            justify-content: space-between;
+            min-height: 180px; /* Ensure consistent content area */
+
+        }
+
+        .work-title {
+            font-size: var(--h3-font-size);
+            color: var(--title-color);
+            margin-bottom: 0.75rem;
+        }
+
+        .work-description {
+            color: var(--text-color);
+            font-size: var(--small-font-size);
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+            flex: 1;
+        }
+
+        .work-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(to right, var(--skin-color), #d43a00);
+            color: var(--title-color);
+            font-weight: var(--font-medium);
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(255, 80, 17, 0.2);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .work-button::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--mirage-color);
+            z-index: -1;
+            transform: scale(0);
+            border-radius: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .work-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(255, 80, 17, 0.3);
+        }
+
+        .work-button:hover::after {
+            transform: scale(1);
+        }
+
+        .work-button-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .work-button:hover .work-button-icon {
+            transform: translateX(5px);
+        }
+
+        .portfolio-item-details {
+            display: none;
+        }
+
+        /* PORTFOLIO POPUP STYLES */
+        .portfolio-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: var(--z-modal);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            padding: 1.5rem;
+        }
+
+        .portfolio-popup.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .portfolio-popup-content {
+            background-color: var(--box-color);
+            border-radius: 0.75rem;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            padding: 2.5rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .portfolio-popup-close {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            font-size: 1.5rem;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: color 0.3s ease;
+            z-index: 1;
+            background: none;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .portfolio-popup-close:hover {
+            color: var(--skin-color);
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .pp-thumbnail {
+            margin-bottom: 1.5rem;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .pp-thumbnail img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .portfolio-popup-subtitle {
+            font-size: var(--h3-font-size);
+            color: var(--skin-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-popup-body {
+            color: var(--text-color);
+        }
+
+        .details-title {
+            font-size: var(--h2-font-size);
+            color: var(--title-color);
+            margin-bottom: 1rem;
+        }
+
+        .details-description {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .details-info {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .details-info li {
+            margin-bottom: 0.5rem;
+            display: flex;
+        }
+
+        .details-info li span {
+            margin-left: 0.5rem;
+            color: var(--title-color);
+        }
+
+        .details-info li a {
+            color: var(--skin-color);
+            transition: color 0.3s ease;
+        }
+
+        .details-info li a:hover {
+            color: var(--title-color);
+        }
+
+        /* Footer */
+        .footer {
+            padding-top: 2rem;
+            margin-top: auto;
+        }
+
+        .footer-container {
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 1.6rem;
+            display: grid;
+        }
+
+        .footer-bg {
+            background-color: var(--box-color);
+            padding: 3rem 0 3.5rem;
+        }
+
+        .footer-title {
+            font-size: var(--h3-font-size);
+            margin-bottom: var(--mb025);
+        }
+
+        .footer-subtitle {
+            font-size: var(--small-font-size);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-self: center;
+            column-gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links li a {
+            color: var(--title-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links li a:hover {
+            color: var(--skin-color);
+        }
+
+        .footer-socials {
+            justify-self: flex-end;
+        }
+
+        .footer-social {
+            font-size: 1.25rem;
+            margin-right: var(--mb15);
+            color: var(--title-color);
+            text-decoration: none;
+        }
+
+        .footer-social:hover {
+            color: var(--skin-color);
+        }
+
+        .footer-copy {
+            font-size: var(--smaller-font-size);
+            text-align: center;
+            margin-top: 4.5rem;
+            color: var(--title-color);
+        }
+
+        .footer-copy a {
+            font-family: var(--signature-font);
+            color: var(--title-color);
+            text-decoration: none;
+        }
+
+        .footer-copy a:hover {
+            color: var(--skin-color);
+        }
+
+        .footer-title,
+        .footer-subtitle {
+            color: var(--title-color);
+        }
+
+        /* Footer Logo Styles */
+        .footer-logo {
+            width: 50px;
+            height: auto;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        /* Back to Top Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            cursor: pointer;
+            z-index: 1000;
+            background: linear-gradient(to right, var(--skin-color), #d43a00);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(255, 80, 17, 0.2);
+        }
+
+        #back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(255, 80, 17, 0.3);
+        }
+
+        #back-to-top img {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media screen and (max-width: 1024px) {
+            .work-container {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            /* Responsive Nav */
+            .nav-links {
+                gap: 0.5rem;
+            }
+            .nav-links a:not(.nav-cta-btn) {
+                display: none;
+            }
+            .logo-container .logo-text {
+                display: none;
+            }
+            .top-menu-bar {
+                padding: 0.5rem 1rem;
+            }
+
+            .work-section {
+                padding: 2rem 1rem;
+            }
+            
+            .work-container {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .portfolio-popup-content {
+                padding: 1.5rem;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .nav-cta-btn {
+                padding: 0.6rem 1.25rem;
+                font-size: var(--smaller-font-size);
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .work-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Responsive adjustments for footer */
+        @media screen and (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+            
+            .footer-links {
+                justify-self: center;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .footer-socials {
+                justify-self: center;
+            }
+            
+            .footer-brand {
+                align-items: center;
+            }
+            
+            .footer-logo {
+                width: 40px;
+            }
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--box-color);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--skin-color);
+            border-radius: 10px;
+            border: 2px solid var(--box-color);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--skin-color);
+            opacity: 0.8;
+        }
+
+        /* Firefox */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: var(--skin-color) var(--box-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Menu Bar -->
+    <header class="top-menu-bar">
+        <div class="top-menu-content">
+            <a href="#" class="logo-container">
+                <img src="https://bucket.mlcdn.com/a/3336/3336910/images/494966047320c2c5be07bd50754a7183ffcda611.png" alt="Bebell Digital Solutions Logo" class="logo-image">
+                <span class="logo-text">Behind the Box</span>
+            </a>
+            <nav class="nav-links">
+                <a href="https://project-freedom.club">Home</a>
+                <a href="/p/meet-the-team">About</a>
+                <a href="/p/projects">Portfolio</a>
+                <a href="/p/contact-us">Contact</a>
+                <a href="/booking-page" class="nav-cta-btn">Book a Meeting</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="relative container">
+            <span class="hero-overline">Our Portfolio</span>
+            <h1>Digital Offices Gallery</h1>
+            <p>Explore our portfolio of custom digital office solutions for various industries</p>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section class="work-section">
+        <div class="container">
+
+            <div class="work-container">
+                <!-- Digital Offices Cards -->
+                <div class="work-card mix digital-office">
+                    <div class="work-img-container">
+                        <img src="https://bucket.mlcdn.com/a/3336/3336910/images/7ad430b6a54fd2ae52e02805d7208c28b801ea94.jpeg" alt="Balcacer & Asociados Digital Office" class="work-img">
+                    </div>
+                    <div class="work-content">
+                        <div>
+                            <h3 class="work-title">Balcácer & Asociados</h3>
+                            <p class="work-description">Legal office automation with client tracking, CRM, and SEO optimization.</p>
+                        </div>
+                        <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+                        <div class="portfolio-item-details">
+                            <h3 class="details-title">Custom Legal Digital Office</h3>
+                            <p class="details-description">Legal office automation with client tracking, CRM, and SEO optimization.</p>
+                            <ul class="details-info">
+                                <li>Created - <span>Feb 2024</span></li>
+                                <li>Services - <span>CRM automation, client data system, SEO</span></li>
+                                <li>Case Study - <span><a href="/projects/online-offices/balcacer-asociados">Balcácer & Asociados</a></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-card mix digital-office">
+                    <div class="work-img-container">
+                        <img src="https://bucket.mlcdn.com/a/3336/3336910/images/d04530d9f4779d7792be454957de69b4b8dd963c.jpeg" alt="DivorcioRD Digital Office" class="work-img">
+                    </div>
+                    <div class="work-content">
+                        <div>
+                            <h3 class="work-title">DivorcioRD</h3>
+                            <p class="work-description">Complete digital legal office with lead funnel automation and online consultations.</p>
+                        </div>
+                        <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+                        <div class="portfolio-item-details">
+                            <h3 class="details-title">Automated Legal Office</h3>
+                            <p class="details-description">Complete digital legal office with lead funnel automation and online consultations.</p>
+                            <ul class="details-info">
+                                <li>Created - <span>Jan 2024</span></li>
+                                <li>Services - <span>Automation, CRM, online appointments</span></li>
+                                <li>Case Study - <span><a href="/projects/online-offices/divorciord">DivorcioRD</a></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-card mix digital-office">
+                    <div class="work-img-container">
+                        <img src="https://bucket.mlcdn.com/a/3336/3336910/images/39014f0efcc873761f9a8e1c62669333c1fcc124.jpeg" alt="Farmacia Vegana Digital Office" class="work-img">
+                    </div>
+                    <div class="work-content">
+                        <div>
+                            <h3 class="work-title">Farmacia Vegana</h3>
+                            <p class="work-description">Digital pharmacy with delivery automation and WhatsApp order system.</p>
+                        </div>
+                        <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+                        <div class="portfolio-item-details">
+                            <h3 class="details-title">E-commerce Pharmacy Office</h3>
+                            <p class="details-description">Digital pharmacy with delivery automation and WhatsApp order system.</p>
+                            <ul class="details-info">
+                                <li>Created - <span>May 2024</span></li>
+                                <li>Services - <span>E-commerce, delivery system, WhatsApp integration</span></li>
+                                <li>Case Study - <span><a href="/projects/online-offices/farmacia-vegana">Farmacia Vegana</a></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-card mix digital-office">
+                    <div class="work-img-container">
+                        <img src="https://bucket.mlcdn.com/a/3336/3336910/images/5e2c63367745c661a063afe27d140d209e732033.jpeg" alt="Senses Luxury Spa Digital Office" class="work-img">
+                    </div>
+                    <div class="work-content">
+                        <div>
+                            <h3 class="work-title">Senses Luxury Spa</h3>
+                            <p class="work-description">Booking automation platform with gift card and membership management.</p>
+                        </div>
+                        <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+                        <div class="portfolio-item-details">
+                            <h3 class="details-title">Luxury Spa Digital Office</h3>
+                            <p class="details-description">Booking automation platform with gift card and membership management.</p>
+                            <ul class="details-info">
+                                <li>Created - <span>Jun 2024</span></li>
+                                <li>Services - <span>Online booking, automation, memberships</span></li>
+                                <li>Case Study - <span><a href="/projects/online-offices/senses-luxury-spa">Senses Luxury Spa</a></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-card mix digital-office">
+                    <div class="work-img-container">
+                        <img src="https://bucket.mlcdn.com/a/3336/3336910/images/f2d579155c32eb4acbdf5891bcabc9a0f922529b.jpeg" alt="HS Interior Design Digital Office" class="work-img">
+                    </div>
+                    <div class="work-content">
+                        <div>
+                            <h3 class="work-title">HS Interior Design</h3>
+                            <p class="work-description">Online portfolio and consultation booking system with automated CRM.</p>
+                        </div>
+                        <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+                        <div class="portfolio-item-details">
+                            <h3 class="details-title">Interior Design Digital Office</h3>
+                            <p class="details-description">Online portfolio and consultation booking system with automated CRM.</p>
+                            <ul class="details-info">
+                                <li>Created - <span>Jul 2024</span></li>
+                                <li>Services - <span>Portfolio, booking automation, CRM</span></li>
+                                <li>Case Study - <span><a href="/projects/online-offices/hs-interior-design">HS Interior Design</a></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-card mix digital-office">
+                    <div class="work-img-container">
+                        <img src="https://bucket.mlcdn.com/a/3336/3336910/images/43c7f5cac569068d066f5103fc3c1eb5fb49090f.jpeg" alt="NEXED Travel Digital Office" class="work-img">
+                    </div>
+                    <div class="work-content">
+                        <div>
+                            <h3 class="work-title">NEXED Travel</h3>
+                            <p class="work-description">Trip builder platform with affiliate automation and booking workflows.</p>
+                        </div>
+                        <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+                        <div class="portfolio-item-details">
+                            <h3 class="details-title">Travel Agency Digital Office</h3>
+                            <p class="details-description">Trip builder platform with affiliate automation and booking workflows.</p>
+                            <ul class="details-info">
+                                <li>Created - <span>Aug 2024</span></li>
+                                <li>Services - <span>Trip builder, affiliate automation, CRM</span></li>
+                                <li>Case Study - <span><a href="/projects/online-offices/nexed-travel">NEXED Travel</a></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-card mix digital-office">
+                    <div class="work-img-container">
+                        <img src="https://bucket.mlcdn.com/a/3336/3336910/images/a5c0a36fd7815942be23fdac413c29287579c429.jpeg" alt="Bicimetro Nacional Digital Office" class="work-img">
+                    </div>
+                    <div class="work-content">
+                        <div>
+                            <h3 class="work-title">Bicimetro Nacional</h3>
+                            <p class="work-description">Platform for bike rentals, maintenance scheduling, and recurring memberships.</p>
+                        </div>
+                        <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+                        <div class="portfolio-item-details">
+                            <h3 class="details-title">Subscription-Based Digital Office</h3>
+                            <p class="details-description">Platform for bike rentals, maintenance scheduling, and recurring memberships.</p>
+                            <ul class="details-info">
+                                <li>Created - <span>Oct 2024</span></li>
+                                <li>Services - <span>Subscriptions, booking, automation</span></li>
+                                <li>Case Study - <span><a href="/projects/online-offices/bicimetro">Bicimetro Nacional</a></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-card mix digital-office">
+                    <div class="work-img-container">
+                        <img src="https://bucket.mlcdn.com/a/3336/3336910/images/e545e379b12553835b1e827954e2d0d559a25b2b.jpeg" alt="Chef Jacada Digital Office" class="work-img">
+                    </div>
+                    <div class="work-content">
+                        <div>
+                            <h3 class="work-title">Chef Jacada</h3>
+                            <p class="work-description">Automated catering booking system with digital menus and client dashboard.</p>
+                        </div>
+                        <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+                        <div class="portfolio-item-details">
+                            <h3 class="details-title">Catering Digital Office</h3>
+                            <p class="details-description">Automated catering booking system with digital menus and client dashboard.</p>
+                            <ul class="details-info">
+                                <li>Created - <span>Apr 2024</span></li>
+                                <li>Services - <span>Digital menu, online booking, automation</span></li>
+                                <li>Case Study - <span><a href="/projects/online-offices/chef-jacada">Chef Jacada</a></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-card mix digital-office">
+                    <div class="work-img-container">
+                        <img src="https://bucket.mlcdn.com/a/3336/3336910/images/102c99b30d59d678c997f2319322e5c8dae89375.jpeg" alt="Bebell Design Studio Digital Office" class="work-img">
+                    </div>
+                    <div class="work-content">
+                        <div>
+                            <h3 class="work-title">Bebell Design Studio</h3>
+                            <p class="work-description">Project showcase and workflow automation platform for creative collaboration.</p>
+                        </div>
+                        <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+                        <div class="portfolio-item-details">
+                            <h3 class="details-title">Creative Agency Digital Office</h3>
+                            <p class="details-description">Project showcase and workflow automation platform for creative collaboration.</p>
+                            <ul class="details-info">
+                                <li>Created - <span>Sep 2024</span></li>
+                                <li>Services - <span>Portfolio, automation, CRM</span></li>
+                                <li>Case Study - <span><a href="/projects/online-offices/bebell-design-studio">Bebell Design Studio</a></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-card mix digital-office">
+                    <div class="work-img-container">
+                        <img src="https://bucket.mlcdn.com/a/3336/3336910/images/7456eb9f12a3eaf68cd16c33ef7aa0f77b2dc674.jpeg" alt="Grupo Lisman SRL Digital Office" class="work-img">
+                    </div>
+                    <div class="work-content">
+                        <div>
+                            <h3 class="work-title">Grupo Lisman SRL</h3>
+                            <p class="work-description">Digital platform for distributors with automated catalog and order system.</p>
+                        </div>
+                        <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+                        <div class="portfolio-item-details">
+                            <h3 class="details-title">B2B Corporate Digital Office</h3>
+                            <p class="details-description">Digital platform for distributors with automated catalog and order system.</p>
+                            <ul class="details-info">
+                                <li>Created - <span>Dec 2024</span></li>
+                                <li>Services - <span>Distributor portal, B2B automation</span></li>
+                                <li>Case Study - <span><a href="/projects/online-offices/grupo-lisman">Grupo Lisman SRL</a></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-card mix digital-office">
+                    <div class="work-img-container">
+                        <img src="https://ik.imagekit.io/bebell/Customers/Digital%20Offices/As%20food%20as%20it%20gets.png?updatedAt=1762074449311" alt="As Food As It Gets Digital Office" class="work-img">
+                    </div>
+                    <div class="work-content">
+                        <div>
+                            <h3 class="work-title">As Food As It Gets</h3>
+                            <p class="work-description">Online ordering, menu management, and delivery automation system.</p>
+                        </div>
+                        <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+                        <div class="portfolio-item-details">
+                            <h3 class="details-title">Restaurant Digital Office</h3>
+                            <p class="details-description">Online ordering, menu management, and delivery automation system.</p>
+                            <ul class="details-info">
+                                <li>Created - <span>Nov 2024</span></li>
+                                <li>Services - <span>Online ordering, delivery, automation</span></li>
+                                <li>Case Study - <span><a href="/projects/online-offices/as-food-as-it-gets">As Food As It Gets</a></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-card mix digital-office">
+                    <div class="work-img-container">
+                        <img src="https://bucket.mlcdn.com/a/3336/3336910/images/44ee407b5d38bf67ab87f4ca9ddd187e6780ede3.jpeg" alt="Fundación Rescued by Love Digital Office" class="work-img">
+                    </div>
+                    <div class="work-content">
+                        <div>
+                            <h3 class="work-title">Fundación Rescued by Love</h3>
+                            <p class="work-description">Online donation system with automation and integrated payment gateway.</p>
+                        </div>
+                        <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+                        <div class="portfolio-item-details">
+                            <h3 class="details-title">Nonprofit Digital Office</h3>
+                            <p class="details-description">Online donation system with automation and integrated payment gateway.</p>
+                            <ul class="details-info">
+                                <li>Created - <span>Mar 2024</span></li>
+                                <li>Services - <span>Online donations, automation, web design</span></li>
+                                <li>Case Study - <span><a href="/projects/online-offices/fundacion-rescued-by-love">Fundación Rescued by Love</a></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+           
+                
+                
+                
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Portfolio Popup -->
+    <div class="portfolio-popup">
+        <div class="portfolio-popup-content">
+            <button class="portfolio-popup-close">
+                <i class="uil uil-times"></i>
+            </button>
+            <div class="pp-thumbnail">
+                <img src="" alt="">
+            </div>
+            <div class="portfolio-popup-body">
+                <!-- Content will be inserted here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer footer-bg">
+        <div class="footer-container container">
+            <div class="footer-brand">
+                <img src="https://bucket.mlcdn.com/a/3336/3336910/images/494966047320c2c5be07bd50754a7183ffcda611.png" alt="Behind the Box Logo" class="footer-logo">
+                <h3 class="footer-title">Behind the Box</h3>
+                <p class="footer-subtitle">Digital Solutions Provider</p>
+            </div>
+            <ul class="footer-links">
+                <li><a href="https://project-freedom.club">Home</a></li>
+                <li><a href="/p/meet-the-team">About</a></li>
+                <li><a href="/p/projects">Portfolio</a></li>
+                <li><a href="/p/contact-us">Contact</a></li>
+            </ul>
+            <div class="footer-socials">
+                <a href="#" class="footer-social"><i class="uil uil-facebook-f"></i></a>
+                <a href="#" class="footer-social"><i class="uil uil-instagram"></i></a>
+                <a href="#" class="footer-social"><i class="uil uil-linkedin-alt"></i></a>
+            </div>
+        </div>
+        <p class="footer-copy">&#169; 2024 <a href="#">Behind the Box</a>. All rights reserved</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div id="back-to-top" onclick="scrollToTop()">
+        <img src="https://bucket.mlcdn.com/a/3336/3336910/images/972c5065cffe83955d5322557dcdce28eca170e5.png" alt="Volver arriba">
+    </div>
+
+    <script>
+        // Back to Top Functionality
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            var backToTopButton = document.getElementById("back-to-top");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "flex";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        // Portfolio Popup Functionality - FIXED CODE
+        document.addEventListener('DOMContentLoaded', function() {
+            // Portfolio Popup
+            document.addEventListener('click', (e) => {
+                const workButton = e.target.closest('.work-button');
+                const popupClose = e.target.closest('.portfolio-popup-close');
+                const popup = document.querySelector('.portfolio-popup');
+                
+                if (workButton) {
+                    e.preventDefault();
+                    togglePortfolioPopup();
+                    portfolioItemDetails(workButton.closest('.work-card'));
+                }
+                if (popupClose || (popup.classList.contains('open') && e.target === popup)) {
+                    e.preventDefault();
+                    togglePortfolioPopup();
+                }
+            })
+
+            function togglePortfolioPopup() {
+                document.querySelector('.portfolio-popup').classList.toggle('open');
+            }
+
+            function portfolioItemDetails(portfolioItem) {
+                const imgSrc = portfolioItem.querySelector('.work-img').src;
+                const detailsContent = portfolioItem.querySelector('.portfolio-item-details').innerHTML;
+                
+                document.querySelector('.pp-thumbnail img').src = imgSrc;
+                document.querySelector('.portfolio-popup-body').innerHTML = detailsContent;
+            }
+        });
+    </script>
+</body>
+</html>
