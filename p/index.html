@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -206,6 +204,18 @@
             max-width: 980px;
             padding: 0 1.5rem;
             animation: fadeInUp 1s ease-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Logo above title */
+        .hero-logo {
+            width: 70px;
+            height: 70px;
+            margin-bottom: var(--mb1);
+            border-radius: 8px;
+            object-fit: contain;
         }
 
         .hero h1 {
@@ -238,11 +248,25 @@
             font-size: var(--h3-font-size);
             opacity: 0.9;
             margin-bottom: var(--mb2);
+            text-align: center;
+        }
+        
+        
+        
+
+        /* MailerLite form container */
+        .ml-form-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
         }
 
         /* Custom form styling */
         .subscribe-form {
-            max-width: 500px;
+            width: 100%;
+            max-width: 800px;
             margin: 0 auto;
             padding: 2rem;
             background-color: var(--box-color);
@@ -280,7 +304,7 @@
 
         .btn-subscribe {
             width: 100%;
-            padding: 0.75rem 1.75rem;
+            padding: 1.75rem 1.75rem;
             background: linear-gradient(to right, var(--skin-color), #d43a00);
             color: var(--title-color);
             font-weight: var(--font-medium);
@@ -345,6 +369,11 @@
             .subscribe-form {
                 padding: 1.5rem;
             }
+            
+            .hero-logo {
+                width: 60px;
+                height: 60px;
+            }
         }
 
         @media screen and (max-width: 576px) {
@@ -355,6 +384,11 @@
 
             .hero h1 {
                 font-size: 1.75rem;
+            }
+            
+            .hero-logo {
+                width: 50px;
+                height: 50px;
             }
         }
 
@@ -540,16 +574,21 @@
     <!-- Hero Section with Video Background -->
     <section class="hero">
         <video class="hero-video" autoplay muted loop>
-            <source src="https://ik.imagekit.io/bebell/Project%20Freedom/hero-video-pf-homepage.mp4?updatedAt=1761847671194" type="video/mp4">
+            <source src="https://cdn.shopify.com/videos/c/o/v/18c568ecd0a64687a25f7497870b6fef.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="hero-content">
+            <!-- Logo above title -->
+            <img src="https://bucket.mlcdn.com/a/3336/3336910/images/494966047320c2c5be07bd50754a7183ffcda611.png" alt="Project Freedom Logo" class="hero-logo">
+            
             <h1>Project Freedom</h1>
-            <p>Designing Freedom From Within</p>
+            <p>Join the Movement</p>
             <p>Be the first to know when we launch. Subscribe for updates!</p>
             
             <!-- MailerLite Form -->
-            <div class="ml-form-embed" data-account="3336910:t8p6n6m7b3" data-form="6111260:p7j0q9"></div>
+            <div class="ml-form-container">
+                <div class="ml-form-embed" data-account="3336910:t8p6n6m7b3" data-form="6111260:p7j0q9"></div>
+            </div>
         </div>
     </section>
 
