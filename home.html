@@ -227,22 +227,12 @@
             display: inline-block;
         }
 
-        .hero h1::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(to right, transparent, var(--skin-color), transparent);
-            transform: scaleX(0);
-            transform-origin: center;
-            transition: transform 0.5s ease;
-        }
+
 
         .hero h1:hover::after {
             transform: scaleX(1);
         }
+        
 
         .hero p {
             font-size: var(--h3-font-size);
@@ -251,6 +241,59 @@
             text-align: center;
         }
         
+
+
+/* Add this to your existing CSS */
+.hero h1::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, transparent, var(--skin-color), transparent);
+    transform: scaleX(0);
+    transform-origin: center;
+    animation: pulseUnderline 6s infinite;
+}
+
+@keyframes pulseUnderline {
+    0%, 50% {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+    25% {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+    75% {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+}
+
+/* Remove or comment out the existing hover effect */
+/*
+.hero h1:hover::after {
+    transform: scaleX(1);
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
         
         
 
