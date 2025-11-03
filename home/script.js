@@ -33,3 +33,11 @@
             }
 
 
+
+
+
+
+    // Initial setup
+    updateButtonVisibility();
+}
+        });
