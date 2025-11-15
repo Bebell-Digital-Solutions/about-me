@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Offices Gallery | Behind the Box</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Turret+Road:wght@400;700&display=swap" rel="stylesheet">
+   
+    
+    
+       <!-- Favicon -->
+    <link rel="icon" href="https://bucket.mlcdn.com/a/3336/3336910/images/1b3c402d665f8293883141de5a7d564769906d78.png">  
+    
+    
+    
+    
+    
+    
+    
+    <style>
+        /* Your existing CSS variables and base styles */
+        :root {
+            --hue-color: 242;
+            --skin-color: #ff5011;
+            --mirage-color: hsl(210, 10%, 23%);
+            --title-color: hsl(var(--hue-color), 8%, 95%);
+            --text-color: hsl(var(--hue-color), 8%, 85%);
+            --body-color: hsl(var(--hue-color), 19%, 5%);
+            --box-color: hsl(var(--hue-color), 14%, 10%);
+            --scroll-box-color: hsl(var(--hue-color), 12%, 38%);
+            --scroll-thumb-color: hsl(var(--hue-color), 12%, 26%);
+            --body-font: 'Poppins', sans-serif;
+            --signature-font: 'Turret', sans-serif;
+            --biggest-font-size: 3rem;
+            --h1-font-size: 3rem;
+            --h2-font-size: 2rem;
+            --h3-font-size: 1.25rem;
+            --normal-font-size: 1rem;
+            --small-font-size: .875rem;
+            --smaller-font-size: .813rem;
+            --font-medium: 500;
+            --font-bold: 600;
+            --mb025: .25rem;
+            --mb05: .5rem;
+            --mb075: .75rem;
+            --mb1: 1rem;
+            --mb15: 1.5rem;
+            --mb2: 2rem;
+            --mb25: 2.5rem;
+            --mb3: 3rem;
+            --z-fixed: 10;
+            --z-modal: 1000;
+        }
+
+        @media screen and (max-width: 1024px) {
+            :root {
+                --biggest-font-size: 2rem;
+                --h1-font-size: 3rem;
+                --h2-font-size: 1.25rem;
+                --h3-font-size: 1.125rem;
+                --normal-font-size: .938rem;
+                --small-font-size: .813rem;
+                --smaller-font-size: .75rem;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--body-font);
+            font-size: var(--normal-font-size);
+            background-color: var(--body-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            color: var(--title-color);
+            font-weight: var(--font-bold);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Case Study Specific Styles */
+        .case-study {
+            font-family: var(--body-font);
+            background-color: var(--body-color);
+            color: var(--text-color);
+        }
+        
+        .home-social {
+            position: absolute;
+            top: 1.8rem;
+            left: 0;
+            display: flex;
+            align-items: center;
+            column-gap: 3.5rem;
+        }
+
+        .home-social-follow {
+            font-weight: var(--font-medium);
+            position: relative;
+        }
+
+        .home-social-follow::after {
+            content: '';
+            position: absolute;
+            width: 1rem;
+            height: 2px;
+            background-color: var(--skin-color);
+            right: -45%;
+            top: 50%;
+        }
+
+        .home-social-links {
+            display: inline-flex;
+            column-gap: 1rem;
+        }
+
+        .home-social-link {
+            font-size: 1.08rem;
+            color: var(--text-color);
+            transition: .4s;
+        }
+
+        .home-social-link:hover {
+            transform: translateY(.25rem);
+        }
+        
+        /* --- Top Menu Bar --- */
+        .top-menu-bar {
+            position: sticky;
+            top: 1.5rem;
+            z-index: 50;
+            max-width: 1100px;
+            margin: 0 auto;
+            width: calc(100% - 2rem);
+            background-color: hsla(var(--hue-color), 14%, 10%, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid hsl(var(--hue-color), 12%, 26%);
+            border-radius: 0.75rem;
+            padding: 0.5rem 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .top-menu-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--title-color);
+        }
+
+        .logo-container .logo-image {
+            height: 32px;
+            width: 32px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .logo-container .logo-text {
+            font-size: 1.1rem;
+            font-weight: var(--font-bold); 
+            color: var(--title-color); 
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            font-weight: var(--font-medium);
+            transition: color 0.3s ease;
+            font-size: var(--small-font-size);
+        }
+
+        .nav-links a:hover {
+            color: var(--skin-color);
+        }
+
+        .nav-cta-btn {
+            background: linear-gradient(to right, var(--skin-color), #d43a00);
+            color: #fff;
+            padding: 0.75rem 1.75rem;
+            border-radius: 0.5rem;
+            font-weight: var(--font-medium);
+            font-size: var(--small-font-size);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(255, 80, 17, 0.2);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .nav-cta-btn::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--mirage-color);
+            color: #fff;
+            z-index: -1;
+            transform: scale(0);
+            border-radius: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 80, 17, 0.3);
+            color: #fff !important; /* Force white text on hover */
+        }
+
+        .nav-cta-btn:hover::after {
+            transform: scale(1);
+        }
+        /* --- End Top Menu Bar --- */
+
+        /* HERO SECTION - ADAPTIVE HEIGHT */
+        .hero {
+            position: relative;
+            min-height: 30vh;
+            display: flex;
+            align-items: center; 
+            justify-content: center;
+            text-align: center;
+            color: var(--title-color);
+            background-color: var(--body-color);
+            overflow: hidden;
+            padding: 80px 0 40px;
+        }
+
+        .hero .relative {
+            position: relative;
+            z-index: 10;
+            padding: 0 1.5rem;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: var(--h1-font-size);
+            font-weight: var(--font-bold);
+            margin-bottom: var(--mb1);
+            animation: fadeInUp 1s ease-out;
+            margin-top: 0;
+            max-width: 960px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: var(--mb1);
+            max-width: 960px;
+        }
+
+        .hero-overline {
+            color: var(--skin-color);
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        /* WORK SECTION STYLES */
+        .work-section {
+            padding: 3rem 1.2rem;
+            background-color: var(--body-color);
+            
+        }
+
+        .work-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 0rem;
+            margin-bottom: 6rem;
+        }
+
+.work-card {
+    background-color: var(--box-color);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Remove aspect-ratio to allow natural height */
+    display: flex;
+    flex-direction: column;
+    height: auto; /* Let content determine height */
+}
+
+        .work-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .work-img-container {
+            padding: 1.25rem;
+            flex: 0 0 auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        }
+
+        .work-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 0.5rem;
+            transition: transform 0.5s ease;
+        }
+
+
+        .work-content {
+            padding: 0 1.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            justify-content: space-between;
+            min-height: 180px; /* Ensure consistent content area */
+
+        }
+
+        .work-title {
+            font-size: var(--h3-font-size);
+            color: var(--title-color);
+            margin-bottom: 0.75rem;
+        }
+
+        .work-description {
+            color: var(--text-color);
+            font-size: var(--small-font-size);
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+            flex: 1;
+        }
+
+        .work-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(to right, var(--skin-color), #d43a00);
+            color: var(--title-color);
+            font-weight: var(--font-medium);
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(255, 80, 17, 0.2);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .work-button::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--mirage-color);
+            z-index: -1;
+            transform: scale(0);
+            border-radius: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .work-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(255, 80, 17, 0.3);
+        }
+
+        .work-button:hover::after {
+            transform: scale(1);
+        }
+
+        .work-button-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .work-button:hover .work-button-icon {
+            transform: translateX(5px);
+        }
+
+        .portfolio-item-details {
+            display: none;
+        }
+
+        /* PORTFOLIO POPUP STYLES */
+        .portfolio-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: var(--z-modal);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            padding: 1.5rem;
+        }
+
+        .portfolio-popup.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .portfolio-popup-content {
+            background-color: var(--box-color);
+            border-radius: 0.75rem;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            padding: 2.5rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .portfolio-popup-close {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            font-size: 1.5rem;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: color 0.3s ease;
+            z-index: 1;
+            background: none;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .portfolio-popup-close:hover {
+            color: var(--skin-color);
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .pp-thumbnail {
+            margin-bottom: 1.5rem;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .pp-thumbnail img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .portfolio-popup-subtitle {
+            font-size: var(--h3-font-size);
+            color: var(--skin-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-popup-body {
+            color: var(--text-color);
+        }
+
+        .details-title {
+            font-size: var(--h2-font-size);
+            color: var(--title-color);
+            margin-bottom: 1rem;
+        }
+
+        .details-description {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .details-info {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .details-info li {
+            margin-bottom: 0.5rem;
+            display: flex;
+        }
+
+        .details-info li span {
+            margin-left: 0.5rem;
+            color: var(--title-color);
+        }
+
+        .details-info li a {
+            color: var(--skin-color);
+            transition: color 0.3s ease;
+        }
+
+        .details-info li a:hover {
+            color: var(--title-color);
+        }
+
+        /* Footer */
+        .footer {
+            padding-top: 2rem;
+            margin-top: auto;
+        }
+
+        .footer-container {
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 1.6rem;
+            display: grid;
+        }
+
+        .footer-bg {
+            background-color: var(--box-color);
+            padding: 3rem 0 3.5rem;
+        }
+
+        .footer-title {
+            font-size: var(--h3-font-size);
+            margin-bottom: var(--mb025);
+        }
+
+        .footer-subtitle {
+            font-size: var(--small-font-size);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-self: center;
+            column-gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links li a {
+            color: var(--title-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links li a:hover {
+            color: var(--skin-color);
+        }
+
+        .footer-socials {
+            justify-self: flex-end;
+        }
+
+        .footer-social {
+            font-size: 1.25rem;
+            margin-right: var(--mb15);
+            color: var(--title-color);
+            text-decoration: none;
+        }
+
+        .footer-social:hover {
+            color: var(--skin-color);
+        }
+
+        .footer-copy {
+            font-size: var(--smaller-font-size);
+            text-align: center;
+            margin-top: 4.5rem;
+            color: var(--title-color);
+        }
+
+        .footer-copy a {
+            font-family: var(--signature-font);
+            color: var(--title-color);
+            text-decoration: none;
+        }
+
+        .footer-copy a:hover {
+            color: var(--skin-color);
+        }
+
+        .footer-title,
+        .footer-subtitle {
+            color: var(--title-color);
+        }
+
+        /* Footer Logo Styles */
+        .footer-logo {
+            width: 50px;
+            height: auto;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        /* Back to Top Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            cursor: pointer;
+            z-index: 1000;
+            background: linear-gradient(to right, var(--skin-color), #d43a00);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(255, 80, 17, 0.2);
+        }
+
+        #back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(255, 80, 17, 0.3);
+        }
+
+        #back-to-top img {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media screen and (max-width: 1024px) {
+            .work-container {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            /* Responsive Nav */
+            .nav-links {
+                gap: 0.5rem;
+            }
+            .nav-links a:not(.nav-cta-btn) {
+                display: none;
+            }
+            .logo-container .logo-text {
+                display: none;
+            }
+            .top-menu-bar {
+                padding: 0.5rem 1rem;
+            }
+
+            .work-section {
+                padding: 2rem 1rem;
+            }
+            
+            .work-container {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .portfolio-popup-content {
+                padding: 1.5rem;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .nav-cta-btn {
+                padding: 0.6rem 1.25rem;
+                font-size: var(--smaller-font-size);
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .work-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Responsive adjustments for footer */
+        @media screen and (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+            
+            .footer-links {
+                justify-self: center;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .footer-socials {
+                justify-self: center;
+            }
+            
+            .footer-brand {
+                align-items: center;
+            }
+            
+            .footer-logo {
+                width: 40px;
+            }
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--box-color);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--skin-color);
+            border-radius: 10px;
+            border: 2px solid var(--box-color);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--skin-color);
+            opacity: 0.8;
+        }
+
+        /* Firefox */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: var(--skin-color) var(--box-color);
+        }
+    
+    
+    
+     /* Page loader container with black background */
+  .page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Added text header */
+  .loader-header {
+    color: white;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  /* Your progress bar - unchanged */
+  .progress {
+    width: 272.8px;
+    height: 41.7px;
+    border-radius: 28.8px;
+    color: #ff5011;
+    background-color: #000;
+    border: 2.9px solid;
+    position: relative;
+  }
+
+  .progress::before {
+    content: "";
+    position: absolute;
+    margin: 2.9px;
+    inset: 0 100% 0 0;
+    border-radius: inherit;
+    background: currentColor;
+    animation: progress-pf82op 1.5s forwards;
+  }
+
+  @keyframes progress-pf82op {
+    100% {
+      inset: 0;
+    }
+  }
+
+  /* Hide transition */
+  .page-loader.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+
+    
+    
+    
+    
+    
+    
+    
+    </style>
+
+
+
+
+<script>
+  // Create and show loader
+  function showLoader() {
+    const loader = document.createElement('div');
+    loader.className = 'page-loader';
+    loader.innerHTML = `
+      <div class="loader-header">Wait for it...</div>
+      <div class="progress"></div>
+    `;
+    document.body.appendChild(loader);
+    return loader;
+  }
+
+  // Hide loader after 2 seconds
+  function initLoader() {
+    const loader = showLoader();
+    
+    setTimeout(() => {
+      loader.classList.add('hidden');
+      setTimeout(() => loader.remove(), 300); // Remove after fade out
+    }, 2000); // 2 second duration
+  }
+
+  // Initialize when DOM is ready
+  document.addEventListener('DOMContentLoaded', initLoader);
+</script>
+<!-- CSS LOADER  - PROGRESS BAR WITH TEXT -->
+
+
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <!-- Top Menu Bar -->
+    <header class="top-menu-bar">
+        <div class="top-menu-content">
+            <a href="#" class="logo-container">
+                <img src="https://bucket.mlcdn.com/a/3336/3336910/images/494966047320c2c5be07bd50754a7183ffcda611.png" alt="Bebell Digital Solutions Logo" class="logo-image">
+                <span class="logo-text">Behind the Box</span>
+            </a>
+            <nav class="nav-links">
+                <a href="https://project-freedom.club">Home</a>
+                <a href="/p/meet-the-team">About</a>
+                <a href="/p/projects">Portfolio</a>
+                <a href="/p/contact-us">Contact</a>
+                <a href="/booking-page" class="nav-cta-btn">Book a Meeting</a>
+            </nav>
+        </div>
+    </header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="relative container">
+        <span class="hero-overline">Our Portfolio</span>
+        <h1>Digital Stores Gallery</h1>
+        <p>Explore our portfolio of custom e-commerce and automated digital store solutions</p>
+    </div>
+</section>
+
+<!-- Work Section -->
+<section class="work-section">
+    <div class="container">
+
+        <div class="work-container">
+            <!-- E-Commerce Cards -->
+
+            <!-- Virtual Restaurant Store -->
+            <div class="work-card mix digital-store">
+                <div class="work-img-container">
+                    <img src="https://via.placeholder.com/600x400" alt="Virtual Restaurant Store" class="work-img">
+                </div>
+                <div class="work-content">
+                    <div>
+                        <h3 class="work-title">Virtual Restaurant Store</h3>
+                        <p class="work-description">Digital multi-restaurant ordering system with automated payments and delivery workflows.</p>
+                    </div>
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+                    <div class="portfolio-item-details">
+                        <h3 class="details-title">Restaurant Ordering Digital Store</h3>
+                        <p class="details-description">Digital multi-restaurant ordering system with automated payments and delivery workflows.</p>
+                        <ul class="details-info">
+                            <li>Created - <span>2024</span></li>
+                            <li>Services - <span>E-commerce, delivery automation</span></li>
+                            <li>Case Study - <span><a href="/projects/online-stores/virtual-restaurant-store">Virtual Restaurant Store</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Casa Cool RD -->
+            <div class="work-card mix digital-store">
+                <div class="work-img-container">
+                    <img src="https://via.placeholder.com/600x400" alt="Casa Cool RD" class="work-img">
+                </div>
+                <div class="work-content">
+                    <div>
+                        <h3 class="work-title">Casa Cool RD</h3>
+                        <p class="work-description">Tienda digital de artículos decorativos con catálogo automatizado y entregas el mismo día.</p>
+                    </div>
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+                    <div class="portfolio-item-details">
+                        <h3 class="details-title">Decor Store E-commerce</h3>
+                        <p class="details-description">Tienda digital de artículos decorativos con catálogo automatizado y entregas el mismo día.</p>
+                        <ul class="details-info">
+                            <li>Created - <span>2024</span></li>
+                            <li>Services - <span>E-commerce, delivery automation</span></li>
+                            <li>Case Study - <span><a href="/projects/online-stores/casa-cool-rd">Casa Cool RD</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Santé Brand -->
+            <div class="work-card mix digital-store">
+                <div class="work-img-container">
+                    <img src="https://via.placeholder.com/600x400" alt="Santé Brand" class="work-img">
+                </div>
+                <div class="work-content">
+                    <div>
+                        <h3 class="work-title">Santé Brand</h3>
+                        <p class="work-description">Luxury wellness store with subscription-ready checkout and CRM-integrated sales automation.</p>
+                    </div>
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+                    <div class="portfolio-item-details">
+                        <h3 class="details-title">Luxury Wellness E-commerce</h3>
+                        <p class="details-description">Luxury wellness store with subscription-ready checkout and CRM-integrated sales automation.</p>
+                        <ul class="details-info">
+                            <li>Created - <span>2024</span></li>
+                            <li>Services - <span>E-commerce, subscriptions, CRM automation</span></li>
+                            <li>Case Study - <span><a href="/projects/online-stores/sante-brand">Santé Brand</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adilya’Lomé -->
+            <div class="work-card mix digital-store">
+                <div class="work-img-container">
+                    <img src="https://via.placeholder.com/600x400" alt="Adilya'Lomé" class="work-img">
+                </div>
+                <div class="work-content">
+                    <div>
+                        <h3 class="work-title">Adilya’Lomé</h3>
+                        <p class="work-description">Boutique de moda artesanal con tienda online, catálogo escalable y automatización de ventas.</p>
+                    </div>
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+                    <div class="portfolio-item-details">
+                        <h3 class="details-title">Artisanal Fashion Store</h3>
+                        <p class="details-description">Boutique de moda artesanal con tienda online, catálogo escalable y automatización de ventas.</p>
+                        <ul class="details-info">
+                            <li>Created - <span>2024</span></li>
+                            <li>Services - <span>Catalog automation, e-commerce</span></li>
+                            <li>Case Study - <span><a href="/projects/online-stores/adilyalome">Adilya’Lomé</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DelCora Music -->
+            <div class="work-card mix digital-store">
+                <div class="work-img-container">
+                    <img src="https://via.placeholder.com/600x400" alt="DelCora Music" class="work-img">
+                </div>
+                <div class="work-content">
+                    <div>
+                        <h3 class="work-title">DelCora Music</h3>
+                        <p class="work-description">Artist monetization platform enabling creators to sell services and automate submissions.</p>
+                    </div>
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+                    <div class="portfolio-item-details">
+                        <h3 class="details-title">Artist Services E-commerce</h3>
+                        <p class="details-description">Artist monetization platform enabling creators to sell services and automate submissions.</p>
+                        <ul class="details-info">
+                            <li>Created - <span>2024</span></li>
+                            <li>Services - <span>E-commerce, automation</span></li>
+                            <li>Case Study - <span><a href="/projects/online-stores/delcora-music">DelCora Music</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Luli for Men -->
+            <div class="work-card mix digital-store">
+                <div class="work-img-container">
+                    <img src="https://via.placeholder.com/600x400" alt="Luli for Men" class="work-img">
+                </div>
+                <div class="work-content">
+                    <div>
+                        <h3 class="work-title">Luli for Men</h3>
+                        <p class="work-description">Grooming & skincare brand with automated shopping experience and customer retention systems.</p>
+                    </div>
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+                    <div class="portfolio-item-details">
+                        <h3 class="details-title">Men’s Grooming Store</h3>
+                        <p class="details-description">Grooming & skincare brand with automated shopping experience and customer retention systems.</p>
+                        <ul class="details-info">
+                            <li>Created - <span>2024</span></li>
+                            <li>Services - <span>E-commerce, automation</span></li>
+                            <li>Case Study - <span><a href="/projects/online-stores/luli-for-men">Luli for Men</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trendisimard -->
+            <div class="work-card mix digital-store">
+                <div class="work-img-container">
+                    <img src="https://via.placeholder.com/600x400" alt="Trendisimard" class="work-img">
+                </div>
+                <div class="work-content">
+                    <div>
+                        <h3 class="work-title">Trendisimard</h3>
+                        <p class="work-description">Fashion accessories store with real-time catalog updates and automated order flow.</p>
+                    </div>
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+                    <div class="portfolio-item-details">
+                        <h3 class="details-title">Fashion Accessories Store</h3>
+                        <p class="details-description">Fashion accessories store with real-time catalog updates and automated order flow.</p>
+                        <ul class="details-info">
+                            <li>Created - <span>2024</span></li>
+                            <li>Services - <span>E-commerce, automation</span></li>
+                            <li>Case Study - <span><a href="/projects/online-stores/trendisimard">Trendisimard</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lurinels -->
+            <div class="work-card mix digital-store">
+                <div class="work-img-container">
+                    <img src="https://via.placeholder.com/600x400" alt="Lurinels" class="work-img">
+                </div>
+                <div class="work-content">
+                    <div>
+                        <h3 class="work-title">Lurinels</h3>
+                        <p class="work-description">Boutique femenina con pedidos rápidos, envíos automatizados y remarketing integrado.</p>
+                    </div>
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+                    <div class="portfolio-item-details">
+                        <h3 class="details-title">Boutique Fashion Store</h3>
+                        <p class="details-description">Boutique femenina con pedidos rápidos, envíos automatizados y remarketing integrado.</p>
+                        <ul class="details-info">
+                            <li>Created - <span>2024</span></li>
+                            <li>Services - <span>E-commerce, delivery automation</span></li>
+                            <li>Case Study - <span><a href="/projects/online-stores/lurinels">Lurinels</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KeiDesign -->
+            <div class="work-card mix digital-store">
+                <div class="work-img-container">
+                    <img src="https://via.placeholder.com/600x400" alt="KeiDesign" class="work-img">
+                </div>
+                <div class="work-content">
+                    <div>
+                        <h3 class="work-title">KeiDesign</h3>
+                        <p class="work-description">Creative decor store with digital catalog, instant quote requests, and order automation.</p>
+                    </div>
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+                    <div class="portfolio-item-details">
+                        <h3 class="details-title">Decor Creative Store</h3>
+                        <p class="details-description">Creative decor store with digital catalog, instant quote requests, and order automation.</p>
+                        <ul class="details-info">
+                            <li>Created - <span>2024</span></li>
+                            <li>Services - <span>E-commerce, quote system</span></li>
+                            <li>Case Study - <span><a href="/projects/online-stores/keidesign">KeiDesign</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DecoVintage Art -->
+            <div class="work-card mix digital-store">
+                <div class="work-img-container">
+                    <img src="https://via.placeholder.com/600x400" alt="DecoVintage Art" class="work-img">
+                </div>
+                <div class="work-content">
+                    <div>
+                        <h3 class="work-title">DecoVintage Art</h3>
+                        <p class="work-description">Art & vintage decor shop powered by a digital gallery and automated order tracking.</p>
+                    </div>
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+                    <div class="portfolio-item-details">
+                        <h3 class="details-title">Art Decor Store</h3>
+                        <p class="details-description">Art & vintage decor shop powered by a digital gallery and automated order tracking.</p>
+                        <ul class="details-info">
+                            <li>Created - <span>2024</span></li>
+                            <li>Services - <span>E-commerce, gallery system</span></li>
+                            <li>Case Study - <span><a href="/projects/online-stores/decovintage-art">DecoVintage Art</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nathalie Hazim -->
+            <div class="work-card mix digital-store">
+                <div class="work-img-container">
+                    <img src="https://via.placeholder.com/600x400" alt="Nathalie Hazim Store" class="work-img">
+                </div>
+                <div class="work-content">
+                    <div>
+                        <h3 class="work-title">Nathalie Hazim</h3>
+                        <p class="work-description">Artist & influencer merchandise shop with digital product sales and automation.</p>
+                    </div>
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+                    <div class="portfolio-item-details">
+                        <h3 class="details-title">Artist Merchandise Store</h3>
+                        <p class="details-description">Artist & influencer merchandise shop with digital product sales and automation.</p>
+                        <ul class="details-info">
+                            <li>Created - <span>2024</span></li>
+                            <li>Services - <span>E-commerce, CRM</span></li>
+                            <li>Case Study - <span><a href="/projects/online-stores/nathalie-hazim">Nathalie Hazim</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- YoxoHair -->
+            <div class="work-card mix digital-store">
+                <div class="work-img-container">
+                    <img src="https://via.placeholder.com/600x400" alt="YoxoHair" class="work-img">
+                </div>
+                <div class="work-content">
+                    <div>
+                        <h3 class="work-title">YoxoHair</h3>
+                        <p class="work-description">Haircare brand with a conversion-optimized online store and subscription options.</p>
+                    </div>
+                    <span class="work-button">More Info<i class="uil uil-arrow-right work-button-icon"></i></span>
+
+                    <div class="portfolio-item-details">
+                        <h3 class="details-title">Haircare E-commerce Store</h3>
+                        <p class="details-description">Haircare brand with a conversion-optimized online store and subscription options.</p>
+                        <ul class="details-info">
+                            <li>Created - <span>2024</span></li>
+                            <li>Services - <span>E-commerce, subscriptions</span></li>
+                            <li>Case Study - <span><a href="/projects/online-stores/yoxohair">YoxoHair</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Portfolio Popup -->
+    <div class="portfolio-popup">
+        <div class="portfolio-popup-content">
+            <button class="portfolio-popup-close">
+                <i class="uil uil-times"></i>
+            </button>
+            <div class="pp-thumbnail">
+                <img src="" alt="">
+            </div>
+            <div class="portfolio-popup-body">
+                <!-- Content will be inserted here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer footer-bg">
+        <div class="footer-container container">
+            <div class="footer-brand">
+                <img src="https://bucket.mlcdn.com/a/3336/3336910/images/494966047320c2c5be07bd50754a7183ffcda611.png" alt="Behind the Box Logo" class="footer-logo">
+                <h3 class="footer-title">Behind the Box</h3>
+                <p class="footer-subtitle">Digital Solutions Provider</p>
+            </div>
+            <ul class="footer-links">
+                <li><a href="https://project-freedom.club">Home</a></li>
+                <li><a href="/p/meet-the-team">About</a></li>
+                <li><a href="/p/projects">Portfolio</a></li>
+                <li><a href="/p/contact-us">Contact</a></li>
+            </ul>
+            <div class="footer-socials">
+                <a href="#" class="footer-social"><i class="uil uil-facebook-f"></i></a>
+                <a href="#" class="footer-social"><i class="uil uil-instagram"></i></a>
+                <a href="#" class="footer-social"><i class="uil uil-linkedin-alt"></i></a>
+            </div>
+        </div>
+        <p class="footer-copy">&#169; 2024 <a href="#">Behind the Box</a>. All rights reserved</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div id="back-to-top" onclick="scrollToTop()">
+        <img src="https://bucket.mlcdn.com/a/3336/3336910/images/972c5065cffe83955d5322557dcdce28eca170e5.png" alt="Volver arriba">
+    </div>
+
+    <script>
+        // Back to Top Functionality
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            var backToTopButton = document.getElementById("back-to-top");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "flex";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        // Portfolio Popup Functionality - FIXED CODE
+        document.addEventListener('DOMContentLoaded', function() {
+            // Portfolio Popup
+            document.addEventListener('click', (e) => {
+                const workButton = e.target.closest('.work-button');
+                const popupClose = e.target.closest('.portfolio-popup-close');
+                const popup = document.querySelector('.portfolio-popup');
+                
+                if (workButton) {
+                    e.preventDefault();
+                    togglePortfolioPopup();
+                    portfolioItemDetails(workButton.closest('.work-card'));
+                }
+                if (popupClose || (popup.classList.contains('open') && e.target === popup)) {
+                    e.preventDefault();
+                    togglePortfolioPopup();
+                }
+            })
+
+            function togglePortfolioPopup() {
+                document.querySelector('.portfolio-popup').classList.toggle('open');
+            }
+
+            function portfolioItemDetails(portfolioItem) {
+                const imgSrc = portfolioItem.querySelector('.work-img').src;
+                const detailsContent = portfolioItem.querySelector('.portfolio-item-details').innerHTML;
+                
+                document.querySelector('.pp-thumbnail img').src = imgSrc;
+                document.querySelector('.portfolio-popup-body').innerHTML = detailsContent;
+            }
+        });
+    </script>
+</body>
+</html>
